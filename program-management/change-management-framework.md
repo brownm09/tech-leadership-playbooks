@@ -10,7 +10,7 @@ This framework was developed from two change management deployments:
 
 1. **Raytheon / NASA EED/2 (2018–2019):** I led a Waterfall→Kanban→SAFe transition for a team of 20+ personnel. I conducted working groups, adapted ceremonies for the team's context, and built the JIRA migration tooling to replace the legacy Waterfall tooling.
 
-2. **ActBlue Technical Services (2022–2024):** I applied the same change management posture to the LaunchDarkly rollout — driving cross-team adoption from zero to first customer-facing flag in production within 4 months — and to the on-call restructuring, which required redesigning roles and handover processes across multiple teams simultaneously.
+2. **ActBlue Technical Services (2022–2024):** I applied the same change management posture to the LaunchDarkly rollout — driving cross-team adoption from mandate to first trivial flag in production within 4 months and the first non-trivial customer-facing flag at 7 months — and to the on-call restructuring, which required redesigning roles and handover processes across multiple teams simultaneously.
 
 ## When to Use This
 
