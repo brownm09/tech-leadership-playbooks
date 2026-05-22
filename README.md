@@ -141,7 +141,7 @@ Flag lifecycle management for LaunchDarkly at scale. Covers flag taxonomy, namin
 ## Compliance & Security
 
 **[compliance/pci-dss-gap-analysis-checklist.md](compliance/pci-dss-gap-analysis-checklist.md)**
-Engineering-focused checklist for a PCI-DSS v4.0 gap analysis. Organized by all 12 requirement domains, with emphasis on the controls engineering teams are most likely to own or partially own. Includes a section on common gaps found in first assessments.
+Engineering-focused checklist for a PCI-DSS v4.0 gap analysis. Organized by all 12 requirement domains, with emphasis on the controls engineering teams own or partially own. Includes a section on common gaps found in first assessments.
 
 ---
 
