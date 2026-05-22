@@ -6,7 +6,7 @@ Feature flags decouple deployment from release, letting an engineering org ship 
 
 ## Purpose
 
-Feature flags without governance become permanent conditionals — undocumented, unowned, unremoved. This guide covers the policies and practices keeping a LaunchDarkly implementation useful over time: flag naming, lifecycle management, targeting rules, rollout sequencing, and a cleanup process preventing flag debt from accumulating.
+Feature flags without governance become permanent conditionals no one documents, owns, or removes. This guide covers the policies and practices keeping a LaunchDarkly implementation useful over time: flag naming, lifecycle management, targeting rules, rollout sequencing, and a cleanup process preventing flag debt from accumulating.
 
 ## Background and Motivation
 
@@ -128,7 +128,7 @@ Before creating a flag:
 Before archiving a flag:
 
 - [ ] All code references to the flag key have been removed
-- [ ] Dead code branches have been cleaned up, including the conditional logic the flag controlled (not only the flag call itself)
+- [ ] Dead code branches have been removed in full: both the flag call and the conditional logic it controlled
 - [ ] PR is merged and deployed to all environments
 - [ ] Flag is archived in LaunchDarkly
 
@@ -140,4 +140,4 @@ Before archiving a flag:
 
 **Targeting rules owned by one person:** A targeting rule was set up by an engineer who left the team. No one knows what it does or whether it can be changed. Fix: document targeting rules; review and reassign ownership during offboarding.
 
-**Flag created to avoid a deploy:** A deploy sometimes solves what a flag would only delay. Flags add evaluation overhead and long-term maintenance cost; reach for one when gradual rollout, instant rollback, or controlled experimentation justifies the cost. Avoiding the discomfort of deploying does not.
+**Flag created to avoid a deploy:** A deploy sometimes solves what a flag would only delay. Flags add evaluation overhead and long-term maintenance cost; reach for one when gradual rollout, instant rollback, or controlled experimentation justifies the cost. Avoiding the discomfort of deploying does not justify it.
