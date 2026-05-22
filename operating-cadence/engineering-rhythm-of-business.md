@@ -6,7 +6,7 @@ Without a defined operating cadence, decisions land at the wrong level or never 
 
 ## Background and Motivation
 
-This playbook synthesizes the operating cadence I participated in at ActBlue Technical Services (2024–2025), a platform directorate of approximately 50 engineers across 6 teams. The cadence captured here documents sustained delivery rhythm observed in practice at this scale; the playbook reflects an inside-the-room observer's synthesis of what I saw work, captured for re-use by others stepping into similar roles.
+This playbook synthesizes the operating cadence I participated in at ActBlue Technical Services (2024–2025), a platform directorate of approximately 20 IC engineers across 6 teams. The cadence captured here documents sustained delivery rhythm observed in practice at this scale; the playbook reflects an inside-the-room observer's synthesis of what I saw work, captured for re-use by others stepping into similar roles.
 
 ## When to Use This
 
@@ -385,7 +385,7 @@ A Chief of Staff or senior TPM owning the operating cadence carries more leverag
 
 ---
 
-## Sample Weekly Calendar: 50-Engineer Org
+## Sample Weekly Calendar: Mid-Size Org (~30–60 Engineers)
 
 ```
 Monday
@@ -405,7 +405,7 @@ Friday
             - One metric to watch
 ```
 
-## Sample Monthly Calendar: 50-Engineer Org
+## Sample Monthly Calendar: Mid-Size Org (~30–60 Engineers)
 
 ```
 Week 1
