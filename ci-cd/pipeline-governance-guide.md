@@ -24,7 +24,7 @@ Two CI/CD programs anchor the framework:
 
 ## Pipeline Ownership Model
 
-Every pipeline needs an assigned owner. Pipelines without owners accumulate configuration drift and update last when security requirements change.
+Every pipeline needs an assigned owner. Pipelines without owners accumulate configuration drift and get patched last when security requirements change.
 
 **Ownership responsibilities:**
 - Keep pipeline configuration current with platform standards
@@ -57,7 +57,7 @@ Non-negotiable gates for any pipeline deploying to production:
 - [ ] Infrastructure-as-code linting and validation (Terraform `validate`, `plan` output reviewed for destructive changes)
 
 **Deploy stage:**
-- [ ] Environment promotion runs sequential: dev → staging → production; no skipping
+- [ ] Environment promotion runs sequentially: dev → staging → production; no skipping
 - [ ] Production deploys require explicit approval (manual gate or automated approval from a defined approver group)
 - [ ] Rollback procedure defined and tested before the pipeline ships as production-ready
 
@@ -153,5 +153,5 @@ The artifacts below illustrate the techniques described in this guide against th
 
 ### Gaps relative to the standard
 
-- **Branch protection rules** sit invisible from the repo. Configuration happens via GitHub's API/UI; committed YAML does not carry it. The guide's "branch protection enforced" gate stands as a requirement nonetheless; reading the repo cannot verify it. To verify on a project of your own, query `gh api repos/{owner}/{repo}/branches/{branch}/protection`.
+- **Branch protection rules** do not appear in the repo. Configuration happens via GitHub's API/UI; committed YAML does not carry it. The guide's "branch protection enforced" gate stands as a requirement nonetheless; reading the repo cannot verify it. To verify on a project of your own, query `gh api repos/{owner}/{repo}/branches/{branch}/protection`.
 - **No CI-specific ADR exists yet.** The pipeline's design decisions (Turborepo over alternatives, the `terraform plan → manual approval` sequencing, OIDC over keys) remain unrecorded as ADRs in `docs/adr/`, a gap against the standard the rest of the stack upholds.
