@@ -2,13 +2,13 @@
 
 ## Leadership Context
 
-PCI-DSS compliance is not a legal checkbox — it is a trust prerequisite for any business that processes payments. For engineering leadership, the gap analysis is the artifact that translates compliance requirements into a prioritized engineering workplan. Arriving at a QSA assessment without having done this work first is expensive: remediation timelines measured in months, potential assessment failure, and the reputational cost of delayed card-brand certifications.
+For engineering leadership, the gap analysis translates compliance requirements into a prioritized engineering workplan. Arriving at a QSA assessment without having done this work first costs months of remediation, risks assessment failure, and delays card-brand certifications at reputational expense.
 
 ## Purpose
 
-This checklist supports an initial gap analysis against PCI-DSS v4.0 requirements for engineering teams operating in or adjacent to the cardholder data environment (CDE). It is not a substitute for a formal QSA assessment, but it is the right starting point before one: it surfaces the gaps that are fixable before the auditor arrives and identifies the ones that require longer remediation timelines.
+This checklist supports an initial gap analysis against PCI-DSS v4.0 requirements for engineering teams operating in or adjacent to the cardholder data environment (CDE). It precedes a formal QSA assessment: it surfaces fixable gaps before the auditor arrives and identifies the ones requiring longer remediation timelines.
 
-The checklist is organized by the 12 PCI-DSS requirement domains. For each domain, the focus is on the controls that engineering teams are most likely to own or partially own. Compliance, legal, and security teams own some of these; the gaps that cause engineering orgs the most trouble are the ones that sit at the boundary.
+The checklist is organized by the 12 PCI-DSS requirement domains. Each domain section focuses on the controls engineering teams own or partially own. Compliance, legal, and security teams own some of these; boundary-spanning gaps cause the most trouble.
 
 ## Background and Motivation
 
@@ -16,15 +16,15 @@ This checklist was developed from the PCI-DSS gap analysis I led at ActBlue Tech
 
 ## Scope Definition (Do This First)
 
-Before running the checklist, define CDE scope. Scope creep is the most common source of unnecessary remediation work.
+Before running the checklist, define CDE scope.
 
 - [ ] Cardholder data (CHD) and sensitive authentication data (SAD) are inventoried: where it is stored, transmitted, and processed
-- [ ] Systems that store, process, or transmit CHD are identified and documented
-- [ ] Systems that could impact the security of CHD (connected systems) are identified
+- [ ] Systems storing, processing, or transmitting CHD are identified and documented
+- [ ] Systems with potential impact on CHD security (connected systems) are identified
 - [ ] Network segmentation between CDE and non-CDE is documented and validated
 - [ ] Tokenization or point-to-point encryption (P2PE) scope reductions are documented with QSA sign-off
 
-Scope that is not defined is scope that defaults to "everything," which makes every subsequent requirement harder.
+Undefined scope defaults to everything, which expands every subsequent requirement.
 
 ## Requirement 1: Network Security Controls
 
@@ -57,7 +57,7 @@ Scope that is not defined is scope that defaults to "everything," which makes ev
 - [ ] TLS 1.0 and 1.1 are disabled
 - [ ] Certificates are from trusted CAs and are monitored for expiration
 - [ ] Internal transmission of CHD is also encrypted (not just external-facing)
-- [ ] Wireless networks that transmit CHD use strong encryption
+- [ ] Wireless networks transmitting CHD use strong encryption
 
 ## Requirement 5: Protect Systems Against Malware
 
@@ -124,7 +124,7 @@ Scope that is not defined is scope that defaults to "everything," which makes ev
 
 ## Common Engineering Gaps
 
-These are the gaps that engineering orgs most frequently discover during a first gap analysis:
+These are the gaps the ActBlue analysis surfaced:
 
 **Logging completeness:** Audit logs exist but do not capture all required fields, or are not retained for the full 12-month period. Fix: audit log configuration against the Requirement 10 checklist above.
 
