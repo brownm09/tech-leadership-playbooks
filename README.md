@@ -77,7 +77,7 @@ How managers and Staff or Principal ICs divide technical authority and co-own te
 Frameworks for the Chief of Staff, Engineering function: how information flows, how decisions are made, how leadership time is spent, and how engineering communicates upward.
 
 **[operating-cadence/engineering-rhythm-of-business.md](operating-cadence/engineering-rhythm-of-business.md)**
-The weekly/monthly/quarterly/annual meeting cadence for a 50-engineer org. Covers agenda templates, decision authority (DACI), meeting health audit methodology, CoS responsibilities, and a sample weekly and monthly calendar.
+The weekly/monthly/quarterly/annual meeting cadence for a mid-size org (~30–60 engineers). Covers agenda templates, decision authority (DACI), meeting health audit methodology, CoS responsibilities, and a sample weekly and monthly calendar.
 
 **[operating-cadence/engineering-okr-framework.md](operating-cadence/engineering-okr-framework.md)**
 How to set, cascade, and report engineering OKRs without the common failure modes (activity OKRs, unmeasurable aspirations). Covers the org → team cascade, grading, quarterly review format, and anti-patterns.
