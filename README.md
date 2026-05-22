@@ -148,7 +148,7 @@ Engineering-focused checklist for a PCI-DSS v4.0 gap analysis. Organized by all 
 ## Technology Adoption
 
 **[ai-adoption/ai-adoption-readiness-framework.md](ai-adoption/ai-adoption-readiness-framework.md)**
-Framework for rolling out AI-assisted development tools (GitHub Copilot, Claude, Claude Code, Cursor) across engineering organizations. Covers a four-stage IC fluency rubric, role-differentiated use cases (IC vs. manager), task classification by risk level, a three-tier observability model, and a phased gate model that sequences access to higher-risk workflows on demonstrated readiness. Developed across two production rollouts (ActBlue 2024–2025, CTA 2025–2026). Includes a worked example and rollback triggers.
+Framework for rolling out AI-assisted development tools (GitHub Copilot, Claude, Claude Code, Cursor) across engineering organizations. Presents a four-stage IC fluency rubric, role-differentiated use cases for ICs and managers, task classification by risk level, a three-tier observability model, and a phased gate model sequencing access to higher-risk workflows on demonstrated readiness. Grounded in two production rollouts: GitHub Copilot and Claude piloted at ActBlue (2024–2025) with observability instrumented from day one; Claude Code and Claude integration initiative designed at CTA (2025–2026) for engineering and non-engineering workflows respectively, staggered to limit organizational risk. Includes a worked example and rollback triggers.
 
 ---
 
