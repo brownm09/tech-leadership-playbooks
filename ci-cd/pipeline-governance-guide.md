@@ -2,160 +2,156 @@
 
 ## Leadership Context
 
-Pipeline governance is a delivery confidence problem, not a DevOps tooling problem. Without it, the org cannot answer basic questions that engineering leadership needs answered: what changed, who approved it, and could it have caused this incident? DORA metrics — the primary lens for executive-level delivery reporting — are only credible when the pipeline enforces the gates that make them meaningful.
+Without pipeline governance, the org cannot answer the questions engineering leadership routinely needs answered: what changed, who approved it, could it have caused this incident? DORA metrics carry executive weight only when the pipeline enforces the gates making them meaningful.
 
 ## Purpose
 
-This guide covers the decisions and controls that determine whether a CI/CD pipeline is trustworthy at scale. It is written for engineering orgs that have pipelines running but have not formalized the rules around who can change them, what gates are required, and how to audit what ran.
-
-A pipeline with no governance is a deployment mechanism. A pipeline with governance is part of the software supply chain, with accountability to match.
+This guide covers the decisions, gates, and ownership determining whether a CI/CD pipeline holds up at scale. Written for engineering orgs running pipelines but lacking formalized rules around who can change them, what gates run, and how to audit what ran.
 
 > **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook)
-> is a personal-project monorepo, not a production system at scale. The artifacts linked
+> is a personal-project monorepo at single-operator scale. The artifacts linked
 > in the Further-reading section illustrate the techniques described here; production-scale
-> application of the same techniques is documented in [ORIGINS.md](../ORIGINS.md) where
+> application of the same techniques appears in [ORIGINS.md](../ORIGINS.md) where
 > applicable.
 
 ## Background and Motivation
 
-This framework draws from two deployments:
+Two CI/CD programs anchor the framework:
 
 1. **Capital One (2019–2022):** I led the standardization of CI/CD pipelines across multiple engineering departments, completing the migration two months ahead of schedule. Outcome: 300 engineering hours saved per team.
 
-2. **ActBlue Technical Services (2022–2024):** I chartered the DevEx team, which owned application-level delivery tooling — CI/CD pipelines, the internal developer platform, and deployment scaffolding. The cloud infrastructure layer was owned by a separate team outside my direct management.
+2. **ActBlue Technical Services (2022–2024):** I chartered the DevEx team, which owned application-level delivery tooling (CI/CD pipelines, the internal developer platform, and deployment scaffolding). The cloud infrastructure layer sat with a separate team outside my direct management.
 
 ## Pipeline Ownership Model
 
-Every pipeline should have a clearly assigned owner. Pipelines without owners accumulate configuration drift and are the last to get updated when security requirements change.
+Every pipeline needs an assigned owner. Pipelines without owners accumulate configuration drift and update last when security requirements change.
 
 **Ownership responsibilities:**
 - Keep pipeline configuration current with platform standards
 - Review and approve changes to pipeline steps with elevated permissions (deploy steps, secret access)
-- Respond to pipeline failures that are not caught by on-call rotation
+- Respond to pipeline failures the on-call rotation does not catch
 
 **Ownership model options:**
 
 | Model | When it works | Watch out for |
 |-------|--------------|---------------|
-| Application team owns their pipeline | Teams move fast, pipelines match team needs | Inconsistency across teams; security controls vary |
+| Application team owns their pipeline | Teams move fast, pipelines match team needs | Inconsistency across teams; security guardrails vary |
 | Platform team owns shared pipeline templates; app teams extend | Consistency with flexibility | Template updates can break team pipelines if not versioned |
-| Platform team owns all pipelines | Maximum consistency and control | Bottleneck; teams cannot iterate quickly |
+| Platform team owns all pipelines | Full consistency and central control | Bottleneck; teams cannot iterate quickly |
 
-For most orgs with 3+ application teams, the shared template model (option 2) provides the right balance. Platform team defines the required gates; teams configure application-specific steps within those boundaries.
+The shared template model (option 2) holds up where 3+ application teams need consistent gates without a central bottleneck. Platform team defines the required gates; teams configure application-specific steps within those boundaries.
 
 ## Required Gates
 
-These gates should be non-negotiable for any pipeline deploying to production:
+Non-negotiable gates for any pipeline deploying to production:
 
 **Build stage:**
-- [ ] Dependency vulnerability scan (SCA) — blocks on critical/high CVEs with a defined exception process
-- [ ] Static analysis (SAST) — results visible to developers; severity thresholds enforced
-- [ ] Unit and integration tests — failure blocks promotion; flaky tests are tracked and fixed, not suppressed
-- [ ] Container image scan — if building Docker images, scan before push
+- [ ] Dependency vulnerability scan (SCA): blocks on critical/high CVEs with a defined exception process
+- [ ] Static analysis (SAST): results visible to developers; severity thresholds enforced
+- [ ] Unit and integration tests: failure blocks promotion; flaky tests get tracked and fixed, never suppressed
+- [ ] Container image scan: if building Docker images, scan before push
 
 **Pre-deploy stage:**
-- [ ] Branch protection rules enforced — direct commits to `main`/`production` are blocked; changes require PR + review
-- [ ] Secrets scanning — no credentials, API keys, or tokens in committed code or pipeline configuration
+- [ ] Branch protection rules enforced: direct commits to `main`/`production` blocked; changes require PR + review
+- [ ] Secrets scanning: no credentials, API keys, or tokens in committed code or pipeline configuration
 - [ ] Infrastructure-as-code linting and validation (Terraform `validate`, `plan` output reviewed for destructive changes)
 
 **Deploy stage:**
-- [ ] Environment promotion is sequential: dev → staging → production; no skipping
+- [ ] Environment promotion runs sequential: dev → staging → production; no skipping
 - [ ] Production deploys require explicit approval (manual gate or automated approval from a defined approver group)
-- [ ] Rollback procedure is defined and tested before the pipeline is considered production-ready
+- [ ] Rollback procedure defined and tested before the pipeline ships as production-ready
 
 **Post-deploy:**
-- [ ] Smoke tests or synthetic monitoring validates the deployment succeeded
-- [ ] Deployment is logged with: who triggered it, what artifact was deployed, what SHA, at what time
-- [ ] Alerting is in place to detect regressions within a defined window after deploy
+- [ ] Smoke tests or synthetic monitoring validate the deployment
+- [ ] Deployment logged with: triggering user, artifact, SHA, timestamp
+- [ ] Alerting in place to detect regressions within a defined window after deploy
 
 ## Secret Management
 
-Secrets in pipeline configuration are one of the most common sources of credential exposure. The rules:
+Secrets in pipeline configuration drive credential exposure incidents at high frequency. The rules:
 
-- Secrets are never stored in repository code, pipeline YAML, or environment variable configuration in plaintext
-- Secrets are injected at runtime from a secrets manager (AWS Secrets Manager, HashiCorp Vault, GitHub Actions secrets with OIDC)
-- Service accounts used by pipelines have the minimum permissions required for the steps they run
-- Pipeline credentials are rotated on a defined schedule and immediately after team membership changes
-- Access to production secrets is logged and reviewable
+- Secrets never live in repository code, pipeline YAML, or environment variable configuration in plaintext
+- Secrets get injected at runtime from a secrets manager (AWS Secrets Manager, HashiCorp Vault, GitHub Actions secrets with OIDC)
+- Service accounts used by pipelines hold the minimum permissions required for the steps they run
+- Pipeline credentials rotate on a defined schedule and immediately after team membership changes
+- Access to production secrets gets logged with a queryable audit trail
 
-**OIDC over long-lived credentials:** Where the CI platform and cloud provider support it (GitHub Actions + AWS, for example), use OIDC federation to issue short-lived credentials per pipeline run rather than storing long-lived access keys. This eliminates the rotation problem entirely.
+**OIDC over long-lived credentials.** Where the CI platform and cloud provider support it (GitHub Actions + AWS, for example), use OIDC federation to issue short-lived credentials per pipeline run instead of storing long-lived access keys. The rotation problem disappears entirely.
 
 ## Branch and Environment Strategy
 
-The pipeline governance model should match the branching strategy. Common patterns:
+The pipeline governance model matches the branching strategy. Common patterns:
 
 **Trunk-based development:**
 - All work merges to `main` via short-lived feature branches
-- `main` is always in a deployable state
-- Feature flags control what is live, not branches
-- Pipeline: every merge to `main` triggers a deploy to staging; production deploy is a promotion with approval
+- `main` stays deployable
+- Feature flags control what runs live; branches do not
+- Pipeline: every merge to `main` triggers a deploy to staging; production deploy comes as a promotion with approval
 
 **GitFlow (or modified GitFlow):**
 - `develop` branch for integration, `release` branches for production candidates
 - More pipeline complexity; more opportunities for gates to be bypassed if not enforced at each branch
 - Appropriate for teams with long release cycles or strict change management requirements
 
-For most modern web platforms, trunk-based is the right default. GitFlow adds overhead that is only justified when release cadence is constrained externally (regulatory approval, coordinated launches).
+For modern web platforms, trunk-based holds up as the default. GitFlow adds overhead justified only when release cadence faces external constraints (regulatory approval, coordinated launches).
 
 ## Audit and Observability
 
-A pipeline that cannot be audited is a liability in an incident or a compliance review.
+An unauditable pipeline becomes a liability in an incident or compliance review.
 
 **Minimum audit requirements:**
-- Every pipeline run is logged with: triggering user or event, branch/SHA, environment, start/end time, pass/fail per stage
-- Logs are retained for at least 90 days (12 months if in scope for PCI-DSS or similar)
-- Who approved a production deploy is recorded and queryable
-- Pipeline configuration changes are version-controlled and reviewed like application code
+- Every pipeline run logs: triggering user or event, branch/SHA, environment, start/end time, pass/fail per stage
+- Logs retained for at least 90 days (12 months if in scope for PCI-DSS or similar)
+- Production deploy approver recorded and queryable
+- Pipeline configuration changes version-controlled and reviewed like application code
 
 **Metrics worth tracking:**
 - Deployment frequency (per team, per service)
-- Change failure rate (what percentage of deploys require a rollback or hotfix)
+- Change failure rate: percentage of deploys requiring a rollback or hotfix
 - Mean time to restore (MTTR) after a failed deploy
-- Pipeline duration trends (increasing duration is a signal that something needs attention)
+- Pipeline duration trends; rising duration signals something needs attention
 
-These four metrics map directly to DORA metrics and give a factual answer to "how is our delivery health?"
+These four metrics map directly to DORA metrics and answer "how is our delivery health?" with data.
 
 ## Change Control for Pipeline Configuration
 
-Pipeline configuration is infrastructure. Treat it accordingly.
-
 - Pipeline config lives in version control alongside application code, or in a dedicated platform configuration repo
 - Changes to pipeline config require code review, the same as application changes
-- Changes that add or modify steps with elevated permissions (secret access, production deploy) require review from the platform team or a designated approver
-- Hotfix procedures for pipeline config are defined in advance (not improvised during an incident)
+- Changes adding or modifying steps with elevated permissions (secret access, production deploy) require review from the platform team or a designated approver
+- Hotfix procedures for pipeline config get defined in advance, never improvised during an incident
 
 ## Common Governance Failures
 
-**Tests that always pass because failures are suppressed:** `|| true` at the end of a test command, or test results uploaded but not enforced. The gate exists in the config but does not block anything.
+**Tests passing because failures get suppressed.** `|| true` at the end of a test command, or test results uploaded without enforcement. The gate exists in the config without blocking anything.
 
-**Manual steps that are undocumented:** Someone SSH'd into a server once to fix a deploy, and now that step is assumed as part of the process but is not in the pipeline. The next person to run the deploy discovers it at 11pm.
+**Manual steps undocumented.** Someone SSH'd into a server once to fix a deploy; the step gets assumed as part of the process but lives nowhere in the pipeline. The next person running the deploy discovers it at 11pm.
 
-**Production credentials in staging pipelines:** Staging pipelines use production credentials "temporarily" and the temporary state becomes permanent. Isolate credentials per environment.
+**Production credentials in staging pipelines.** Staging pipelines use production credentials "temporarily" and the temporary state becomes permanent. Isolate credentials per environment.
 
-**No rollback test:** Rollback procedures are defined but have not been executed since the pipeline was built. Test rollback before you need it.
+**No rollback test.** Rollback procedures defined but never executed since the pipeline was built. Test rollback before you need it.
 
-**Drift between environments:** Staging and production pipelines diverge over time because fixes go to production first and are not backported. The staging pipeline stops being representative. Run the same pipeline config across all environments; parameterize what needs to differ.
+**Drift between environments.** Staging and production pipelines diverge over time because fixes go to production first and never get backported. The staging pipeline stops being representative. Run the same pipeline config across all environments; parameterize what differs.
 
 ---
 
 ## Further reading: demonstration artifacts
 
-The artifacts below illustrate the techniques described in this guide against the demonstration sandbox introduced after the Purpose section. See [LINKING.md](../LINKING.md) for the full convention. Citation links pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446) per the LINKING.md SHA-pinning rule. Where an artifact is intended to evolve as the pipeline does, a `main` link is provided alongside.
+The artifacts below illustrate the techniques described in this guide against the demonstration sandbox introduced after the Purpose section. See [LINKING.md](../LINKING.md) for the full convention. Citation links pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446) per the LINKING.md SHA-pinning rule. Where an artifact evolves alongside the pipeline, a `main` link sits alongside.
 
 ### On required gates and gate ordering
 
-- **CI workflow** — citation: [`.github/workflows/ci.yml` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.github/workflows/ci.yml); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/.github/workflows/ci.yml). Defines the build-stage gates: lint and test under Turborepo, an analytics-taxonomy validator that runs as a separate enforced step, and a parallel `db-integration` job that spins up Postgres as a service container so DB-touching tests run against a real engine rather than a mock. Demonstrates the guide's claim that gates are only meaningful if they actually block — every step here exits non-zero on failure and there is no `|| true` suppression.
-- **Deploy workflow** — citation: [`.github/workflows/deploy.yml` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.github/workflows/deploy.yml); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/.github/workflows/deploy.yml). Worked example of the sequential `terraform staging → build images → deploy staging → smoke test → manual approval → terraform production → deploy production` pipeline this guide describes. Notable: the `terraform plan` output is reviewed before apply; production is gated behind an explicit GitHub Environment approval; smoke tests run between staging deploy and the production gate.
+- **CI workflow.** Citation: [`.github/workflows/ci.yml` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.github/workflows/ci.yml); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/.github/workflows/ci.yml). Defines the build-stage gates: lint and test under Turborepo, an analytics-taxonomy validator running as a separate enforced step, and a parallel `db-integration` job spinning up Postgres as a service container so DB-touching tests run against a real engine instead of a mock. Demonstrates the guide's claim about gates being meaningful only where they actually block — every step here exits non-zero on failure and no `|| true` suppression exists.
+- **Deploy workflow.** Citation: [`.github/workflows/deploy.yml` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.github/workflows/deploy.yml); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/.github/workflows/deploy.yml). Worked example of the sequential `terraform staging → build images → deploy staging → smoke test → manual approval → terraform production → deploy production` pipeline this guide describes. Notable: `terraform plan` output reviewed before apply; production gated behind an explicit GitHub Environment approval; smoke tests run between staging deploy and the production gate.
 
 ### On Turborepo task dependencies
 
-- **`turbo.json`** — citation: [`turbo.json` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/turbo.json); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/turbo.json). Encodes the build/test/lint dependency graph and input scoping that lets the CI run only the affected packages. The explicit `inputs` arrays for each task are the part most worth reading: they define what changes invalidate the cache, which is where most monorepo CI bugs originate.
+- **`turbo.json`.** Citation: [`turbo.json` at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/turbo.json); live state: [same path on `main`](https://github.com/brownm09/lifting-logbook/blob/main/turbo.json). Encodes the build/test/lint dependency graph and input scoping letting the CI run only the affected packages. The explicit `inputs` arrays for each task carry the part worth reading closely: they define what changes invalidate the cache, where most monorepo CI bugs originate.
 
 ### On secret management and OIDC
 
-- **OIDC federation in deploy.yml** — citation: [`google-github-actions/auth@v2` step at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.github/workflows/deploy.yml). Demonstrates the guide's recommendation to prefer short-lived OIDC-issued credentials over long-lived service account keys: the workflow exchanges GitHub's OIDC token for GCP credentials per run via `workload_identity_provider` and `service_account` secrets. There are no long-lived GCP keys in repo or in GitHub secrets — only the WIF binding identifiers.
+- **OIDC federation in deploy.yml.** Citation: [`google-github-actions/auth@v2` step at 413f8a6](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/.github/workflows/deploy.yml). Demonstrates the guide's recommendation to prefer short-lived OIDC-issued credentials over long-lived service account keys: the workflow exchanges GitHub's OIDC token for GCP credentials per run via `workload_identity_provider` and `service_account` secrets. No long-lived GCP keys live in repo or in GitHub secrets; only the WIF binding identifiers.
 
-### What is missing (honestly)
+### Gaps relative to the standard
 
-- **Branch protection rules** are not visible from the repo. They are configured via GitHub's API/UI, not in committed YAML. The guide's "branch protection enforced" gate is a real requirement; it just cannot be inspected by reading the repo. To verify on a project of your own, query `gh api repos/{owner}/{repo}/branches/{branch}/protection`.
-- **No CI-specific ADR exists yet.** The pipeline's design decisions (Turborepo over alternatives, the `terraform plan → manual approval` sequencing, OIDC over keys) are not yet recorded as ADRs in `docs/adr/`. This is a gap relative to the standard the rest of the stack holds itself to.
+- **Branch protection rules** sit invisible from the repo. Configuration happens via GitHub's API/UI; committed YAML does not carry it. The guide's "branch protection enforced" gate stands as a requirement nonetheless; reading the repo cannot verify it. To verify on a project of your own, query `gh api repos/{owner}/{repo}/branches/{branch}/protection`.
+- **No CI-specific ADR exists yet.** The pipeline's design decisions (Turborepo over alternatives, the `terraform plan → manual approval` sequencing, OIDC over keys) remain unrecorded as ADRs in `docs/adr/`, a gap against the standard the rest of the stack upholds.
