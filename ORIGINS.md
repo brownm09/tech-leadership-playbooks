@@ -92,7 +92,7 @@ Every framework in this repo was developed from real work, not synthesized from 
 
 | Framework | Engagement | Origin | Outcome | In my own words |
 |---|---|---|---|---|
-| [AI Adoption Readiness Framework](ai-adoption/ai-adoption-readiness-framework.md) | ActBlue Technical Services (2024–2025) → Community Tech Alliance (2025–2026) | GitHub Copilot + Claude pilot (ActBlue); Claude Code integration initiative with phased rollout, IC/manager use cases, and evaluation rubric (CTA) | Observability built into rollout at ActBlue; structured framework with separate use cases and rubric developed at CTA | "I designed the ActBlue pilot and built observability into it. The structured framework — separate use cases, evaluation rubric, and phased rollout — came together at CTA." |
+| [AI Adoption Readiness Framework](ai-adoption/ai-adoption-readiness-framework.md) | ActBlue Technical Services (2024–2025) → Community Tech Alliance (2025–2026) | GitHub Copilot + Claude pilot (ActBlue); Claude Code and Claude integration initiative for engineering and non-engineering workflows respectively, staggered to limit organizational risk (CTA) | Observability built into rollout at ActBlue; structured framework with separate use cases and rubric developed at CTA | "I designed the ActBlue pilot and built observability into it. The structured framework — separate use cases, evaluation rubric, and phased rollout — came together at CTA." |
 
 ---
 
