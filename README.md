@@ -134,7 +134,7 @@ Tabletop exercise format for stress-testing DR posture and incident management p
 Governance model for CI/CD pipelines at scale: ownership, required gates, secret management, audit requirements, and change control. Covers the shared template model, DORA metric instrumentation, and common governance failures.
 
 **[experimentation/launchdarkly-rollout-governance.md](experimentation/launchdarkly-rollout-governance.md)**
-Flag lifecycle management for LaunchDarkly at scale. Covers flag taxonomy, naming conventions, rollout sequencing, targeting rules, experiment guardrails, and the cleanup policy that prevents flag debt from accumulating.
+Flag lifecycle management for LaunchDarkly at scale. Covers flag taxonomy, naming conventions, rollout sequencing, targeting rules, experiment guardrails, and the cleanup policy preventing flag debt from accumulating.
 
 ---
 
