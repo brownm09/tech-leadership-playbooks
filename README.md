@@ -131,7 +131,7 @@ The artifact produced after a real incident — distinct from the DR fire drill 
 Tabletop exercise format for stress-testing DR posture and incident management protocols. Covers scenario sequencing (catastrophic failure first), participant structure, pre/post checklists, and what to watch for. Built from exercises run at ActBlue to validate payment continuity under failure scenarios.
 
 **[ci-cd/pipeline-governance-guide.md](ci-cd/pipeline-governance-guide.md)**
-Governance model for CI/CD pipelines at scale: ownership, required gates, secret management, audit requirements, and change control. Covers the shared template model, DORA metric instrumentation, and the most common governance failures.
+Governance model for CI/CD pipelines at scale: ownership, required gates, secret management, audit requirements, and change control. Covers the shared template model, DORA metric instrumentation, and common governance failures.
 
 **[experimentation/launchdarkly-rollout-governance.md](experimentation/launchdarkly-rollout-governance.md)**
 Flag lifecycle management for LaunchDarkly at scale. Covers flag taxonomy, naming conventions, rollout sequencing, targeting rules, experiment guardrails, and the cleanup policy that prevents flag debt from accumulating.
