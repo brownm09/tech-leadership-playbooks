@@ -6,7 +6,7 @@ For engineering leadership, the gap analysis translates compliance requirements 
 
 ## Purpose
 
-This checklist supports an initial gap analysis against PCI-DSS v4.0 requirements for engineering teams operating in or adjacent to the cardholder data environment (CDE). It does not substitute for a formal QSA assessment but serves as the right starting point before one: it surfaces fixable gaps before the auditor arrives and identifies the ones requiring longer remediation timelines.
+This checklist supports an initial gap analysis against PCI-DSS v4.0 requirements for engineering teams operating in or adjacent to the cardholder data environment (CDE). It precedes a formal QSA assessment: it surfaces fixable gaps before the auditor arrives and identifies the ones requiring longer remediation timelines.
 
 The checklist is organized by the 12 PCI-DSS requirement domains. Each domain section focuses on the controls engineering teams own or partially own. Compliance, legal, and security teams own some of these; boundary-spanning gaps cause the most trouble.
 
@@ -23,6 +23,8 @@ Before running the checklist, define CDE scope.
 - [ ] Systems with potential impact on CHD security (connected systems) are identified
 - [ ] Network segmentation between CDE and non-CDE is documented and validated
 - [ ] Tokenization or point-to-point encryption (P2PE) scope reductions are documented with QSA sign-off
+
+Undefined scope defaults to everything, which expands every subsequent requirement.
 
 ## Requirement 1: Network Security Controls
 
@@ -122,7 +124,7 @@ Before running the checklist, define CDE scope.
 
 ## Common Engineering Gaps
 
-These are the gaps the ActBlue analysis surfaced, consistent with what other engineering-led PCI gap assessments typically uncover:
+These are the gaps the ActBlue analysis surfaced:
 
 **Logging completeness:** Audit logs exist but do not capture all required fields, or are not retained for the full 12-month period. Fix: audit log configuration against the Requirement 10 checklist above.
 
