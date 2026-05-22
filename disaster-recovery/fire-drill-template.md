@@ -6,7 +6,7 @@ Boards and enterprise customers increasingly ask for evidence of DR validation; 
 
 ## Purpose
 
-This template formalizes the tabletop exercise format used to stress-test disaster recovery posture and incident management protocols before a real event forces the issue. Tabletop runs surface gaps in failover readiness, standardization debt, and coordination assumptions before remediation costs rise.
+This template formalizes the tabletop exercise format used to stress-test disaster recovery posture and incident management protocols before a real event forces the issue. Tabletop runs surface gaps in failover readiness, standardization debt, and coordination assumptions while discovery cost stays low.
 
 Tabletop exercises prioritize catastrophic failure scenarios first (full failover, data loss, regional outage) and work down to lesser issues in subsequent runs. Starting with the worst case validates critical-function recovery before teams spend time on lower-severity paths.
 
@@ -70,7 +70,7 @@ The exercise produces a gap register. For each gap identified:
 |-----|--------|-------|-------------|-------------|
 | Heroku components outside AWS/K8s standard | Engineers unfamiliar with recovery path; DR scope harder to reason about | Platform lead | Migrate to AWS/K8s | Q[X] |
 
-Gaps are prioritized by impact on critical functions (payment receipt, data integrity) first. The gap register tracks standardization gaps increasing cognitive load as risk items, with remediation prioritized accordingly.
+Gaps are prioritized by impact on critical functions (payment receipt, data integrity) first. Standardization gaps increasing cognitive load are tracked as risk items in the register, with remediation prioritized accordingly.
 
 ## Rerun Cadence
 
