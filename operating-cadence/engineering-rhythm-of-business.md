@@ -2,11 +2,11 @@
 
 ## Leadership Context
 
-Without a defined operating cadence, decisions land at the wrong level, miss the moment of leverage, or never resolve. Three symptoms surface together: the Q1 strategy goes invisible by Q2; engineering managers spend their 1:1s on status updates instead of developmental conversation; the VP first hears about a critical platform risk in the same meeting where the CTO does. The meeting and ritual structure in this playbook compresses decision latency, channels leadership bandwidth toward load-bearing problems, and gives cross-functional partners a dependable coordination surface. When the cadence runs cleanly, surprises shrink across both the engineering org and the business, and trust grows in their place.
+Without a defined operating cadence, decisions land at the wrong level or never resolve. The Q1 strategy goes invisible by Q2. Engineering managers spend their 1:1s on status updates instead of developmental conversation, and the VP first hears about a critical platform risk in the same meeting where the CTO does. The meeting and ritual structure in this playbook compresses decision latency and gives cross-functional partners a dependable coordination surface. When the cadence runs cleanly, surprises shrink across the engineering org and the business; trust replaces them.
 
 ## Background and Motivation
 
-This playbook synthesizes the operating cadence I participated in at ActBlue Technical Services (2024–2025), a platform directorate of approximately 50 engineers across 6 teams. The cadence captured here documents sustained delivery rhythm observed in practice at this scale; the playbook reflects an inside-the-room observer's synthesis, not personal ownership of the cadence itself.
+This playbook synthesizes the operating cadence I participated in at ActBlue Technical Services (2024–2025), a platform directorate of approximately 50 engineers across 6 teams. The cadence captured here documents sustained delivery rhythm observed in practice at this scale; the playbook reflects an inside-the-room observer's synthesis of what I saw work, captured for re-use by others stepping into similar roles.
 
 ## When to Use This
 
@@ -35,7 +35,7 @@ This playbook synthesizes the operating cadence I participated in at ActBlue Tec
 **Frequency:** Weekly, 60 minutes
 **Owner:** Engineering Director/VP or Chief of Staff
 
-The weekly engineering staff meeting serves as the primary decision-making forum for the engineering leadership layer. Status moves async; the room takes decisions, cross-team alignment, and escalations only.
+The weekly engineering staff meeting serves as the primary decision-making forum for the engineering leadership layer. Status moves async; the agenda holds decisions, inter-team alignment, and escalations only.
 
 **Agenda template:**
 
@@ -89,7 +89,7 @@ When the prior week shows no incidents and the upcoming week shows no planned ri
 
 ### 1:1 Cadence Guidance
 
-The 1:1 carries more leverage than any other tool an engineering manager holds; engineers also waste it more often than any other. Status belongs async; the 1:1 belongs to development.
+The 1:1 carries more leverage than any other tool an engineering manager holds; managers also waste it more often than any other tool in their kit. Status belongs async; the 1:1 belongs to development.
 
 **Recommended structure for manager-to-direct-report 1:1s (30–45 min, weekly):**
 
@@ -172,7 +172,7 @@ Decisions are written and stored (Confluence, Notion, or equivalent). An archite
 **Frequency:** Monthly, 45–60 minutes
 **Owner:** Engineering Director/VP or CoS
 
-Dashboards display the numbers. In the metrics review, attendees ask: what do these trends say about the health of the system, and what are we going to do about it?
+Dashboards display the numbers. In the metrics review, attendees read the trends for system-health signals and decide what to do about them.
 
 **Metric categories to cover:**
 
@@ -201,7 +201,7 @@ Do not spend time discussing healthy, stable metrics unless an upcoming change w
 **Frequency:** Quarterly, 120 minutes
 **Owner:** Engineering Director/VP with CoS managing prep and logistics
 
-The engineering QBR works as a leadership-layer forcing function: a structured look at what the org committed to, what it delivered, and what it commits to next. The venue surfaces structural problems; communicate wins by email instead.
+The engineering QBR works as a leadership-layer forcing function: a structured look at what the org committed to and what it delivered, with the same structure producing the next quarter's commitments. The venue surfaces structural problems; communicate wins by email instead.
 
 **What goes in the QBR:**
 
@@ -276,7 +276,7 @@ Meeting:
 **Frequency:** Annual (Q4, in parallel with business planning)
 **Owner:** CTO or VP Engineering with principal engineer input
 
-The annual technology strategy review answers one question: given where the business is going in the next 12–18 months, can our technology platform support it? Roadmap-level review belongs elsewhere; this review treats architecture and the org as one structural question.
+The annual technology strategy review answers one question: given where the business is going in the next 12–18 months, can our technology platform support it? Roadmap-level review belongs elsewhere; this review covers architecture and the org as one structural question.
 
 **Agenda:**
 ```
@@ -306,7 +306,7 @@ Each initiative in the roadmap should have:
 - An owning team and an engineering lead
 - A rough quarter when work is expected to begin
 
-The roadmap functions as a forecast; the contract framing misleads. The reset acknowledges last year's roadmap proved partially correct and this year's roadmap will land the same way.
+The roadmap functions as a forecast; calling it a contract sets the wrong expectation. The reset starts from the premise that last year's roadmap proved partially correct and this year's will too.
 
 ---
 
@@ -430,7 +430,7 @@ Week 4
 
 **Start with the weekly staff meeting.** It carries more leverage than any other meeting in the cadence and decays more quickly without structure. Get the agenda template right before building the rest.
 
-**Run the cadence before adding new meetings.** Every org carries too many meetings. Before adding anything from this playbook, audit what already exists. The goal: replace what is broken with what works. Adding tiers wholesale defeats the cadence.
+**Run the cadence before adding new meetings.** Every org carries too many meetings. Before adding anything from this playbook, audit what already exists. The goal: replace what is broken with what works. Add tiers wholesale and the cadence breaks.
 
 **Cadence debt compounds.** An org skipping the quarterly retrospective for two quarters, letting the metrics review become a status update, and dropping written updates will re-accumulate every coordination failure this cadence prevents. Meetings alone provide only structure; discipline sustains the cadence.
 
