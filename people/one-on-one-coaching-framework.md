@@ -2,7 +2,7 @@
 
 ## Leadership Context
 
-The 1:1 is the primary instrument of engineering management. Everything else — performance reviews, promotion calibration, team culture — is downstream of what happens in this meeting. A 1:1 used as a status update is an opportunity wasted. A 1:1 where the manager does most of the talking is a monologue, not a 1:1. Done well, the weekly 1:1 is the mechanism through which you understand what is blocking an engineer, build the trust needed to give and receive difficult feedback, and create the growth conditions that lead to promotion, retention, and a team that can execute without you.
+The 1:1 is the primary instrument of engineering management. Everything else — performance reviews, promotion calibration, team culture — is downstream of what happens in this meeting. A 1:1 used as a status update is an opportunity wasted. A 1:1 where the manager does most of the talking has become a monologue with two attendees. Done well, the weekly 1:1 is the mechanism through which you understand what is blocking an engineer, build the trust needed to give and receive difficult feedback, and create the growth conditions that lead to promotion, retention, and a team that can execute without you.
 
 This framework covers format, cadence, and the coaching arc across career stages. It is grounded in promotions for three engineers over three years (two promoted twice each from SE2 to SSE2, and one promoted from SSE to SSE2 — five promotion events across the three), where the 1:1 was the primary vehicle for growth visibility, stretch assignment identification, and calibration preparation.
 

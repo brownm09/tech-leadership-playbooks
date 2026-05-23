@@ -4,7 +4,7 @@
 
 A manager who avoids difficult conversations is not being kind; the avoidance is a form of negligence. The engineer who is underperforming and never told clearly is not given the opportunity to improve. The team watching the performance problem go unaddressed concludes the manager will not hold standards. The high performer who shares a team with someone carrying a performance gap experiences that gap as an unfairness, and eventually leaves. The avoidance that felt like compassion produces bad outcomes for everyone involved.
 
-This playbook covers the mechanics of four recurring difficult conversations in engineering management: underperformance, role mismatch, team conflict, and leveling disagreements. It does not cover HR process — jurisdiction-specific and owned by your People team. It covers the conversation that has to happen before the process does.
+This playbook covers the mechanics of four recurring difficult conversations in engineering management: underperformance, role mismatch, team conflict, and leveling disagreements. It does not cover HR process — the process is jurisdiction-specific and owned by your People team. It covers the conversation that has to happen before the process does.
 
 ## Background and Motivation
 

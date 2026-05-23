@@ -2,7 +2,7 @@
 
 ## Leadership Context
 
-The manager-IC relationship at the senior level remains one of the underspecified partnerships in engineering organizations. At the Staff level — Staff Engineer, Principal Engineer, and their manager-track equivalents — the relationship changes character in ways engineering management frameworks rarely describe adequately. The Staff IC is not a strong senior engineer who needs more coaching. They are a peer operating in a different functional dimension: where the manager owns the org, the Staff IC owns the technical direction, and both need the other to do their job well.
+The manager-IC relationship at the senior level remains underspecified in most engineering organizations. At the Staff level — Staff Engineer, Principal Engineer, and their manager-track equivalents — the relationship changes character in ways engineering management frameworks rarely describe adequately. The Staff IC is not a strong senior engineer who needs more coaching. They are a peer operating in a different functional dimension: where the manager owns the org, the Staff IC owns the technical direction, and both need the other to do their job well.
 
 The failure mode is predictable: either the manager over-controls the technical domain (producing an IC who stops taking technical initiative) or the IC operates with full independence in a way that disconnects from organizational priorities (producing technical work that nobody asked for). The partnership model described here is a forcing function against both failure modes. It requires both parties to make the implicit explicit: who owns what, how decisions get made when they conflict, and what each party needs from the other to operate at full effectiveness.
 

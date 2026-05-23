@@ -2,7 +2,7 @@
 
 ## Leadership Context
 
-A career ladder carries weight beyond its HR-artifact status; it is the primary mechanism by which an engineering organization makes compensation, promotion, and retention decisions consistently at scale. Without a shared level definition, managers in the same org will promote different engineers for different reasons, pay bands will drift, and high performers will leave when they conclude that advancement depends on who their manager is. This playbook covers building a ladder from scratch, running calibration sessions that hold up under scrutiny, and handling the failure modes that quietly undermine both.
+A career ladder operates as the primary mechanism by which an engineering organization makes compensation, promotion, and retention decisions consistently at scale; treating it as an HR artifact misreads the role. Without a shared level definition, managers in the same org will promote different engineers for different reasons, pay bands will drift, and high performers will leave when they conclude that advancement depends on who their manager is. This playbook covers building a ladder from scratch, running calibration sessions that hold up under scrutiny, and handling the failure modes that quietly undermine both.
 
 The business outcome is straightforward: equitable promotion decisions reduce regrettable attrition, reduce the cost of external hiring (replacing a mid-level engineer typically runs 0.5–1x their annual salary in recruiting and ramp costs), and give managers a shared vocabulary for growth conversations that do not depend on a single person's judgment.
 
@@ -106,7 +106,7 @@ These axes force the discussion toward evidence — "what did this person do?" �
 
 **Impact scope:** Technical owner of an initiative that spans multiple teams, affects a product line, or addresses a platform-level risk. Work creates leverage across the org — reduces toil, unblocks future roadmap, or closes a risk that would otherwise require executive attention.
 
-**Decision autonomy:** Operates with a high degree of autonomy on technical architecture, tooling choices, and cross-team technical standards. Accountable for the outcomes of those decisions, including when they are wrong. Escalates decisions that have significant cost, compliance, or strategic implications — and arrives at escalation with a recommendation alongside the question.
+**Decision autonomy:** Operates with a high degree of autonomy on technical architecture, tooling choices, and cross-team technical standards. Accountable for the outcomes of those decisions, including when they are wrong. Escalates decisions that have significant cost, compliance, or strategic implications; the escalation arrives with a recommendation in hand, not a bare problem.
 
 **Execution expectations:** Drives multi-month technical programs with ambiguous initial scope. Creates the structure that allows others to execute. Writes the technical design that becomes the team's shared understanding. Holds a high quality bar without being a bottleneck.
 
