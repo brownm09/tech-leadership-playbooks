@@ -2,29 +2,29 @@
 
 ## Leadership Context
 
-On-call structure is a talent and delivery risk, not just an ops concern. Unsustainable rotation load drives attrition among your most experienced engineers, increases incident duration, and degrades the reliability signal that leadership depends on for investment decisions. A well-designed on-call program is an argument for trust — it demonstrates that the org can absorb failure without heroics.
+On-call structure carries talent and delivery risk, beyond the ops concern. Unsustainable rotation load drives attrition among your most experienced engineers, increases incident duration, and degrades the reliability signal leadership depends on for investment decisions. A well-designed on-call program argues for trust — it demonstrates the org can absorb failure without heroics.
 
 ## Background and Motivation
 
-This framework was developed from the on-call restructuring at ActBlue Technical Services (2022–2024). I redesigned the cross-team incident handover process and redefined responder roles across a 5-person SRE team that was absorbing every incident in the organization. The structural changes — separating coordination from resolution, introducing per-team rotations, and centralizing alert instrumentation — reduced friction and improved stakeholder resolution clarity.
+This framework grew out of the on-call restructuring at ActBlue Technical Services (2022–2024). I redesigned the cross-team incident handover process and redefined responder roles across a 5-person SRE team absorbing every incident in the organization. The structural changes — separating coordination from resolution, introducing per-team rotations, and centralizing alert instrumentation — reduced friction and improved stakeholder resolution clarity.
 
 ## Problem Statement
 
-A common failure mode in on-call programs: a small team gets paged for everything, regardless of who actually owns the problem or can fix it. Alerts are not standardized, so some issues surface only when an engineer notices something is wrong, not when a monitor fires. There is no mechanism for recording incident start and end times, so the org has no data on frequency, duration, or trend.
+A common failure mode in on-call programs: a small team gets paged for everything, regardless of who owns the problem or can fix it. Alerts lack standardization, so some issues surface only when an engineer notices something has gone wrong, never when a monitor fires. No mechanism records incident start and end times, so the org has no data on frequency, duration, or trend.
 
-This is the state ActBlue's on-call program was in before restructuring. The 5-person SRE team, plus a handful of staff-level volunteers, was absorbing every incident across the organization. Responders were expected to both coordinate the incident and resolve it, which degrades response quality under pressure. Alerts existed across systems but were not centralized or standardized, which meant detection lag varied by incident type and by who happened to be paying attention.
+ActBlue's on-call program sat in this state before restructuring. The 5-person SRE team, plus a handful of staff-level volunteers, was absorbing every incident across the organization. Responders were expected to both coordinate the incident and resolve it — a split focus degrading response quality under pressure. Alerts existed across systems but lacked centralization or standardization, so detection lag varied by incident type and by who happened to be paying attention.
 
 ## Structural Changes
 
 ### Separate Coordination from Resolution
 
-The core change is splitting the incident responder role into two distinct functions:
+The core change: splitting the incident responder role into two distinct functions.
 
 **Incident Commander (IC):** Runs the incident. Owns communication, coordinates between responders, makes scope and escalation decisions, writes the timeline. Does not resolve the technical problem directly. Filled by staff engineers and engineering managers with cross-team context.
 
-**Responder:** Resolves the technical problem. Has subject matter expertise for the systems in scope. Focused on diagnosis and fix, not on managing the room.
+**Responder:** Resolves the technical problem. Holds subject matter expertise for the systems in scope. Focused on diagnosis and fix, not on managing the room.
 
-This separation reduces cognitive load on responders and improves incident coherence. An engineer who is simultaneously troubleshooting a database failure and answering questions from leadership is doing both jobs worse than they would do either alone.
+This separation reduces cognitive load on responders and improves incident coherence. An engineer simultaneously troubleshooting a database failure and answering questions from leadership does both jobs worse than they would do either alone.
 
 ### Rotation Structure
 
@@ -42,24 +42,24 @@ This distributes on-call load across the org while keeping subject matter expert
 
 ### Rotation Cadence
 
-Weekly rotation, shifted from Monday-to-Monday to Wednesday-to-Wednesday. The Mon-Mon cadence concentrated handoffs around weekends and holidays, which created coverage gaps. Wed-Wed puts the handoff midweek when staffing is most predictable.
+Weekly rotation, shifted from Monday-to-Monday to Wednesday-to-Wednesday. The Mon-Mon cadence concentrated handoffs around weekends and holidays, creating coverage gaps. Wed-Wed puts the handoff midweek when staffing remains most predictable.
 
 ## Metrics and Tooling
 
-On-call health is only improvable if it is measurable. Two metrics were tracked:
+On-call health improves only against measurement. Two metrics were tracked:
 
 - **Incident frequency:** Number of incidents per week/month, by team and by severity tier
 - **Time-to-resolve (TTR):** Time from incident open to resolution, tracked per incident
 
 These were captured via Jeli for incident retrospectives and a dedicated Jira incident project for tracking. The combination gives a running record of incidents (Jira) and structured postmortems with timeline reconstruction (Jeli).
 
-Before this tooling was in place, the org had no reliable way to answer: how many incidents did we have last quarter? Which team had the highest TTR? Is frequency trending up or down? After, those answers were available with a filter query.
+Before this tooling landed, the org had no reliable way to answer: how many incidents did we have last quarter? Which team had the highest TTR? Is frequency trending up or down? After, those answers were available with a filter query.
 
 ## Rollout Notes
 
-No significant pushback from engineers. The restructuring reduced on-call burden for the teams that had been absorbing everything, and scoped responsibility more clearly for everyone else. Engineers who previously felt over-exposed got relief; engineers who had been invisible to the rotation got a defined, bounded responsibility.
+No significant pushback from engineers. The restructuring reduced on-call burden for the teams absorbing everything, and scoped responsibility more clearly for everyone else. Engineers previously feeling over-exposed got relief; engineers previously invisible to the rotation got a defined, bounded responsibility.
 
-The IC rotation is the role most likely to generate questions. Staff engineers and managers are not always accustomed to running an incident without also being a technical contributor. The framing that worked: the IC's job is to make the responders faster, not to be the smartest person in the room about the underlying system.
+The IC rotation generates the most questions. Staff engineers and managers do not always come accustomed to running an incident without also serving as a technical contributor. The framing that worked: the IC's job is to make the responders faster, never to be the smartest person in the room about the underlying system.
 
 ## Implementation Checklist
 
@@ -74,13 +74,13 @@ The IC rotation is the role most likely to generate questions. Staff engineers a
 
 ## Common Failure Modes
 
-**Paging the same team for everything:** It looks like a coverage guarantee but is actually a single point of failure. When the SRE team is unavailable or overwhelmed, incidents stall.
+**Paging the same team for everything.** Looks like a coverage guarantee; functions as a single point of failure. When the SRE team is unavailable or overwhelmed, incidents stall.
 
-**Alerts without owners:** An alert that fires to a shared channel with no assigned team produces slow response by diffusion of responsibility. Every alert should have a team and a responder rotation behind it.
+**Alerts without owners.** An alert firing to a shared channel with no assigned team produces slow response by diffusion of responsibility. Every alert should have a team and a responder rotation behind it.
 
-**No postmortem process:** TTR and frequency data without retrospectives identifies that problems exist but not why. Jeli-style postmortems with timeline reconstruction surface the systemic causes.
+**No postmortem process.** TTR and frequency data without retrospectives identifies the existence of problems but never their causes. Jeli-style postmortems with timeline reconstruction surface the systemic causes.
 
-**Mon-Mon rotations:** Weekend and holiday handoffs create gaps that are predictable and preventable. Move the boundary to Wednesday.
+**Mon-Mon rotations.** Weekend and holiday handoffs create predictable, preventable gaps. Move the boundary to Wednesday.
 
 ---
 
@@ -88,7 +88,7 @@ The IC rotation is the role most likely to generate questions. Staff engineers a
 
 > **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook) is a personal-project monorepo, not a production system at scale. The framework above is grounded in the ActBlue restructuring documented in [ORIGINS.md](../ORIGINS.md); the artifacts below are complementary — they show the diagnostic infrastructure that makes any rotation tractable, including a rotation of one. See [LINKING.md](../LINKING.md) for the full convention.
 
-A single-operator on-call posture is the worst case for the framework's *separate coordination from resolution* split — there is no second person to take either role. The compensating mechanism is making the system legible enough that the same operator can fall back to the runbook rather than reasoning from first principles under pressure. Citation links pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446).
+A single-operator on-call posture stresses the framework's *separate coordination from resolution* split — no second person exists to take either role. The compensating mechanism: making the system legible enough that the same operator falls back to the runbook instead of reasoning from first principles under pressure. Citation links pin to commit [`413f8a6`](https://github.com/brownm09/lifting-logbook/tree/413f8a62f43f12fa200be3e3307da7ef72c7b446).
 
 ### On the operational contract
 
@@ -106,4 +106,4 @@ A single-operator on-call posture is the worst case for the framework's *separat
 
 ### What is missing — and what that demonstrates
 
-The single-operator rotation has no IC/responder split, no per-team rotation, no Wed-Wed handoff cadence. Those mechanisms only have meaning at organizational scale. The lifting-logbook artifacts show the diagnostic substrate the framework's structural changes depend on — they are not a substitute for the organizational restructuring documented in ORIGINS.md.
+The single-operator rotation has no IC/responder split, no per-team rotation, no Wed-Wed handoff cadence. Those mechanisms acquire meaning only at organizational scale. The lifting-logbook artifacts show the diagnostic substrate the framework's structural changes depend on — they do not substitute for the organizational restructuring documented in ORIGINS.md.
