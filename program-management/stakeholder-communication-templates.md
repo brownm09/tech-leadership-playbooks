@@ -2,7 +2,7 @@
 
 ## Leadership Context
 
-The highest-leverage thing a TPM or engineering leader does is give stakeholders accurate information at the right frequency. Bad program communication produces one of two failure modes: stakeholders who are constantly surprised because they did not know things were going wrong, or stakeholders who are overwhelmed and stop reading updates because the signal-to-noise ratio is too low. Both failure modes erode trust and slow decision-making. The templates in this playbook exist to remove the weekly cost of deciding how to communicate — so the work becomes choosing the right facts to surface, not structuring them from scratch each time.
+A TPM or engineering leader earns high leverage by giving stakeholders accurate information at the right frequency. Bad program communication produces one of two failure modes: stakeholders who are constantly surprised because they did not know things were going wrong, or stakeholders who are overwhelmed and stop reading updates because the signal-to-noise ratio is too low. Both failure modes erode trust and slow decision-making. The templates in this playbook exist to remove the weekly cost of deciding how to communicate — so the work becomes choosing which facts to surface, without structuring them from scratch each time.
 
 ## Background and Motivation
 
@@ -22,7 +22,7 @@ For shorter or single-team efforts, a brief Slack message or a comment on a tick
 
 ## The 3 Writing Principles for Upward Communication
 
-Before the templates: the underlying principles that determine whether a status update is actually useful.
+Before the templates: the underlying principles that determine whether a status update lands as useful.
 
 **1. Lead with status, not detail.**
 
@@ -218,7 +218,7 @@ Marcus Webb, Sarah Chen
 
 ## Common Failure Modes
 
-**Status updates that read as activity reports.** "This week the team completed X, Y, and Z" with no evaluation of whether that is good, bad, or concerning. The reader cannot tell if the program is healthy. Every update needs an explicit status judgment, not just a list of completed work.
+**Status updates that read as activity reports.** "This week the team completed X, Y, and Z" with no evaluation of whether that is good, bad, or concerning. The reader cannot tell if the program is healthy. Every update needs an explicit status judgment; a list of completed work alone does not produce one.
 
 **Buried blockers.** A blocker mentioned in the third paragraph of a workstream description that reads "the team is working through some challenges with the vendor timeline" is not surfaced — it is hidden. If something is blocking or at risk, it belongs in the summary and in the asks section. Nowhere else.
 
