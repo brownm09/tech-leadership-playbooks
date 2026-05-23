@@ -125,7 +125,7 @@ A launch without a rollout plan is a binary on/off event. Most non-trivial launc
 - [ ] Canary success criteria defined: which metrics must be healthy at canary scale before expanding rollout? (e.g., "error rate below 0.1%, p99 latency below 300ms, zero payment failures in the cohort")
 - [ ] Canary hold period defined: how long does the launch stay at canary scale before expanding? (minimum 1 hour for low-risk; 24–48 hours for high-risk)
 - [ ] Rollback trigger defined and documented: what specific metric or event causes the team to roll back, and who makes that call?
-- [ ] Rollback procedure tested in addition to written — a person has run through the rollback procedure in staging and confirmed it works within the target time window
+- [ ] Rollback procedure tested end-to-end — a person has run through the rollback procedure in staging and confirmed it works within the target time window
 - [ ] Full rollout schedule defined: canary → partial (25–50%) → full, with time estimates between each phase
 
 **Owner:** Engineering lead, confirmed by TPM.

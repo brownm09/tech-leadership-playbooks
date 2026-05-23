@@ -136,7 +136,7 @@ Send at least 48 hours before. Must include: program brief (all sections), miles
 
 **Presenting a plan to the room instead of building one.** Handing teams a completed Gantt chart and asking for questions signals that the planning is done and they are here to receive it. Alignment built this way does not last past the first dependency conflict.
 
-**Skipping the dependency walkthrough.** Teams consistently underestimate how coupled their work is until they are forced to name their dependencies out loud. The dependency walkthrough is the highest-leverage 20 minutes in the kickoff.
+**Skipping the dependency walkthrough.** Teams consistently underestimate how coupled their work is until they are forced to name their dependencies out loud. Run the dependency walkthrough; it surfaces more coordination risk per minute than any other kickoff segment.
 
 **The 3-hour kickoff.** Attention collapses after 90 minutes. If there is more content than fits in 90 minutes, cut the content — not the time limit.
 

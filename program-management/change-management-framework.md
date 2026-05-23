@@ -273,7 +273,7 @@ This single-question survey takes 10 seconds to answer, produces actionable sign
 
 **Change by announcement.** The change is communicated in a company-wide email or all-hands, and the assumption is that awareness equals adoption. It does not. Announcement is Phase 3; execution and reinforcement are where change happens. Orgs that confuse announcement with execution consistently see changes fail to stick.
 
-**Skipping the "why."** Mandating a change without a credible rationale creates compliance without commitment. Engineers who do not understand the "why" will find workarounds, perform the process in letter while abandoning the spirit, or leave when a compelling alternative arises. The "why" is a precondition for adoption, not a courtesy.
+**Skipping the "why."** Mandating a change without a credible rationale creates compliance without commitment. Engineers who do not understand the "why" will find workarounds, follow the letter of the process while violating its spirit, or leave when a compelling alternative arises. The "why" is a precondition for adoption, not a courtesy.
 
 **Launching too many changes simultaneously.** Every change competes for organizational attention. An org in the middle of a reorg, a major platform migration, and a new incident process simultaneously is an org where all three changes will be slower, messier, and more expensive than any one would be alone. Sequence changes deliberately. The rule of thumb: no more than one high-friction change per team at a time.
 
