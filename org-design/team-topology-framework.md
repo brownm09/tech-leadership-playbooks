@@ -31,7 +31,7 @@ Do not reorg in response to interpersonal conflict, a single bad quarter, or as 
 
 ## The Four Team Types
 
-The Team Topologies framework (Skelton & Pais, 2019) identifies four fundamental team types. The labels themselves carry little of the framework's value; the explicit recognition that different team types operate under different interaction modes and different mandates does the work. Conflating them causes predictable failure.
+The Team Topologies framework (Skelton & Pais, 2019) identifies four fundamental team types. The labels themselves carry little of the framework's value. The work is done by an explicit recognition: different team types operate under different interaction modes and different mandates, and conflating them causes predictable failure.
 
 ### Stream-Aligned Teams
 
@@ -195,7 +195,7 @@ A 30-engineer org creating 4 team types because the framework says so. Complicat
 | Team has >9 engineers with shared ownership | Split the team; split the service boundary with it |
 | Team has <4 engineers carrying on-call rotation | Merge with adjacent team or redistribute ownership to reduce on-call risk |
 | Post-acquisition team integration | Treat as Inverse Conway Maneuver; target architecture first, then org delta |
-| DORA metrics plateau despite technical investment | Run cognitive load audit before assuming structural change is needed; the audit may surface a tool problem when a structure problem looks likely |
+| DORA metrics plateau despite technical investment | Run cognitive load audit before assuming structural change is needed; the audit may diagnose a tooling issue underneath what presents as a structural problem |
 
 ---
 

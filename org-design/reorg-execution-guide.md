@@ -85,7 +85,7 @@ The announcement should answer five questions in the following order. When the a
 
 ## Part 3: The 72 Hours After Announcement
 
-The 72 hours following a reorg announcement concentrate the period of risk to the changes the reorg intended to produce. Engineers are processing, and the signal they look for from leadership runs simpler than more information; it is consistency between what was said in the announcement and what shows up in the building.
+The 72 hours following a reorg announcement concentrate the period of risk to the changes the reorg intended to produce. Engineers are processing, and what they need from leadership during this window is consistency between what was said in the announcement and what shows up in the building. More information does not substitute for that consistency.
 
 ### What to Watch For
 
