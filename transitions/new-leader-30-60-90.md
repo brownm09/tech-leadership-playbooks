@@ -10,7 +10,7 @@ A 90-180-360 extension applies for larger orgs (100+ engineers), M&A integration
 
 ## Background and Motivation
 
-This framework was developed from two distinct leadership transitions: stepping into the platform directorate at ActBlue Technical Services (2022), where I inherited six teams and approximately fifty engineers across payments, infrastructure, compliance, and developer experience, and a subsequent transition into a technical leadership role at Community Tech Alliance (2025), a smaller org with a narrower scope but different organizational maturity. The challenges are meaningfully different — inheriting an established org versus building in a greenfield context — but the listening-first discipline applies in both.
+This framework was developed from two distinct leadership transitions: stepping into the platform directorate at ActBlue Technical Services (2022), where I inherited approximately twenty engineers across six teams in payments, infrastructure, compliance, and developer experience, and a subsequent transition into a technical leadership role at Community Tech Alliance (2025), a smaller org with a narrower scope but different organizational maturity. The challenges are meaningfully different — inheriting an established org versus building in a greenfield context — but the listening-first discipline applies in both.
 
 ## When to Use This
 
