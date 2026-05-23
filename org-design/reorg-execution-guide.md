@@ -2,15 +2,15 @@
 
 ## Leadership Context
 
-The [Team Topology Framework](team-topology-framework.md) describes the principles for designing a well-structured engineering organization: stream-aligned teams, platform teams, enabling teams, and the cognitive load thresholds that tell you when a team topology has run past its usefulness. That framework addresses the question of *what* to change and *why*. This guide addresses what happens after that question is answered — the execution of the reorganization itself.
+The [Team Topology Framework](team-topology-framework.md) covers the principles for designing a well-structured engineering organization: stream-aligned teams, platform teams, enabling teams, and the cognitive load thresholds signaling when a team topology has run past its usefulness. That framework addresses *what* to change and *why*. This guide picks up at the next question: how to execute the reorganization itself.
 
-The execution is where most reorgs fail to achieve their intended effect. The structural change is made correctly: reporting lines are updated, charters are redrawn, headcount is reallocated. But the human elements — the communication sequencing, the handling of the announcement, the re-establishment of norms in reconfigured teams — are underestimated or deferred. Engineers who experience a reorg as a thing that happened to them rather than a decision they can understand are less likely to perform well in the new structure, regardless of whether the structure is correct.
+Execution determines whether a reorg achieves its intended effect. The structural change usually lands correctly: reporting lines updated, charters redrawn, headcount reallocated. The human elements get underestimated or deferred — communication sequencing, the handling of the announcement, re-norming in reconfigured teams. Engineers experiencing a reorg as something done to them, with no path into the rationale, perform worse in the new structure even when the structure itself is correct.
 
-This guide is not about whether to reorg. That decision belongs in the topology framework. This guide is about how to execute a reorg in a way that preserves trust, minimizes the performance dip that every reorg produces, and re-establishes effective team norms as quickly as possible.
+The decision about whether to reorg belongs in the topology framework. This guide covers how to execute one in a way preserving trust, minimizing the performance dip every reorg produces, and re-establishing effective team norms quickly.
 
 ## Background and Motivation
 
-This framework is grounded in the platform directorate formation at ActBlue Technical Services (2022), which involved significant structural change: chartering new teams (DevEx, Payments Architecture, Database Platform), realigning existing team scope, and shifting reporting structures across approximately twenty engineers in six teams. The framework also reflects observation of subsequent reorgs at ActBlue where I was an organizational stakeholder rather than the primary executor — which provided a contrasting view of what the process looks like from the receiving end.
+This framework draws on the platform directorate formation at ActBlue Technical Services (2022), which involved significant structural change: chartering new teams (DevEx, Payments Architecture, Database Platform), realigning existing team scope, and shifting reporting structures across approximately twenty engineers in six teams. The framework also reflects observation of subsequent reorgs at ActBlue where I sat as an organizational stakeholder without owning execution; that vantage point offered a contrasting view of the process from the receiving end.
 
 For engineers stepping into the role of a newly reorganized team, the [Inheriting a Team You Didn't Hire](../transitions/inheriting-a-team.md) framework provides the complementary playbook.
 
@@ -28,7 +28,7 @@ For engineers stepping into the role of a newly reorganized team, the [Inheritin
 
 ## Part 1: Pre-Announcement Checklist
 
-Nothing should be communicated to the broader team before every item on this list is complete. The sequencing matters: the people most affected should know before the people least affected. Reverting this order — announcing broadly before affected managers are prepared — is the single most common execution failure in reorgs.
+Nothing should be communicated to the broader team before every item on this list is complete. Sequencing matters: the people most affected should know before the people least affected. Announcing broadly before affected managers are prepared inverts this order; the inversion accounts for a large share of reorg execution failures.
 
 ### Structural Decisions (complete before any communication)
 
@@ -53,7 +53,7 @@ Before any broader communication:
 3. **Allow 24 hours for managers to process** before expecting them to deliver the news to their teams
 4. **Confirm manager messaging** — give each manager the core points they need to communicate and the questions they should be prepared to answer
 
-The gap between the manager briefings and the team announcement should be as short as possible (24–72 hours). Reorg plans that are widely known at the manager layer but not communicated to ICs produce anxiety from information asymmetry.
+The gap between the manager briefings and the team announcement should run as short as possible (24–72 hours). A reorg plan widely known at the manager layer but not yet communicated to ICs produces anxiety from information asymmetry.
 
 ---
 
@@ -61,64 +61,64 @@ The gap between the manager briefings and the team announcement should be as sho
 
 ### What to Say
 
-The announcement should answer five questions in the following order. If the announcement does not answer one of these questions, the team will spend the post-announcement period generating their own answers, and the generated answers will be worse than anything you would have said.
+The announcement should answer five questions in the following order. When the announcement skips one of these, the team spends the post-announcement period generating their own answers, and the generated answers come out worse than anything you would have said.
 
-1. **What is changing?** The specific structural change: who is moving where, what teams are changing, what the new structure looks like. Specific, not vague. "The platform and infrastructure teams are merging" is better than "we are optimizing our org structure for scale."
+1. **What is changing?** The specific structural change: who moves where, which teams change, what the new structure looks like. Specific over vague. "The platform and infrastructure teams are merging" beats "we are optimizing our org structure for scale."
 
-2. **Why is this happening now?** The business or technical rationale. Not a comprehensive history — one to two sentences that give engineers a real reason, not a platitude. "Our current team boundaries have created a dependency bottleneck that is slowing every team's delivery" is a real reason. "To position the org for future growth" is not.
+2. **Why now?** The business or technical rationale. Skip the comprehensive history; aim for one to two sentences giving engineers a real reason. Platitudes lose. "Our current team boundaries have created a dependency bottleneck slowing every team's delivery" works as a real reason. "To position the org for future growth" does not.
 
-3. **What does this mean for you specifically?** The team members want to know: does my job change? does my manager change? does my project change? Generic announcements that do not answer the individual question produce individual anxiety that spreads into collective distraction.
+3. **What does this mean for you specifically?** The team members want to know: does my job change? does my manager change? does my project change? Generic announcements skipping the individual question produce individual anxiety, and the anxiety spreads into collective distraction.
 
-4. **What is not changing?** Naming what stays the same is as important as naming what changes. Engineers will assume that everything is uncertain until you tell them otherwise. If the tech stack, the current project commitments, and the on-call rotation are not changing, say so explicitly.
+4. **What is not changing?** Naming what stays the same carries as much weight as naming what changes. Engineers will assume everything is uncertain until you tell them otherwise. When the tech stack, the current project commitments, and the on-call rotation hold steady, say so explicitly.
 
 5. **What happens next, and by when?** A concrete timeline for the transition. "Team charters will be finalized by [date]. New sprint planning begins on [date]. Individual 1:1s with your new manager will be scheduled by [date]." Uncertainty about next steps produces more anxiety than the reorg itself.
 
 ### Announcement Formats
 
-**All-hands (synchronous, preferred):** Allows questions to be answered in real time. Schedule no more than 24 hours after manager briefings. Prepare for questions in three categories: logistics (what exactly is changing and when), motivation (why this decision was made), and personal impact (what does this mean for me). Answers should be prepared for each category.
+**All-hands (synchronous, preferred):** Lets questions get answered in real time. Schedule no more than 24 hours after manager briefings. Prepare for questions in three categories: logistics (the specific change and when), motivation (why this decision got made), and personal impact (what this means for me). Prepare answers in each category.
 
-**Written announcement (async, as supplement):** Always follow a verbal announcement with a written summary that engineers can reference later. The written version should contain the same five-question structure as the verbal announcement. Do not send the written announcement before the verbal — questions arrive without any opportunity for clarification.
+**Written announcement (async, as supplement):** Always follow a verbal announcement with a written summary engineers can reference later. The written version carries the same five-question structure as the verbal announcement. Sending the written announcement before the verbal one fails: questions arrive with no opportunity for clarification.
 
-**Do not announce via org chart change.** Org charts updated in systems before the announcement has been made allow engineers to discover the change without context. Check whether your HR system's org chart is visible to employees before the announcement and, if it is, delay the system update until after.
+**Do not announce via org chart change.** Org charts updated in systems before the announcement let engineers discover the change without context. Check whether your HR system's org chart is visible to employees, and if so, delay the system update until after the announcement.
 
 ---
 
 ## Part 3: The 72 Hours After Announcement
 
-The 72 hours following a reorg announcement are the highest-risk period for the changes the reorg intended to produce. Engineers are processing, and what they are looking for from leadership is not more information — it is consistency between what was said in the announcement and what is happening in the building.
+The 72 hours following a reorg announcement concentrate the period of risk to the changes the reorg intended to produce. Engineers are processing, and what they need from leadership during this window is consistency between what was said in the announcement and what shows up in the building. More information does not substitute for that consistency.
 
 ### What to Watch For
 
-**The Informal Information Network.** Engineers talk to each other, and the informal information that circulates after an announcement is often more influential than the official communication. Watch for the signal that is moving through the team's informal channels: what questions are being asked in Slack, what uncertainty is being expressed in retros, what the first-line managers are hearing in 1:1s. The gap between what was communicated and what is circulating informally is where the announcement failed.
+**The Informal Information Network.** Engineers talk to each other, and the informal information circulating after an announcement often carries more weight than the official communication. Watch the signal moving through the team's informal channels: which questions surface in Slack, which uncertainties surface in retros, which concerns first-line managers hear in 1:1s. The gap between what was communicated and what is circulating informally marks where the announcement failed.
 
-**The High Performer Who Goes Quiet.** After a reorg, strong performers who are uncertain about the new structure may go quiet — not as an act of disengagement, but as a processing strategy. A high performer who is visibly less engaged in the week after an announcement should have a direct check-in conversation: "How are you experiencing the change? Is there anything I can answer or clarify?" This should not wait for the next scheduled 1:1.
+**The High Performer Who Goes Quiet.** After a reorg, strong performers uncertain about the new structure may go quiet as a processing strategy; disengagement is not the right read. A high performer visibly less engaged in the week after an announcement should get a direct check-in conversation: "How are you experiencing the change? Is there anything I can answer or clarify?" Do not wait for the next scheduled 1:1.
 
-**The Manager Who Is Not Ready.** Some managers will have absorbed the reorg news intellectually but will not be emotionally ready to deliver it clearly to their teams. If you observe a manager who is communicating uncertainty, frustration, or ambivalence to their direct reports, address it in a 1:1 with the manager — not in the all-hands.
+**The Manager Who Is Not Ready.** Some managers absorb the reorg news intellectually but lack the emotional readiness to deliver it clearly to their teams. When you observe a manager communicating uncertainty, frustration, or ambivalence to their direct reports, address it in a 1:1 with the manager; the all-hands is the wrong venue.
 
 ### One-on-One Cadence
 
-In the week following the announcement, every manager should have a 1:1 with every direct report. These should not be status meetings — they should be check-in conversations:
+In the week following the announcement, every manager should hold a 1:1 with every direct report. These run as check-in conversations; status reporting belongs elsewhere:
 
 - How are you doing with the change?
-- What is the most uncertain thing for you right now?
-- Is there anything about your role or project that you need clarity on?
+- Where does the uncertainty concentrate for you right now?
+- Is there anything about your role or project needing clarity?
 - What can I do to make this transition easier?
 
-Do not skip these conversations because the team "seemed fine" in the all-hands. The all-hands creates a social context in which expressing concern is uncomfortable. The 1:1 is where the real concerns surface.
+Do not skip these conversations because the team "seemed fine" in the all-hands. The all-hands creates a social context where expressing concern feels uncomfortable. The 1:1 surfaces the real concerns.
 
 ---
 
 ## Part 4: Re-Establishing Norms
 
-The most underestimated phase of a reorg is the re-establishment of team norms. Even when the individual engineers are the same and the work is the same, a change in team membership or structure disrupts the implicit agreements that govern how work gets done.
+Re-norming consistently gets underestimated as a reorg phase. Even when the individual engineers stay the same and the work stays the same, a change in team membership or structure disrupts the implicit agreements governing how work gets done.
 
 ### What Norms Need Re-Establishing
 
-**Decision-making authority.** In a newly formed team, nobody is yet certain whose job it is to make which decisions. Explicitly re-run the decision authority conversation early: who has authority in which domains, how disagreements get resolved, what gets escalated.
+**Decision-making authority.** In a newly formed team, nobody yet knows whose job covers which decisions. Re-run the decision authority conversation early and explicitly: who holds authority in which domains, how disagreements get resolved, what gets escalated.
 
-**Communication cadence.** How the team communicates across sync (standups, planning, retro) and async (Slack, docs, code review) channels should be explicitly agreed, not assumed to transfer from the prior structure. Different teams have different norms, and a merged team will bring multiple prior norms into contact.
+**Communication cadence.** How the team communicates across sync (standups, planning, retro) and async (Slack, docs, code review) channels should be explicitly agreed, never assumed to transfer from the prior structure. Different teams hold different norms, and a merged team brings multiple prior norms into contact.
 
-**Quality standards.** Code review standards, test coverage expectations, and deployment conventions should be explicitly re-agreed when a team's membership changes. "We've always done it this way" is no longer a complete statement when half the team is new to this team's "always."
+**Quality standards.** Code review standards, test coverage expectations, and deployment conventions need explicit re-agreement when a team's membership changes. "We've always done it this way" stops working as a complete statement when half the team is new to this team's "always."
 
 ### The Re-Norming Retro
 
@@ -131,11 +131,11 @@ Within the first two sprints of the new team structure, run a structured retro f
 4. What is the one thing we should decide today to make the next sprint go better? (10 min)
 ```
 
-The output of this retro is a brief working agreement — not a comprehensive policy document, but a short list of explicit agreements that the team can hold each other accountable to.
+The retro output runs as a brief working agreement: a short list of explicit agreements the team can hold each other accountable to. A comprehensive policy document is the wrong artifact here.
 
 ### The New Team Charter
 
-For teams that are newly formed or significantly restructured, a written team charter reduces the period of norm uncertainty. The charter should cover:
+For newly formed or significantly restructured teams, a written team charter shortens the period of norm uncertainty. The charter should cover:
 
 - Team mission and primary ownership domain
 - Team name (if new)
@@ -144,7 +144,7 @@ For teams that are newly formed or significantly restructured, a written team ch
 - Decision authority: how the team makes decisions within its scope
 - Operating cadence: recurring ceremonies and their purpose
 
-The team charter is not a bureaucratic document — it is a working tool. It should be short enough to be consulted in practice (one page is ideal) and should be revisited at the six-month mark or after any significant scope change.
+The team charter functions as a working tool; the bureaucratic-document framing produces a charter no one consults. Keep it short enough to read in practice (one page is ideal) and revisit it at the six-month mark or after any significant scope change.
 
 ---
 
@@ -247,16 +247,16 @@ Session structure:
 ## Anti-Patterns
 
 **The Surprise Announcement.**
-An all-hands where the engineering team first learns about a reorg. This is almost always avoidable — the leak risk of manager-first briefings is lower than the trust damage of a surprise announcement. Engineers who learn about a reorg from a system update or a hallway conversation before the formal announcement feel managed rather than respected.
+An all-hands where the engineering team first learns about a reorg. This stays almost always avoidable; the leak risk of manager-first briefings runs lower than the trust damage of a surprise announcement. Engineers learning about a reorg from a system update or a hallway conversation before the formal announcement feel managed; the respect signal is absent.
 
 **The Org Chart Without Context.**
-A reorg communicated only as a reporting-line change, without explanation of the rationale or the intended outcome. Engineers experiencing this will supply their own rationale, and the supplied rationale will frequently be worse than the actual one ("they must be preparing to reduce headcount," "they must have lost confidence in [manager]").
+A reorg communicated only as a reporting-line change, with no explanation of the rationale or intended outcome. Engineers experiencing this supply their own rationale, and the supplied rationale frequently runs worse than the actual one ("they must be preparing to reduce headcount," "they must have lost confidence in [manager]").
 
 **The False Certainty.**
-An announcement that presents the new structure as definitely correct and final. Engineers know that org structures change. Presenting a reorg as permanent — "this is the right structure for where we're going" — and then revising it six months later produces more trust damage than an announcement that acknowledges the structure is the best current answer to the current problem.
+An announcement presenting the new structure as definitely correct and final. Engineers know org structures change. Presenting a reorg as permanent ("this is the right structure for where we're going") and revising it six months later produces more trust damage than an announcement framing the structure as the working answer to the current problem.
 
 **The Skipped Re-Norming.**
-Assuming that because the work is the same and some of the people are the same, the team norms transfer automatically. They do not. Every team membership change resets some portion of the implicit operating agreement, and the reset period is longer when it is unaddressed.
+Assuming team norms transfer automatically because the work is the same and some of the people are the same. They do not. Every team membership change resets some portion of the implicit operating agreement, and the reset period runs longer when unaddressed.
 
 **The Delayed Charter.**
-Running a newly structured team without a written charter for the first quarter because "we'll figure it out as we go." The figuring-out period produces real costs: scope disputes with adjacent teams, decision-making ambiguity, and onboarding friction for any new engineer who joins before the charter exists.
+Running a newly structured team without a written charter for the first quarter because "we'll figure it out as we go." The figuring-out period produces real costs: scope disputes with adjacent teams, decision-making ambiguity, and onboarding friction for any new engineer joining before the charter exists.
