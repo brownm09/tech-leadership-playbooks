@@ -51,7 +51,7 @@ Engineering and its partners are operating with different mental models of what 
 
 ### Decision Authority Model
 
-The most durable source of engineering-product friction comes from ambiguity about who decides what. The following model, adapted from product management practice, has worked at companies ranging from ActBlue (mission-driven, low margin for error) to Capital One (regulated, compliance-heavy):
+The recurring source of engineering-product friction sits in ambiguity about who decides what. The following model, adapted from product management practice, has worked at companies ranging from ActBlue (mission-driven, low margin for error) to Capital One (regulated, compliance-heavy):
 
 | Decision type | Who decides | Who must be consulted | Who is informed |
 |---|---|---|---|
@@ -211,7 +211,7 @@ Most engineering leaders never need to present this to a board. But engineering 
 
 ### Cost Center Reporting
 
-Engineering typically operates as a cost center: no direct revenue, supporting the product that generates it. Finance will report engineering costs against budget on a monthly and quarterly basis. Engineering leaders should:
+Engineering typically operates as a cost center: no direct revenue, supporting the product generating it. Finance will report engineering costs against budget on a monthly and quarterly basis. Engineering leaders should:
 
 - Know their run-rate cost (headcount loaded + tools + infrastructure), updated monthly
 - Know which costs are variable (cloud infrastructure scales with product usage) vs. fixed (headcount, tooling subscriptions)

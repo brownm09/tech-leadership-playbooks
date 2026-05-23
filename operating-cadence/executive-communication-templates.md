@@ -159,7 +159,7 @@ What engineering needs from the executive team to deliver on Q4 commitments. The
 **Length:** 1 page (in the board deck), or a 5-minute verbal presentation with a leave-behind
 **Cadence:** Quarterly or as part of a board-level product and technology update
 
-Board members do not work as engineering practitioners. They want signal on three questions: Does the technology read as a risk or an asset? Can the team deliver on the company's growth plan? Do material issues exist that engineering leadership knows about and manages?
+Board members do not work as engineering practitioners. They want signal on three questions: Does the technology read as a risk or an asset? Can the team deliver on the company's growth plan? Does engineering leadership know about and actively manage any material issues?
 
 **One-page format:**
 

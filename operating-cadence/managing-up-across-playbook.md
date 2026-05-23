@@ -75,7 +75,7 @@ Practical mechanics:
 
 ### The Peer Manager Relationship
 
-Your peer engineering managers do not function as competitors, nor do they function as automatic allies. Peer relationships rest on reciprocity: you help them when they need it, you stay honest with them when their work creates problems for you, and you do not go over or around them in a way making them look bad to their team.
+Your peer engineering managers occupy a middle position: neither competitors nor automatic allies. Peer relationships rest on reciprocity: you help them when they need it, you stay honest with them when their work creates problems for you, and you do not go over or around them in a way making them look bad to their team.
 
 Common failure modes in peer manager relationships:
 - **Scope creep without negotiation.** Your team starts owning work bleeding into another team's domain without an explicit conversation.

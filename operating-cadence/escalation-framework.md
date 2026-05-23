@@ -2,7 +2,7 @@
 
 ## Leadership Context
 
-Escalation failure ranks among the costliest and quietest problems in engineering organizations. When escalation works, problems surface early enough to be managed: a delivery risk gets caught in week 3 of a 12-week project (no later than week 10); a personnel situation gets addressed before it affects the team; a reputational risk reaches the CTO before it reaches the press. When escalation fails, the organization pays the compound interest on every day the problem stayed visible below the decision-making level and invisible above it. This playbook covers when to escalate, to whom, in what format, how to do it without blame or alarm, and how to distinguish the situations requiring escalation from the ones handled at the team level without surfacing upward.
+Escalation failure operates at high cost and low visibility in engineering organizations. When escalation works, problems surface early enough to be managed: a delivery risk gets caught in week 3 of a 12-week project (no later than week 10); a personnel situation gets addressed before it affects the team; a reputational risk reaches the CTO before it reaches the press. When escalation fails, the organization pays the compound interest on every day the problem stayed visible below the decision-making level and invisible above it. This playbook covers when to escalate, to whom, in what format, how to do it without blame or alarm, and how to distinguish the situations requiring escalation from the ones handled at the team level without surfacing upward.
 
 ## Background and Motivation
 
@@ -44,7 +44,7 @@ Delivery risk escalation fits when a commitment sits in jeopardy and either (a) 
 
 ### Category 2: People Risk
 
-People risk escalation fits when a situation involving a specific person on the team requires action, awareness, or resources beyond what the manager can provide, or when the situation creates risk for the org that leadership needs to know about.
+People risk escalation fits when a situation involving a specific person on the team requires action, awareness, or resources beyond what the manager can provide, or when the situation creates organizational risk leadership needs to know about.
 
 **Escalation triggers in this category:**
 - A team member's performance has been formally documented (verbal or written) and has not improved within the agreed improvement period
@@ -227,7 +227,7 @@ Not every difficult conversation with a manager qualifies as an escalation. The 
 
 **Before drafting an escalation memo, answer these questions:**
 
-1. Does a decision need to be made that I cannot make at my level? (If yes, escalate.)
+1. Does a decision exist beyond my authority to make? (If yes, escalate.)
 2. Do I need a resource unavailable to me at my level? (If yes, escalate.)
 3. Does a level above me need information, regardless of whether any action gets required right now? (If yes, escalate; frame it as an FYI, never as a request for action.)
 4. Am I seeking permission to do something I already know reads as the right thing to do? (If yes, make the decision and inform; do not escalate.)

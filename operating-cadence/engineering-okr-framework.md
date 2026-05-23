@@ -160,7 +160,7 @@ If a team consistently scores 1.0 on every KR every quarter, the targets run too
 A 0.3 means something significant did not happen. Before attributing this to execution failure, ask:
 
 1. Did the KR remain valid at the end of the quarter? Company priorities shift; a KR right in January may have been explicitly deprioritized by March. If so, grade it N/A or "deprioritized"; a 0.3 wrongly penalizes a team for acting on changed priorities.
-2. Did a blocker exist that should have been escalated? A 0.3 visible in week 4 and unsurfaced until scoring counts as a leadership failure, with execution failure stacked on top.
+2. Did an unescalated blocker exist? A 0.3 visible in week 4 and unsurfaced until scoring counts as a leadership failure, with execution failure stacked on top.
 3. Did the KR run unrealistic from the start? If so, that signals a planning failure. Fix the planning process.
 
 A 0.3 representing genuine execution failure (the team committed, held the capacity, faced no blocker, and still did not deliver) warrants a direct conversation about what happened and what changes next quarter.
