@@ -35,7 +35,7 @@ now*. Traditional monitoring — dashboards of predefined metrics — operates a
 it makes a system look understandable while hiding the state space producing incidents.
 High-cardinality, high-dimensionality telemetry remains the only way to make a running system legible
 against novel failure modes.[^1] A system legible only against anticipated failures is illegible
-against the failures that actually matter.
+against the failures that matter most.
 
 Both kinds of legibility require active maintenance. Neither is a one-time documentation
 exercise.
@@ -227,7 +227,8 @@ exercise surfaces this before the production incident does.
 ## What Doesn't Work
 
 **Architecture diagrams maintained manually.** They go stale within a month. Auto-generated
-dependency maps from traces or service mesh telemetry stay current; hand-drawn diagrams do not.
+dependency maps from traces or service mesh telemetry stay current with the system; hand-drawn
+diagrams drift away from it.
 
 **"Ask the team" as an escalation path.** It works until the team turns over — exactly the
 moment of greatest need. Escalation paths should name roles, never individuals.
@@ -260,7 +261,7 @@ The artifacts below illustrate the techniques described in this playbook against
 ### On runtime legibility and high-cardinality telemetry
 
 - **Backend selection rationale** — [ADR-018: Observability Stack](https://github.com/brownm09/lifting-logbook/blob/413f8a62f43f12fa200be3e3307da7ef72c7b446/docs/adr/ADR-018-observability-stack.md). Records the OpenTelemetry + Grafana Cloud (Tempo / Mimir / Loki) decision, the GKE DaemonSet collector topology, the Prisma instrumentation choice, and the head-based 100% sampling stance until production traffic exists. The alternatives-considered section is the part most worth reading: it makes explicit why Honeycomb, Datadog, and self-hosting were rejected for this project's constraints — illustrating the playbook's claim that "the right backend" is a function of traffic shape, vendor lock-in tolerance, and what the team needs to query, not a context-free best practice.
-- **Local development verification path** — [Observability Runbook](https://github.com/brownm09/lifting-logbook/blob/main/docs/runbooks/observability.md) (live state). Documents the docker-compose stack (OTel Collector + Tempo + Loki + Prometheus + Grafana) that mirrors the production topology, plus the trace-by-`trace_id` lookup flow and log↔trace correlation queries. Demonstrates the playbook's argument that runtime legibility must be verifiable on a developer's laptop, not only in production.
+- **Local development verification path** — [Observability Runbook](https://github.com/brownm09/lifting-logbook/blob/main/docs/runbooks/observability.md) (live state). Documents the docker-compose stack (OTel Collector + Tempo + Loki + Prometheus + Grafana) that mirrors the production topology, plus the trace-by-`trace_id` lookup flow and log↔trace correlation queries. Demonstrates the playbook's argument that runtime legibility must be verifiable on a developer's laptop, in addition to production.
 
 ### On runbook structure and symptom-first authoring
 

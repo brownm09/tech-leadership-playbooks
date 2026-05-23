@@ -10,7 +10,7 @@ This framework grew out of the on-call restructuring at ActBlue Technical Servic
 
 ## Problem Statement
 
-A common failure mode in on-call programs: a small team gets paged for everything, regardless of who actually owns the problem or can fix it. Alerts lack standardization, so some issues surface only when an engineer notices something has gone wrong, never when a monitor fires. No mechanism records incident start and end times, so the org has no data on frequency, duration, or trend.
+A common failure mode in on-call programs: a small team gets paged for everything, regardless of who owns the problem or can fix it. Alerts lack standardization, so some issues surface only when an engineer notices something has gone wrong, never when a monitor fires. No mechanism records incident start and end times, so the org has no data on frequency, duration, or trend.
 
 ActBlue's on-call program sat in this state before restructuring. The 5-person SRE team, plus a handful of staff-level volunteers, was absorbing every incident across the organization. Responders were expected to both coordinate the incident and resolve it — a split focus degrading response quality under pressure. Alerts existed across systems but lacked centralization or standardization, so detection lag varied by incident type and by who happened to be paying attention.
 
