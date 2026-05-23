@@ -3,15 +3,15 @@
 ## Purpose
 
 This playbook addresses a specific failure mode in engineering organizations: systems that work
-but cannot be diagnosed — by new engineers, by responders under pressure, or by anyone who
-wasn't present when the system was built. It covers what system legibility means, how it decays,
-and the concrete practices that preserve it.
+but resist diagnosis — by new engineers, by responders under pressure, or by anyone absent
+when the system was built. It covers what system legibility means, how it decays,
+and the concrete practices preserving it.
 
-The primary audience is engineering leaders and senior individual contributors responsible for
+The primary audience: engineering leaders and senior individual contributors responsible for
 on-call programs, service ownership standards, and onboarding design. It complements the
 [On-Call Restructuring Framework](on-call-restructuring-framework.md), which covers rotation
 structure and incident coordination; this playbook covers the underlying diagnostic
-infrastructure that makes a rotation sustainable.
+infrastructure making a rotation sustainable.
 
 > **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook)
 > is a personal-project monorepo, not a production system at scale. The artifact linked
@@ -25,17 +25,17 @@ infrastructure that makes a rotation sustainable.
 System legibility in software operates at two levels simultaneously, and they decay
 independently.
 
-**Code legibility** is the property Fred Brooks called *conceptual integrity* in *The Mythical
+**Code legibility** names the property Fred Brooks called *conceptual integrity* in *The Mythical
 Man-Month* (Addison-Wesley, 1975): a system behaves as if designed by a single coherent mind.
-When conceptual integrity is absent, engineers cannot predict a system's behavior from
-inspection. They test by poking and observing, which is slow and unreliable under pressure.
+Where conceptual integrity is absent, engineers cannot predict a system's behavior from
+inspection. They test by poking and observing — slow and unreliable under pressure.
 
-**Runtime legibility** is whether an engineer can understand what the system is doing *right
-now*. Traditional monitoring — dashboards of predefined metrics — is a legibility theater: it
-makes a system look understandable while hiding the state space that actually causes incidents.
-High-cardinality, high-dimensionality telemetry is the only way to make a running system legible
-against novel failure modes.[^1] A system that is only legible when it fails in anticipated ways
-is not actually legible.
+**Runtime legibility** asks whether an engineer can understand what the system is doing *right
+now*. Traditional monitoring — dashboards of predefined metrics — operates as legibility theater:
+it makes a system look understandable while hiding the state space producing incidents.
+High-cardinality, high-dimensionality telemetry remains the only way to make a running system legible
+against novel failure modes.[^1] A system legible only against anticipated failures is illegible
+against the failures that actually matter.
 
 Both kinds of legibility require active maintenance. Neither is a one-time documentation
 exercise.
@@ -44,88 +44,88 @@ exercise.
 
 ## How Judgment Atrophies in Software Systems
 
-Organizations build systems to scale coordination and reduce variance. Every system that absorbs
-a decision also erodes the judgment capacity that could have made it. The longer a system runs
+Organizations build systems to scale coordination and reduce variance. Every system absorbing
+a decision also erodes the judgment capacity capable of making it. The longer a system runs
 without challenge, the more its internal logic becomes invisible — to operators, to managers,
-and eventually to the people who designed it.
+and eventually to its original designers.
 
 ### The Automation Trap
 
-**ORMs and query planners** trade SQL legibility for development velocity. This is generally
+**ORMs and query planners** trade SQL legibility for development velocity. Generally
 worth it — until a query plan degrades under production load and the engineer debugging it has
 never written a JOIN. The system worked; the human judgment needed to fix it when it stopped had
 quietly atrophied. Michael Feathers describes the downstream result in *Working Effectively with
-Legacy Code* (Prentice Hall, 2004): code that works but that no one can safely change, because
+Legacy Code* (Prentice Hall, 2004): code that works but resists safe change, because
 the understanding required to change it was never built or has since been lost.
 
 **CI/CD pipelines** create a structurally similar problem at the deployment level. Green tests
-are a legibility proxy: they assert correct behavior on the dimensions the test suite measures.
-Engineers who trust the proxy lose the habit of reasoning about what the pipeline doesn't cover —
+serve as a legibility proxy: they assert correct behavior on the dimensions the test suite measures.
+Engineers trusting the proxy lose the habit of reasoning about what the pipeline doesn't cover —
 infrastructure state, downstream dependencies, traffic patterns. Automation bias migrates
-judgment to the binary green/red output of a pipeline whose coverage is never inspected.
+judgment to the binary green/red output of a pipeline whose coverage goes uninspected.
 
-**AI-assisted coding** is the current frontier of this dynamic. The output is plausible and
-often correct, which is exactly the condition under which judgment atrophies fastest. The risk
-is not that AI-generated code is wrong; it is that engineers who ship it without building a
-mental model of it have no basis for diagnosing it when it fails in a novel way.
+**AI-assisted coding** marks the current frontier of this dynamic. The output is plausible and
+often correct — exactly the condition under which judgment atrophies fastest. The risk:
+engineers shipping AI-generated code without building a mental model of it have no basis for
+diagnosing it when it fails in a novel way.
 
 ### Normalization of Deviance
 
 Diane Vaughan's analysis of the Challenger disaster in *The Challenger Launch Decision*
 (University of Chicago Press, 1996) describes the institutional version of this failure: small
-deviations from expected behavior are observed, then rationalized as acceptable. The decision
+deviations from expected behavior get observed, then rationalized as acceptable. The decision
 process looks correct by its own internal measures, while those measures quietly drift from what
 they were designed to track. The same mechanism operates in software systems when alert
-thresholds are tuned to eliminate noise rather than to reflect actual risk — and when no one
+thresholds get tuned to eliminate noise instead of reflecting actual risk — and when no one
 reviews the thresholds afterward.
 
 ---
 
 ## Interval Validation Mechanisms
 
-Several engineering practices are legibility-preservation mechanisms wearing other labels. The
-key insight is that legibility must be validated at the same cadence as the system changes, not
+Several engineering practices function as legibility-preservation mechanisms wearing other labels.
+The key insight: legibility must be validated at the same cadence as the system changes, never
 as a one-time setup activity.
 
 ### Architecture Decision Records (Per Decision)
 
 ADRs — documented in Michael Nygard's 2011 post[^2] — force the decision-maker to articulate
-why a system is the way it is, in terms a future engineer can evaluate. Without them,
+why a system has the shape it does, in terms a future engineer can evaluate. Without them,
 architectural decisions accumulate as tacit knowledge in the heads of the engineers who made
-them, then evaporate when those engineers leave. ADRs are the primary tool for keeping the
+them, then evaporate when those engineers leave. ADRs serve as the primary tool for keeping the
 *why* of a system legible over time.
 
 ### Fitness Functions (Per Commit)
 
 Fitness functions, from Neal Ford, Rebecca Parsons, and Patrick Kua's *Building Evolutionary
-Architectures* (O'Reilly, 2017), are automated assertions over architectural properties:
+Architectures* (O'Reilly, 2017), encode automated assertions over architectural properties:
 dependency direction, module coupling, latency budgets, security posture. Legibility of
-architectural intent needs to be mechanically enforced at the same cadence as code changes or
-it drifts. A fitness function is a legibility check that runs in CI.
+architectural intent needs mechanical enforcement at the same cadence as code changes or
+it drifts. A fitness function operates as a legibility check running in CI.
 
 ### Chaos Engineering and Game Days (Quarterly to Annually)
 
 Chaos engineering and game days (developed formally at Netflix and described in Gregor Hohpe's
-*The Software Architect Elevator*, O'Reilly, 2020) are explicit interval validation of
-operational judgment. The point is not to find bugs — it is to verify that engineers can still
-reason about and respond to failure modes, independent of whether the system is currently
-failing. Every question a responder cannot answer during a game day is a gap in the runbook or
+*The Software Architect Elevator*, O'Reilly, 2020) provide explicit interval validation of
+operational judgment. The point: verify engineers can still reason about and respond to failure
+modes, independent of whether the system is currently failing — bug discovery comes second.
+Every question a responder cannot answer during a game day exposes a gap in the runbook or
 in the system's observability.
 
 ### Cross-Service On-Call Rotation (Ongoing)
 
-Werner Vogels' 2006 articulation of "you build it, you run it" at Amazon[^3] was originally a
-quality incentive, but its legibility effect is equally important: engineers who operate their
-systems under pressure build mental models that design-time work does not produce. Rotation
-across *unfamiliar* services is the stronger version — it surfaces the gap between documentation
-and actual operational knowledge, which is exactly the gap that matters in an incident.
+Werner Vogels' 2006 articulation of "you build it, you run it" at Amazon[^3] originated as a
+quality incentive; its legibility effect carries equal weight. Engineers operating their
+systems under pressure build mental models design-time work does not produce. Rotation
+across *unfamiliar* services constitutes the stronger version — it surfaces the gap between
+documentation and actual operational knowledge, exactly the gap mattering in an incident.
 
 ### Runbook Criteria Review (Annually)
 
 Do not ask only "are we hitting our targets?" Ask "do our targets still track what we care
-about?" Any alert threshold or runbook trigger condition that is adjusted to reduce alert
-frequency without a corresponding investigation of the underlying signal is a legibility
-regression. Criteria review should be an explicit annual step, separate from the incident
+about?" Any alert threshold or runbook trigger condition adjusted to reduce alert
+frequency without a corresponding investigation of the underlying signal counts as a legibility
+regression. Criteria review should constitute an explicit annual step, separate from the incident
 retrospective.
 
 ---
@@ -133,13 +133,13 @@ retrospective.
 ## Making Systems Diagnosable for Onboarding Engineers
 
 The hardest version of the legibility problem eliminates the one thing most systems rely on —
-implicit knowledge in the team. The right frame is: what artifacts does the system produce that
-enable correct inference by someone with no priors?
+implicit knowledge in the team. The right frame: what artifacts does the system produce
+enabling correct inference by someone with no priors?
 
 ### Layer 1: Service Catalog
 
-An engineer who has never touched a service needs to answer four questions before they can
-diagnose anything:
+An engineer who has never touched a service needs to answer four questions before diagnosing
+anything:
 
 1. What does this service do and what does it own?
 2. What does it depend on, and what depends on it?
@@ -147,32 +147,32 @@ diagnose anything:
 4. Who wrote it and who operates it?
 
 A service catalog — with those four fields, kept current, and linked from the alerting system —
-is the single highest-leverage investment for onboarding legibility. Spotify's Backstage[^4] is
-the reference implementation, but the format matters less than the discipline: every service has
+delivers the single highest-leverage investment for onboarding legibility. Spotify's Backstage[^4]
+provides the reference implementation, but the format matters less than the discipline: every service has
 an entry, entries are owner-maintained, and alerts link to them.
 
-A catalog is not a wiki. It is a machine-readable registry with a human-readable summary. Wikis
-rot; catalogs with ownership fields have someone accountable for keeping them current.
+A catalog is not a wiki. It functions as a machine-readable registry with a human-readable summary.
+Wikis rot; catalogs with ownership fields have someone accountable for keeping them current.
 
 ### Layer 2: Distributed Tracing with Meaningful Context
 
-Tracing is the only observability primitive that preserves causality across service boundaries.
-For an onboarding engineer, this is the difference between "the checkout service is slow" and
+Tracing remains the only observability primitive preserving causality across service boundaries.
+For an onboarding engineer, this draws the line between "the checkout service is slow" and
 "the checkout service is slow because a downstream call to the inventory service is timing out,
 and here is the specific request path." The first requires system knowledge to diagnose; the
 second is followable by anyone who can read a waterfall.
 
 As Cindy Sridharan establishes in *Distributed Systems Observability* (O'Reilly, 2018), metrics
-tell you something is wrong; traces tell you where and why.[^5] The practical requirements:
+surface the existence of a problem. Traces surface its location and cause.[^5] The practical requirements:
 
 - Trace IDs must propagate through every service boundary, including async queues and caches
-- Spans must carry enough context to identify the operation — not just a function name, but the
-  relevant parameters (order ID, user ID, SKU) that make a trace instance interpretable
-- Errors must attach structured context, not just a message string
+- Spans must carry enough context to identify the operation — beyond a function name, the
+  relevant parameters (order ID, user ID, SKU) making a trace instance interpretable
+- Errors must attach structured context, beyond a message string
 
 ### Layer 3: Runbooks Structured for Diagnosis
 
-Most runbooks describe what to do after diagnosis. That is the wrong ordering for an engineer
+Most runbooks describe what to do after diagnosis. The wrong ordering for an engineer
 new to the system. A useful runbook starts with symptoms and walks toward cause:
 
 1. **Alert context.** What does this metric measure and what does it mean when it's elevated?
@@ -186,33 +186,34 @@ new to the system. A useful runbook starts with symptoms and walks toward cause:
 
 Michael Nygard's *Release It!* (Pragmatic Bookshelf, 2nd ed., 2018) establishes the
 architectural prerequisite: systems must be designed with operational affordances — health
-endpoints, structured error output, graceful degradation signals — that make the diagnostic path
-navigable. A runbook is only as good as the system it describes; if the system does not expose
+endpoints, structured error output, graceful degradation signals — making the diagnostic path
+navigable. A runbook performs only as well as the system it describes; if the system does not expose
 its own state cleanly, no runbook compensates.
 
 ### Layer 4: Error Messages Designed as Diagnostics
 
-An error message is read by an engineer who does not know what caused it. Its job is to narrow
+An error message gets read by an engineer who does not know what caused it. Its job: narrow
 the search space. Good error messages answer: what was attempted, what failed, and what state
 the system was in when it failed.
 
-"Connection refused" is not a diagnostic. "Connection refused to postgres-primary.internal:5432
-after 3 retries; last attempted at 14:23:07; upstream service returned HTTP 503 at 14:22:59 —
-possible upstream availability issue" gives a new engineer a hypothesis and a timeline.
+"Connection refused" does not function as a diagnostic. "Connection refused to
+postgres-primary.internal:5432 after 3 retries; last attempted at 14:23:07; upstream service
+returned HTTP 503 at 14:22:59 — possible upstream availability issue" gives a new engineer a
+hypothesis and a timeline.
 
 The Google SRE book (Beyer, Jones, Petoff, Murphy, O'Reilly, 2016) frames this as part of SLO
 design: errors at service boundaries should distinguish user-visible impact from internal
-degradation.[^6] That structuring requirement naturally improves error message quality because
+degradation.[^6] That structuring requirement naturally improves error message quality, because
 it forces engineers to think about what information a responder needs.
 
 ### Layer 5: The Onboarding Engineer as Legibility Probe
 
-The most effective validation of onboarding legibility is to deliberately give a new engineer a
+The most effective validation of onboarding legibility: deliberately give a new engineer a
 staged incident and observe where they get stuck.
 
 Run a structured shadow on-call exercise where the new engineer responds to a simulated incident
 with an experienced engineer watching silently. Treat every question the new engineer asks as a
-gap report: a missing runbook step, an untraced service boundary, a metric without a
+gap report — a missing runbook step, an untraced service boundary, a metric without a
 description, an error message without context.
 
 Matthew Skelton and Manuel Pais's *Team Topologies* (IT Revolution, 2019) frames this as a
@@ -225,29 +226,29 @@ exercise surfaces this before the production incident does.
 
 ## What Doesn't Work
 
-**Architecture diagrams maintained manually.** They are wrong within a month. Auto-generated
-dependency maps from traces or service mesh telemetry are always current; hand-drawn diagrams
-are not.
+**Architecture diagrams maintained manually.** They go stale within a month. Auto-generated
+dependency maps from traces or service mesh telemetry stay current; hand-drawn diagrams do not.
 
-**"Ask the team" as an escalation path.** It works until the team turns over, which is exactly
-when it is most needed. Escalation paths should name roles, not individuals.
+**"Ask the team" as an escalation path.** It works until the team turns over — exactly the
+moment of greatest need. Escalation paths should name roles, never individuals.
 
-**Onboarding buddy programs without legibility artifacts.** They transfer tacit knowledge, which
-is valuable, but they do not fix the underlying gap. When the buddy leaves, the knowledge leaves
-with them.
+**Onboarding buddy programs without legibility artifacts.** They transfer tacit knowledge — a
+valuable transfer, but one leaving the underlying gap intact. When the buddy leaves, the
+knowledge leaves with them.
 
 **Long wikis.** They encode what the author thinks a newcomer needs, filtered through what the
-author has forgotten they know. They age immediately and are usually found too late.
+author has forgotten they know. By the time a responder reaches them, the content has aged past
+its useful window and the responder has already exhausted the channels worth trusting.
 
 ---
 
 ## Summary
 
-Legibility for new engineers is an architectural property that must be maintained at the same
-cadence as the system itself. The governing question for any system is: *what artifacts does
-this produce that enable correct inference by someone with no priors, under pressure?* Answer
-that question concretely — with a service catalog entry, a trace, a runbook that starts with
-symptoms, and error messages that point toward causes — and onboarding legibility follows as a
+Legibility for new engineers operates as an architectural property requiring maintenance at the
+same cadence as the system itself. The governing question for any system: *what artifacts does
+this produce enabling correct inference by someone with no priors, under pressure?* Answer
+that question concretely — with a service catalog entry, a trace, a runbook starting with
+symptoms, and error messages pointing toward causes — and onboarding legibility follows as a
 byproduct.
 
 ---
