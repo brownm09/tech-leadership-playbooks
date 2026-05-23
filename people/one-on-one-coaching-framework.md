@@ -2,9 +2,9 @@
 
 ## Leadership Context
 
-The 1:1 is the primary instrument of engineering management. Everything else — performance reviews, promotion calibration, team culture — is downstream of what happens in this meeting. A 1:1 that is used as a status update is an opportunity wasted. A 1:1 where the manager does most of the talking is not a 1:1 — it is a monologue. Done well, the weekly 1:1 is the mechanism through which you understand what is actually blocking an engineer, build the trust needed to give and receive difficult feedback, and create the growth conditions that lead to promotion, retention, and a team that can execute without you.
+The 1:1 is the primary instrument of engineering management. Everything else — performance reviews, promotion calibration, team culture — is downstream of what happens in this meeting. A 1:1 used as a status update is an opportunity wasted. A 1:1 where the manager does most of the talking is a monologue, not a 1:1. Done well, the weekly 1:1 is the mechanism through which you understand what is blocking an engineer, build the trust needed to give and receive difficult feedback, and create the growth conditions that lead to promotion, retention, and a team that can execute without you.
 
-This framework covers format, cadence, and the coaching arc across career stages. It is grounded in five promotions across three engineers over three years — two who advanced from SE2 to SSE2 through back-to-back promotions (SE2→SSE1→SSE2), and one from SSE1 to SSE2 — where the 1:1 was the primary vehicle for growth visibility, stretch assignment identification, and calibration preparation.
+This framework covers format, cadence, and the coaching arc across career stages. It is grounded in promotions for three engineers over three years (two promoted twice each from SE2 to SSE2, and one promoted from SSE to SSE2 — five promotion events across the three), where the 1:1 was the primary vehicle for growth visibility, stretch assignment identification, and calibration preparation.
 
 ## Background and Motivation
 
@@ -16,7 +16,7 @@ The promotion outcomes at ActBlue Technical Services (2022–2025) were not acci
 
 ### Cadence
 
-Weekly for all direct reports. No exceptions for strong performers, senior ICs, or people who say they do not need it. The moment you make 1:1s optional is the moment they start getting canceled — and the people most likely to deprioritize them are the ones who most need the sustained attention.
+Weekly for all direct reports. No exceptions for strong performers, senior ICs, or people who say they do not need it. The moment you make 1:1s optional is the moment they start getting canceled — and the people quickest to deprioritize them are the ones who need the sustained attention.
 
 Thirty minutes per week is the floor. Fifty minutes is useful for engineers in growth conversations or performance situations. The meeting length is less important than the consistency.
 
@@ -59,19 +59,19 @@ Common mistakes with new hires:
 
 ### Growing IC (6 Months to Staff Trajectory)
 
-Once an engineer has their bearings, the 1:1 becomes the primary growth mechanism. The coach's job is to close the gap between where the engineer is now and where they need to be for the next level — and to do this through project placement and deliberate skill building, not just through encouragement.
+Once an engineer has their bearings, the 1:1 becomes the primary growth mechanism. The coach's job is to close the gap between where the engineer is now and where they need to be for the next level — through project placement and deliberate skill building, beyond encouragement alone.
 
 The growth conversation framework for this stage:
 
-1. **What is the next level asking for?** Be specific about the career ladder definition. If the ladder says "owns a project independently from scoping through delivery," what does that mean in your specific context? Name the work, not just the description.
-2. **Where are they now relative to that bar?** Calibrate against evidence, not impressions. "You consistently write clear proposals, but the last two projects needed more scope negotiation with product — that's the gap." Vague feedback ("you're close") is not useful.
+1. **What is the next level asking for?** Be specific about the career ladder definition. If the ladder says "owns a project independently from scoping through delivery," what does that mean in your specific context? Name the work; the description does not stand on its own.
+2. **Where are they now relative to that bar?** Calibrate against evidence; impressions do not anchor the conversation. "You consistently write clear proposals, but the last two projects needed more scope negotiation with product — that's the gap." Vague feedback ("you're close") is not useful.
 3. **What project or context would close the gap?** This is the key move. Do not tell an engineer to "get more cross-team experience" without engineering a specific opportunity for it. The 1:1 is where you connect the growth goal to the next sprint cycle or the next planning round.
 
-Repeat this framework every quarter, not just at performance review time. Growth conversations that happen only at review time are retrospective. Growth conversations that happen continuously are developmental.
+Repeat this framework every quarter, beyond performance-review time alone. Growth conversations that happen only at review time are retrospective. Growth conversations that happen continuously are developmental.
 
 ### Senior / Leveling Out
 
-Senior engineers who are not on a Staff trajectory are often under-managed because they "don't need it." What they actually need is different from what earlier-career engineers need: less tactical coaching, more strategic challenge.
+Senior engineers who are not on a Staff trajectory are often under-managed because they "don't need it." What they need differs from what earlier-career engineers need: less tactical coaching, more strategic challenge.
 
 Focus areas for senior engineers:
 - **Technical direction input.** Include them in architectural conversations and decisions above their scope. Not as a courtesy — because their perspective should change the decision.
@@ -83,7 +83,7 @@ Focus areas for senior engineers:
 If you have managers reporting to you, the 1:1 format shifts. Your job is no longer to coach individual IC performance — it is to develop your managers' ability to run their teams. The 1:1 becomes a coaching-of-coaching conversation.
 
 Focus areas:
-- **Their team's health, not just their team's output.** Is the on-call load distributed fairly? Are there performance situations being avoided? Is there a high performer at flight risk?
+- **Their team's health, beyond their team's output.** Is the on-call load distributed fairly? Are there performance situations being avoided? Is there a high performer at flight risk?
 - **Their growth as a manager.** Where is their practice strong? Where is it uneven? Give them the same behavior-specific feedback you give engineers, applied to management behaviors.
 - **Calibration support.** Before a calibration cycle, align with each manager on the evidence for their team members who are being discussed. Do not let calibration be the first time you understand their read on an engineer. For the full calibration session structure and level definition framework that backs these conversations, see [career-ladder-calibration.md](career-ladder-calibration.md).
 
@@ -105,7 +105,7 @@ Run a dedicated career conversation once per quarter — not instead of the week
 A promotion conversation should not be a surprise to either party. Run a "promotion readiness" check-in every half — or every quarter if the engineer is on a fast trajectory. The check-in covers:
 
 - Are you doing the work at the next level? (Evidence required — name the projects.)
-- Is that work visible to the right people? (Calibration requires others to confirm the level, not just you.)
+- Is that work visible to the right people? (Calibration requires others to confirm the level; your read alone does not suffice.)
 - What is the remaining gap, if any? (Be honest. If the gap is real, name it and plan around it.)
 
 When the answer to all three is yes, the conversation becomes: "I am going to advocate for your promotion in the next cycle. Here is how calibration works, here is who will be in the room, and here is what they will need to see."
@@ -117,7 +117,7 @@ A stretch assignment is work that is visibly above the engineer's current level,
 The manager's job in a stretch assignment:
 - **Scope it correctly.** Not the whole initiative — a specific, time-bounded piece with clear success criteria.
 - **Provide scaffolding without rescue.** Check in more frequently, offer to be a thought partner, review proposals before they go to the broader team. But let them drive.
-- **Name it explicitly.** "This is a stretch for you, and I am giving it to you because I think you can handle it. Let's talk about what success looks like." Engineers who know they are being stretched approach the work differently than engineers who think it is just a normal assignment.
+- **Name it explicitly.** "This is a stretch for you, and I am giving it to you because I think you can handle it. Let's talk about what success looks like." Engineers who know they are being stretched approach the work differently than engineers who treat it as a normal assignment.
 
 ---
 
@@ -140,7 +140,7 @@ SBI is also the structure for difficult conversations when the early-signal appr
 ### Feedback Cadence
 
 Feedback should be:
-- **Frequent.** Not monthly, and not only at performance review time. Weekly observations, weekly feedback. Small doses are easier to absorb and act on than an accumulated dump at review time.
+- **Frequent.** Not monthly, and not reserved for performance-review time. Weekly observations, weekly feedback. Small doses are easier to absorb and act on than an accumulated dump at review time.
 - **Close to the behavior.** Feedback about something that happened three weeks ago is harder to connect to the behavior and easier to argue with. Give it within a week of the observation.
 - **Two-directional.** Ask for feedback in your 1:1s. Not as a formality — as a genuine practice. "What is one thing I could do differently to be more useful to you this quarter?" If you never get critical feedback from your engineers, you are not safe to give it to.
 
@@ -167,7 +167,7 @@ These questions will feel uncomfortable the first few times. Ask them anyway.
 
 **The Positive Feedback Spiral.** The manager only gives reinforcing feedback because difficult feedback feels risky. The engineer gets the impression they are doing great; the calibration cycle produces a different result; the trust built in twelve months of 1:1s is damaged in one conversation.
 
-**The One-Sided Career Plan.** The manager identifies what they think the engineer should work on and tells them. The engineer was thinking about a completely different direction and is now managing their manager's expectations rather than their own growth.
+**The One-Sided Career Plan.** The manager identifies what they think the engineer should work on and tells them. The engineer was thinking about a completely different direction and is now managing their manager's expectations instead of their own growth.
 
 **Frequency Collapse.** 1:1s go biweekly, then monthly, then "we should reschedule that." By the time the manager re-establishes the rhythm, the relationship context needed for a difficult feedback conversation or a growth conversation is gone.
 
