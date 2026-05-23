@@ -53,8 +53,8 @@ Link to the normative specification for every protocol or standard referenced.
 - OIDC → [openid.net/specs/openid-connect-core-1_0.html](https://openid.net/specs/openid-connect-core-1_0.html)
 
 ### Architectural patterns
-Link to the original paper, article, or book chapter introducing the pattern or giving its
-clearest treatment. Do not cite secondary summaries or Wikipedia.
+Link to the original paper, article, or book chapter introducing the pattern or treating
+it canonically. Do not cite secondary summaries or Wikipedia.
 
 **Examples:**
 - Hexagonal Architecture → [Cockburn (2005)](https://alistair.cockburn.us/hexagonal-architecture/)

@@ -4,13 +4,13 @@
 
 Every technical team makes architectural decisions about service boundaries, data models, infrastructure choices, integration patterns, and operational practices. In small teams, these decisions happen in conversation and get documented after the fact, if at all. In larger teams or across teams, undocumented decisions become a recurring source of friction: engineers make incompatible assumptions, the person who made the original decision leaves, or a new engineer re-investigates and re-proposes a decision already made for good reason.
 
-The RFC (Request for Comments) process gives significant technical decisions a structured, reviewable, documented path. The RFC process operates as a forcing function: articulating a decision's rationale in writing before implementing it, making the decision visible to the people it will affect, and creating a searchable record future engineers can find when they encounter the same question. It earns its keep this way — not as a bureaucratic checkpoint.
+The RFC (Request for Comments) process gives significant technical decisions a structured, reviewable, documented path. The RFC process operates as a forcing function: articulating a decision's rationale in writing before implementing it, making the decision visible to the people it will affect, and creating a searchable record future engineers can find when they encounter the same question.
 
 The relationship between an RFC and an Architectural Decision Record (ADR) gets confused frequently. An RFC proposes: it describes a decision not yet made, invites feedback, and documents the options considered. An ADR records: it captures a decision already made, along with the context, rationale, and consequences. Not every RFC produces an ADR — some RFCs conclude with no change to the existing approach. Every significant ADR should be preceded by an RFC-equivalent process, though the process may run lighter for smaller decisions.
 
 ## Background and Motivation
 
-I grounded this framework in technical decision-making across two contexts: ActBlue Technical Services (2022–2025) and Community Tech Alliance (2025–2026). At ActBlue, the scale of the platform directorate — six teams, significant cross-system dependencies, regulated infrastructure — required structured decision-making for architectural changes. Decisions of similar irreversibility and blast radius — the payment processor migration to Stripe, the Heroku-to-Kubernetes migration, the PCI environment deprecation — benefit from the structured review the RFC process provides.
+I grounded this framework in technical decision-making across two contexts: ActBlue Technical Services (2022–2025) and Community Tech Alliance (2025–2026). At ActBlue, the scale of the platform directorate — six teams, significant cross-system dependencies, regulated infrastructure — required structured decision-making for architectural changes. Decisions of similar irreversibility and blast radius (the payment processor migration to Stripe, the Heroku-to-Kubernetes migration, the PCI environment deprecation) benefit from the structured review the RFC process provides.
 
 The same friction surfaces even in a small team where the instinct is to decide in Slack and move on. The friction RFC process resolves comes from documentation and asynchronous review discipline; the friction is not primarily size-related.
 
@@ -47,7 +47,7 @@ Beyond the table above, three factors push a decision toward the full RFC proces
 
 ### Stage 1: Draft
 
-The author produces a draft RFC using the document skeleton provided below. The draft should run complete enough for substantive review: more than a rough sketch, less polished than a document presenting a single option without acknowledging trade-offs.
+The author produces a draft RFC using the document skeleton provided below. The draft should support substantive review. A rough sketch is too thin to comment on; a polished single-option document discourages the trade-off discussion the review window exists for.
 
 **Draft criteria:**
 - Problem statement is specific and bounded (not "we should improve our database strategy")
@@ -75,7 +75,7 @@ I'm looking for feedback specifically on:
 - [Question 2]
 ```
 
-During the review window, the author should actively engage with comments: clarifying ambiguities, acknowledging concerns, and updating the document when feedback surfaces gaps. The job is engagement, not defense.
+During the review window, the author should actively engage with comments: clarifying ambiguities, acknowledging concerns, and updating the document when feedback surfaces gaps. The job calls for engagement; defending the proposal against every objection misreads the format.
 
 ### Stage 3: Decision
 
@@ -122,7 +122,7 @@ If a synchronous session is held, document the key points of the conversation an
 
 ### The Decision-Maker's Responsibility
 
-The decision-maker's job is not to find consensus. Natural consensus is valuable; forced consensus — delaying the decision until objections go away — produces slow organizations and rewards persistent objectors. The decision-maker's job is to:
+The decision-maker's job is not to find consensus. Natural consensus has value; forced consensus — delaying the decision until objections go away — produces slow organizations and rewards persistent objectors. The decision-maker's job is to:
 
 1. Confirm that the review window was sufficient
 2. Confirm that significant objections were addressed or acknowledged
@@ -316,7 +316,7 @@ An RFC starting with a specific technical question and expanding to cover organi
 An RFC presenting two implementation approaches without considering whether the change is necessary at all. "Do nothing" is always an option and should always be analyzed. An RFC unable to make the case against "do nothing" may lack a sufficiently compelling problem statement.
 
 **The Undocumented Decision.**
-An RFC concluding with a decision communicated verbally or in a Slack thread, without an ADR. The ADR captures the RFC process's value; a decision living only in memory or a Slack archive reads as effectively undocumented, regardless of how thorough the RFC was.
+An RFC concluding with a decision communicated verbally or in a Slack thread, without an ADR. The ADR captures the RFC process's value; a decision living only in memory or a Slack archive functions as undocumented, regardless of how thorough the RFC was.
 
 [^1]: The Rust RFC Process. https://github.com/rust-lang/rfcs — the canonical open-source RFC process from which many engineering RFC conventions derive.
 [^2]: Larson, W. (2019). *An Elegant Puzzle: Systems of Engineering Management*. Stripe Press. Chapter 4 discusses architectural decision-making and documentation at the org level.

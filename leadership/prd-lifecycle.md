@@ -35,7 +35,7 @@ Every PRD has five required sections. Sections 1–3 are set during discovery an
 
 One paragraph. What can the user not do, or do only poorly, because this product does not exist? Written as a job-to-be-done: *"When [situation], users want to [goal], but [obstacle] prevents them. The cost of this is [outcome]."*
 
-Avoid solution language in this section. "Users need a dashboard" describes a feature, not a problem.
+Avoid solution language in this section. "Users need a dashboard" describes a feature; a problem statement names what the user cannot do today.
 
 ### Section 2 — User Job and Outcome Table
 
@@ -43,13 +43,13 @@ Avoid solution language in this section. "Users need a dashboard" describes a fe
 |-----------|----------------|-------------------|-------------------|
 | (e.g.) Product manager | Monitor experiment results across multiple flag variants without switching tools | One view, no manual aggregation, results available within 24h of flag creation | Exporting from LaunchDarkly, joining in a spreadsheet |
 
-Fill one row per distinct user type with a meaningfully different job. Two or three rows is normal. More than four typically indicates unclear product scope, not genuine user diversity.
+Fill one row per distinct user type with a meaningfully different job. Two or three rows is normal. More than four typically signals unclear product scope; genuine user diversity rarely needs more than three.
 
 ### Section 3 — Personas
 
-Two or three personas, maximum. Each persona names a specific person, not a demographic. Use Cooper's persona format: a name, a role, one sentence on what they aim to accomplish in their work, and one sentence on where this product fits in their day.
+Two or three personas, maximum. Each persona names a specific person; a demographic label fails the format. Use Cooper's persona format: a name, a role, one sentence on what they aim to accomplish in their work, and one sentence on where this product fits in their day.
 
-Personas describe individuals, not market segments. A persona reads: "Maria, a senior PM who runs 8–10 concurrent experiments and needs to brief the CPO weekly on business impact." Compare with "data-driven PMs at mid-market SaaS companies" — that names a segment, not a person.
+Personas describe individuals; "data-driven PMs at mid-market SaaS companies" names a market segment, which the persona format deliberately rejects. A persona reads: "Maria, a senior PM who runs 8–10 concurrent experiments and needs to brief the CPO weekly on business impact."
 
 ### Section 4 — Hypothesis and Bets
 
@@ -109,7 +109,7 @@ A PRD passes through four stages. What each stage expects:
 
 ### Discovery
 
-The PRD reads as a working hypothesis. Sections 1–3 are drafts. Section 4 carries at least one hypothesis. Section 5 stays empty.
+In Discovery the PRD functions as a working hypothesis. Sections 1–3 are drafts. Section 4 carries at least one hypothesis. Section 5 stays empty.
 
 **Gate to Alignment:** Problem statement is crisp, job-outcome table has ≥1 validated row, at least one persona has been confirmed with a real user, and the PM can articulate the primary bet in one sentence.
 
@@ -129,7 +129,7 @@ The PRD serves as a reference document. Minor updates surface as implementation 
 
 ### Shipped
 
-The PRD goes read-only. A brief post-ship retrospective appended to the changelog documents the outcomes: what the metrics showed, whether discovery validated the bets, and what the team learned.
+In Shipped, the document is archived read-only. A brief post-ship retrospective appended to the changelog documents the outcomes: what the metrics showed, whether discovery validated the bets, and what the team learned.
 
 ---
 
@@ -147,7 +147,7 @@ The PRD goes read-only. A brief post-ship retrospective appended to the changelo
 
 ## Common Failure Modes
 
-**The frozen PRD.** The document reads correctly at kick-off and reads stale six weeks later. Engineers stop consulting it. Fix: make PRD review a standing agenda item in the weekly team sync — five minutes to ask "does this still hold?"
+**The frozen PRD.** The document captures intent at kick-off and drifts within six weeks. Engineers stop consulting it. Fix: make PRD review a standing agenda item in the weekly team sync — five minutes to ask "does this still hold?"
 
 **The PRD-as-contract.** The PM treats deviation from the PRD as a process violation. Engineers treat "it's in the PRD" as grounds for skipping concerns. Fix: Tier 2 process should take hours, not days. A slow change process costs undocumented drift.
 
@@ -195,6 +195,6 @@ The artifacts below illustrate the lifecycle stages described in this playbook a
 
 ## References
 
-- [Clayton Christensen, Taddy Hall, Karen Dillon, and David Duncan — "Know Your Customers' 'Jobs to Be Done'" (*Harvard Business Review*, September 2016)](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done) — The canonical HBR treatment of the Jobs to Be Done framework. Establishes that customers hire products to accomplish specific outcomes, not to consume features. The job-outcome table format in §2 (job + "success looks like") is a direct application.
-- [Alan Cooper — *The Inmates Are Running the Asylum* (Sams, 1998)](https://www.amazon.com/Inmates-Are-Running-Asylum-Products/dp/0672326140) — Origin of Goal-Directed Design and user personas as a product design tool. The guidance to keep personas to two or three reflects Cooper's observation: more personas typically indicate unclear product scope, not genuine user diversity.
+- [Clayton Christensen, Taddy Hall, Karen Dillon, and David Duncan — "Know Your Customers' 'Jobs to Be Done'" (*Harvard Business Review*, September 2016)](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done) — The canonical HBR treatment of the Jobs to Be Done framework. Establishes that customers hire products to accomplish specific outcomes; the feature inventory is incidental. The job-outcome table format in §2 (job + "success looks like") is a direct application.
+- [Alan Cooper — *The Inmates Are Running the Asylum* (Sams, 1998)](https://www.amazon.com/Inmates-Are-Running-Asylum-Products/dp/0672326140) — Origin of Goal-Directed Design and user personas as a product design tool. The guidance to keep personas to two or three reflects Cooper's observation: more personas typically signal unclear product scope; genuine user diversity rarely requires more than three.
 - [Marty Cagan — *Inspired: How to Create Tech Products Customers Love*, 2nd ed. (Wiley, 2018)](https://www.svpg.com/books/inspired-how-to-create-tech-products-customers-love-2nd-edition/) — Establishes continuous discovery and outcome-oriented product thinking. The "one living PRD" design and the rejection of per-version document freezes aligns with Cagan's product-team model, where the document tracks evolving product understanding instead of locking scope.
