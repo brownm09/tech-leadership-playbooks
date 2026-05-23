@@ -2,7 +2,7 @@
 
 ## Leadership Context
 
-The RAID log is the artifact that separates programs that surface problems early from programs that discover them when they are already blocking. Every multi-team program accumulates risks, makes assumptions, generates issues, and creates dependencies — the question is whether they are tracked in a structured format that enables proactive management, or scattered across Slack threads and meeting notes where they become invisible until they cause damage. A maintained RAID log is also the primary input for board-level or executive program reporting: when a VP asks "what are our biggest risks heading into Q4?", the RAID log should produce that answer in minutes, not require a frantic synthesis session the night before.
+The RAID log is the artifact that separates programs that surface problems early from programs that discover them when they are already blocking. Every multi-team program accumulates risks, makes assumptions, generates issues, and creates dependencies — the question is whether they are tracked in a structured format that enables proactive management, or scattered across Slack threads and meeting notes where they become invisible until they cause damage. A maintained RAID log is also the primary input for board-level or executive program reporting: when a VP asks "what are our top risks heading into Q4?", the RAID log should produce the answer in minutes, without requiring a frantic synthesis session the night before.
 
 ## Background and Motivation
 
@@ -23,7 +23,7 @@ Do not wait for a problem to materialize before creating the RAID log. The log i
 
 ## RAID Defined
 
-RAID stands for Risks, Assumptions, Issues, Dependencies. Each category has a distinct meaning; putting items in the wrong category is one of the most common RAID log failures because it obscures what action is needed.
+RAID stands for Risks, Assumptions, Issues, Dependencies. Each category has a distinct meaning; putting items in the wrong category is a recurring RAID log failure because it obscures what action is needed.
 
 ### Risks
 
@@ -38,7 +38,7 @@ A risk is a condition that may occur in the future and would negatively affect t
 
 ### Assumptions
 
-An assumption is something the program plan takes as true that has not been explicitly confirmed. Every program plan is built on assumptions. The RAID log makes them explicit so they can be validated on a schedule rather than discovered when they turn out to be wrong.
+An assumption is something the program plan takes as true that has not been explicitly confirmed. Every program plan is built on assumptions. The RAID log makes them explicit so they can be validated on a schedule, not discovered after they turn out to be wrong.
 
 **Examples:**
 - We are assuming the compliance vendor can complete their review in 3 weeks based on past engagements.
@@ -224,7 +224,7 @@ A RAID log that is being actively maintained looks different from one that is be
 - Dependency matrix has all 🟢 entries for more than 3 consecutive weeks during a complex integration phase — this is statistically unlikely if the program is real
 - No one can tell you what R-003 is without opening the document
 
-**What to do when the RAID log has gone stale:** Do not reboot the log in a meeting. Call each workstream lead individually, ask them to walk you through their current status from memory, and update the log based on what you learn. The stale log is a symptom — the cause is usually that leads feel the log is a reporting artifact rather than a decision-support tool. Fix the perception, not just the document.
+**What to do when the RAID log has gone stale:** Do not reboot the log in a meeting. Call each workstream lead individually, ask them to walk you through their current status from memory, and update the log based on what you learn. The stale log is a symptom — the cause is usually that leads feel the log is a reporting artifact, not a decision-support tool. Fix the perception; updating the document alone will not hold.
 
 ---
 
@@ -236,7 +236,7 @@ For programs with 5+ workstreams, the RAID log becomes unwieldy if all items are
 
 **Tag by program phase.** Add a "Phase" column (Planning, Execution, Integration, Launch, Post-Launch). Filter by phase to understand what is relevant now vs. what is upcoming.
 
-**Separate vendor/external dependencies.** External dependencies have different management paths — you cannot directly resolve them. Create a dedicated section or tab for vendor and third-party dependencies and manage them through a relationship owner rather than the standard workstream lead path.
+**Separate vendor/external dependencies.** External dependencies have different management paths — you cannot directly resolve them. Create a dedicated section or tab for vendor and third-party dependencies and manage them through a relationship owner; the standard workstream lead path does not fit.
 
 **Link to source systems.** Where a risk or issue has a corresponding Jira ticket, engineering incident, or legal review document, link directly from the RAID log entry. This reduces the double-maintenance burden and makes it easier for leads to update status where they are already working.
 
