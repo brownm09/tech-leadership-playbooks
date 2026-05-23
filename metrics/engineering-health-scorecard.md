@@ -2,13 +2,13 @@
 
 ## Leadership Context
 
-A Director or Head of Engineering who cannot quantify the health of the engineering org is dependent on narratives that are impossible to validate and easy to challenge. In a QBR, a board meeting, or an M&A diligence session, "the team is shipping fast and quality is high" without supporting data is not a credible claim — it is an assertion. The engineering health scorecard converts that assertion into a structured, defensible position: here are the four domains we measure, here are our targets, here is where we are, here is the trend, and here is who owns each number.
+A Director or Head of Engineering without a way to quantify org health depends on narratives no one can validate and anyone can challenge. In a QBR, a board meeting, or an M&A diligence session, "the team ships fast and quality stays high" without supporting data lands as an assertion. The engineering health scorecard converts the assertion into a structured, defensible position: four domains measured, targets set, current values, trend direction, and a named owner per number.
 
-This is not a dashboard for engineers. Engineers need granular telemetry. The health scorecard is a leadership communication artifact: 8–12 metrics, organized by domain, that answer the questions a non-technical executive will ask about engineering capability, reliability, and sustainability.
+Engineers need granular telemetry; this artifact serves a different audience. The health scorecard functions as a leadership communication artifact — 8–12 metrics organized by domain, answering the questions a non-technical executive will ask about engineering capability, reliability, and sustainability.
 
 ## Background and Motivation
 
-This scorecard format was developed from the Jellyfish rollout and org-wide engineering health reporting work at ActBlue Technical Services (2024–2025). I led the rollout, owned engineering health reporting for the platform directorate, defined the metrics framework, and trained managers and ICs across six teams. The scorecard is the artifact that translates raw delivery data into the format a VP of Engineering can use in a QBR or board presentation.
+I developed this scorecard format during the Jellyfish rollout and org-wide engineering health reporting work at ActBlue Technical Services (2024–2025). I led the rollout, owned engineering health reporting for the platform directorate, defined the metrics framework, and trained managers and ICs across six teams. The scorecard translates raw delivery data into the format a VP of Engineering uses in a QBR or board presentation.
 
 ---
 
@@ -22,7 +22,7 @@ This scorecard format was developed from the Jellyfish rollout and org-wide engi
 | M&A technical diligence | Engineering maturity signal for acquirers or investors; shows the org has instrumented itself |
 | Engineering leadership performance review | Gives the business a shared language for evaluating the engineering function |
 
-Do not build a scorecard reactively — after a major incident, a missed launch, or a performance conversation with the CTO. Built reactively, the scorecard looks like a cover story. Built proactively and maintained consistently, it is a credibility asset.
+Do not build a scorecard reactively, after a major incident, a missed launch, or a performance conversation with the CTO. Built reactively, the scorecard looks like a cover story. Built proactively and maintained consistently, it becomes a credibility asset.
 
 ---
 
@@ -56,14 +56,14 @@ Time from first commit on a branch to that commit running in production. Measure
 
 **Change Failure Rate**
 
-Percentage of production deployments that require a hotfix, rollback, or immediate remediation. This is the quality gate on delivery speed — high deployment frequency with high change failure rate is not elite performance.
+Percentage of production deployments requiring a hotfix, rollback, or immediate remediation. The quality gate on delivery speed: high deployment frequency with high change failure rate does not qualify as elite performance.
 
 - Elite: 0–5%
 - High: 5–10%
 - Medium: 10–15%
 - Low: More than 15%
 
-*How to instrument:* Tag incidents or hotfixes that are causally linked to a deployment event. PagerDuty and Jeli both support incident tagging; the tag needs to connect to a deploy event. This is the hardest DORA metric to instrument cleanly — it requires discipline about incident classification.
+*How to instrument:* Tag incidents or hotfixes causally linked to a deployment event. PagerDuty and Jeli both support incident tagging; the tag needs to connect to a deploy event. Among the four DORA metrics, this one breaks first on classification discipline. Incident tagging must consistently connect to the causative deploy event.
 
 **Time to Restore Service (MTTR)**
 
@@ -74,7 +74,7 @@ How long it takes to restore normal service after a production failure. Measures
 - Medium: 1 day to 1 week
 - Low: More than 1 week
 
-*How to instrument:* Jeli tracks incident open time and resolution time. PagerDuty incident duration is a proxy but conflates acknowledgment with resolution. For a clean MTTR, define resolution as "service restored to SLO" not "incident acknowledged."
+*How to instrument:* Jeli tracks incident open time and resolution time. PagerDuty incident duration works as a proxy but conflates acknowledgment with resolution. For a clean MTTR, define resolution as service restored to SLO; acknowledgment alone does not close the window.
 
 ---
 
@@ -84,11 +84,11 @@ Quality metrics measure the rate at which defects escape into production and the
 
 **SLO Attainment**
 
-Percentage of rolling 30-day windows where each published SLO is met. This is the most customer-facing quality signal.
+Percentage of rolling 30-day windows in which each published SLO holds. Customer-facing quality lands here before anywhere else.
 
 *Target:* Depends on what you have committed to. If you have not set SLOs yet, start there before building this scorecard. A reasonable starting target for a B2B SaaS platform: 99.5% availability SLO, measured per service tier.
 
-*How to instrument:* Datadog SLO tracking, New Relic SLAs, or Honeycomb. Define SLOs in code (Terraform for Datadog SLOs is ideal for audit purposes). Report: number of SLOs in breach + trending direction, not just a pass/fail.
+*How to instrument:* Datadog SLO tracking, New Relic SLAs, or Honeycomb. Define SLOs in code (Terraform for Datadog SLOs is ideal for audit purposes). Report the number of SLOs in breach plus trending direction; a binary pass/fail collapses too much signal.
 
 **Defect Escape Rate**
 
@@ -101,7 +101,7 @@ Percentage of bugs found in production versus bugs found in pre-production. A hi
 
 **P0/P1 Incident Count (Quality-Attributed)**
 
-Count of severity 0 and severity 1 incidents where root cause is attributable to a code defect (as opposed to infrastructure failure, dependency failure, or capacity). This separates engineering quality failures from operational failures.
+Count of severity 0 and severity 1 incidents whose root cause traces to a code defect (as opposed to infrastructure failure, dependency failure, or capacity). The classification separates engineering quality failures from operational failures.
 
 *Target:* Set based on your 90-day baseline; target 20% reduction quarter-over-quarter until you reach a stable floor.
 
@@ -115,7 +115,7 @@ Reliability metrics measure how the system behaves under failure conditions and 
 
 **Incident Frequency**
 
-Total number of incidents per time period, segmented by severity tier. Frequency trending up is a leading indicator of systemic debt accumulating faster than it is being addressed.
+Total number of incidents per time period, segmented by severity tier. Frequency trending up signals systemic debt accumulating faster than the team addresses it.
 
 *Segment by:* P0/P1 (customer-impacting), P2 (degraded service, users affected), P3 (internal/latent).
 
@@ -127,28 +127,28 @@ MTTR appears in both delivery and reliability because it measures different thin
 
 **On-Call Incident Load Per Engineer**
 
-Average number of pages per on-call engineer per week, by severity tier. This is the most direct measure of on-call sustainability and a leading indicator of engineer burnout and attrition risk.
+Average number of pages per on-call engineer per week, by severity tier. The metric tracks on-call sustainability directly and surfaces engineer burnout and attrition risk before either appears in HR data.
 
 - Target: <3 P2+ pages per engineer per week on average
 - Warning threshold: >6 P2+ pages per engineer per week (sustained over 4+ weeks)
 
-*How to instrument:* PagerDuty on-call report → divide total pages by number of engineers in the rotation. Report the distribution, not just the average — one engineer absorbing 80% of pages while others see none is a structural problem the average hides.
+*How to instrument:* PagerDuty on-call report → divide total pages by number of engineers in the rotation. Report the distribution alongside the average; one engineer absorbing 80% of pages while others see none reveals a structural problem the average hides.
 
 **Mean Time Between Failures (MTBF) for Critical Services**
 
 How long your most critical services run without a customer-impacting incident. For services with SLAs, MTBF is an input to the reliability covenant.
 
-*How to instrument:* Calculated from PagerDuty or Jeli incident history. For each critical service, time between consecutive P0/P1 incidents. Track trend, not absolute value.
+*How to instrument:* Calculated from PagerDuty or Jeli incident history. For each critical service, time between consecutive P0/P1 incidents. Track the trend; absolute MTBF varies too much with service profile to compare across the portfolio.
 
 ---
 
 ### Domain 4: Team Health
 
-Team health metrics are the leading indicators for the lagging indicators in the other three domains. Delivery and reliability degrade when teams are overloaded, undersupported, or operating with unclear ownership.
+Team health metrics lead the lagging indicators in the other three domains. Delivery and reliability degrade after teams have been overloaded, undersupported, or operating with unclear ownership for weeks.
 
 **Lead-to-Cycle Time Ratio**
 
-Cycle time is time spent actively working on a ticket. Lead time is end-to-end time from creation to done. A high ratio (lead time >> cycle time) indicates that work is spending most of its time waiting: waiting for review, waiting for dependencies, waiting in a queue, waiting for a decision.
+Cycle time measures the duration of active work on a ticket. Lead time measures end-to-end time from creation to done. A high ratio (lead time >> cycle time) indicates work spends the majority of its time waiting: waiting for review, waiting for dependencies, waiting in a queue, waiting for a decision.
 
 - Healthy ratio: Lead time < 3× cycle time
 - Warning: Lead time > 5× cycle time
@@ -157,7 +157,7 @@ Cycle time is time spent actively working on a ticket. Lead time is end-to-end t
 
 **Sprint Capacity on Unplanned Work**
 
-Percentage of sprint capacity consumed by work that was not planned at sprint start: reactive incidents, urgent requests, context switches from leadership.
+Percentage of sprint capacity consumed by work not planned at sprint start: reactive incidents, urgent requests, context switches from leadership.
 
 - Target: <25%
 - Warning threshold: >40% (sustained over two or more sprints)
@@ -168,7 +168,7 @@ Percentage of sprint capacity consumed by work that was not planned at sprint st
 
 **Voluntary Attrition (Engineering)**
 
-Rolling 12-month voluntary attrition rate for engineering roles. Engineering attrition is expensive: recruiting, onboarding, and knowledge transfer costs are typically 0.5–1.5× annual salary per departure. High attrition correlates with on-call overload, poor manager effectiveness, and unclear career growth.
+Rolling 12-month voluntary attrition rate for engineering roles. Engineering attrition runs expensive: recruiting, onboarding, and knowledge transfer costs typically reach 0.5–1.5× annual salary per departure. High attrition correlates with on-call overload, poor manager effectiveness, and unclear career growth.
 
 - Target: <12% annually
 - Warning: >20% annually
@@ -179,7 +179,7 @@ Rolling 12-month voluntary attrition rate for engineering roles. Engineering att
 
 ## Sample Scorecard Table Format
 
-Use this format for QBR slides, board decks, and leadership reports. One table per domain. Color-coding (green/yellow/red) should be applied to the Trend column, not the Current column — a metric that is below target but improving is a better story than one that is at target but declining.
+Use this format for QBR slides, board decks, and leadership reports. One table per domain. Apply color-coding (green/yellow/red) to the Trend column; the Current column stays uncolored. Improvement trajectory carries the narrative weight; absolute current value does not.
 
 **Delivery**
 
@@ -218,25 +218,25 @@ Use this format for QBR slides, board decks, and leadership reports. One table p
 
 ## How to Set Targets
 
-The most common mistake in scorecard setup is adopting DORA industry benchmarks as targets before you have a baseline. "Elite performer" thresholds are aspirational; using them as Q1 targets for an org that has never measured itself sets up the scorecard as a failure narrative from day one.
+A common mistake in scorecard setup: adopting DORA industry benchmarks as targets before establishing a baseline. "Elite performer" thresholds carry aspirational weight; using them as Q1 targets for an org with no measurement history sets up the scorecard as a failure narrative from day one.
 
 **The right sequence:**
 
 1. **Instrument first.** Get 90 days of data before you set targets. You cannot set a credible target for deployment frequency if you do not know what your current deployment frequency is.
 
-2. **Set 90-day improvement targets, not industry benchmarks.** "We will improve deployment frequency from 3/week to 5/week" is a credible target. "We will be an elite performer by Q3" is a slogan.
+2. **Set 90-day improvement targets; industry benchmarks come later.** "We will improve deployment frequency from 3/week to 5/week" reads as a credible target. "We will be an elite performer by Q3" reads as a slogan.
 
-3. **Anchor on the trajectory, not the absolute value.** A metric that is below benchmark but improving every quarter is a better leadership story than one that hit benchmark once and is now flat.
+3. **Anchor on the trajectory; absolute value follows.** A metric below benchmark but improving every quarter carries a stronger leadership story than one with a single benchmark hit and a flat curve since.
 
 4. **Re-baseline annually.** As the org matures, benchmarks should tighten. Do not leave targets unchanged for more than 12 months — they become wallpaper.
 
-5. **Define the instrumentation for each metric before the scorecard goes to leadership.** A metric with an undefined data source is a liability; the first time someone asks "how did you calculate that" and the answer is "we estimated," the scorecard loses credibility.
+5. **Define the instrumentation for each metric before the scorecard goes to leadership.** A metric with an undefined data source becomes a liability; the first time someone asks "how did you calculate that" and "we estimated" comes back, the scorecard loses credibility.
 
 ---
 
 ## Leadership Dashboard Narrative
 
-Metrics without narrative are data. At a QBR or board meeting, you need to be able to explain each metric in two sentences: what it measures and what it means for the business.
+A metric without context lands as a number on a slide; the narrative does the load-bearing work. At a QBR or board meeting, each metric needs two sentences of explanation: what it measures and what it means for the business.
 
 **Deployment Frequency:**
 "We ship to production an average of 3.2 times per week, up from 1.8 times per week six months ago. This means we can respond to user feedback and fix production issues faster — it also means our deployment process has become reliable enough to run more frequently without increasing risk."
@@ -254,16 +254,16 @@ Metrics without narrative are data. At a QBR or board meeting, you need to be ab
 
 ## What NOT to Include
 
-A leadership scorecard that includes too many metrics is harder to act on than one with too few. Every metric on the scorecard should be actionable — if it drops, there is a known owner and a known response.
+A leadership scorecard with too many metrics becomes harder to act on than one with too few. Every metric on the scorecard should be actionable: if it drops, a known owner has a known response.
 
 **Metrics to exclude:**
 
-- **Lines of code / commit count:** Measures activity, not output. A team that refactors 10,000 lines of complex code into 1,000 clean lines has done more valuable work, by this metric, than the team that did.
-- **Story points completed:** Velocity is a sprint planning tool, not a performance metric. Story point inflation, scope change, and estimation variance make cross-team and cross-quarter comparisons meaningless.
-- **PR count:** Same problem as commit count. Optimizes for small PRs, not for impactful work.
-- **Test coverage percentage (as a standalone metric):** 80% coverage with tests that assert nothing meaningful is worse than 60% coverage with tests that catch real regressions. Track defect escape rate instead.
-- **Uptime percentage (without SLO context):** 99.9% uptime sounds good but tells you nothing about whether you met your commitments or whether the 0.1% downtime happened at peak user traffic.
-- **"Team happiness" survey scores as a primary metric:** Engagement surveys are useful inputs to a Director's understanding of team health, but they belong in manager-level conversations, not leadership scorecards where the audience does not have the context to interpret them.
+- **Lines of code / commit count:** Captures activity; output stays unmeasured. By this metric, the team that wrote 10,000 lines outranks the team that later refactored those lines into 1,000 cleaner ones — an inversion of the actual value created.
+- **Story points completed:** Velocity serves as a sprint planning tool; performance evaluation breaks the metric. Story point inflation, scope change, and estimation variance make cross-team and cross-quarter comparisons meaningless.
+- **PR count:** Same problem as commit count. Optimizes for small PRs; impactful work stays invisible.
+- **Test coverage percentage (as a standalone metric):** 80% coverage with tests asserting nothing meaningful loses to 60% coverage with tests catching real regressions. Track defect escape rate instead.
+- **Uptime percentage (without SLO context):** 99.9% uptime sounds reassuring but says nothing about whether commitments were met or whether the 0.1% downtime landed at peak user traffic.
+- **"Team happiness" survey scores as a primary metric:** Engagement surveys feed a Director's understanding of team health; they belong in manager-level conversations. In leadership scorecards, the audience lacks the context to interpret them fairly.
 
 ---
 
