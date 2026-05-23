@@ -2,11 +2,11 @@
 
 ## Leadership Context
 
-The decision to launch is a leadership decision, not an engineering decision — and the quality of that decision depends on the quality of the information provided. Unstructured go/no-go conversations produce launches that slip because no one owned the call, launches that proceed when they should not because the relevant concern was never surfaced, and launches that generate on-call crises because operational readiness was assumed rather than verified. This playbook establishes a structured gate framework that gives the person making the go/no-go call a complete picture across eight readiness domains, a documented record of who accepted which risks, and a launch day sequence with explicit decision points. When a launch fails, the gate record answers the question executives will ask: what did we know, and what did we decide?
+The decision to launch belongs with leadership; engineering provides the information that decision rests on, and the quality of the decision depends on the quality of that information. Unstructured go/no-go conversations produce launches that slip because no one owned the call, launches that proceed when they should not because the relevant concern was never surfaced, and launches that generate on-call crises because operational readiness was assumed without being verified. This playbook establishes a structured gate framework that gives the person making the go/no-go call a complete picture across eight readiness domains, a documented record of who accepted which risks, and a launch day sequence with explicit decision points. When a launch fails, the gate record answers the question executives will ask: what did we know, and what did we decide?
 
 ## Background and Motivation
 
-This checklist was developed from the launch readiness work on the payment processor migration to Stripe at ActBlue Technical Services (2022–2025). I led the program and defined scope and sequencing; my team executed the migration. Outcome: 2,600+ entity accounts migrated; payments codebase shrunk by 7,000+ lines. The eight readiness domains reflect the failure modes that payment-path releases expose — surfaced through hands-on launch management rather than derived from a template.
+This checklist was developed from the launch readiness work on the payment processor migration to Stripe at ActBlue Technical Services (2022–2025). I led the program and defined scope and sequencing; my team executed the migration. Outcome: 2,600+ entity accounts migrated; payments codebase shrunk by 7,000+ lines. The eight readiness domains reflect the failure modes payment-path releases expose — surfaced through hands-on launch management, not derived from a template.
 
 ## When to Use This
 
@@ -18,7 +18,7 @@ Apply this launch gate framework for:
 - Launches coordinated with a customer, partner, or press announcement
 - Any release that, if it fails, would require an all-hands incident response
 
-Do not apply this framework to routine weekly deployments of well-tested features to existing surfaces. The overhead of a full gate process should be reserved for launches with meaningful blast radius. For routine releases, the CI/CD pipeline governance guide provides the right level of controls.
+Do not apply this framework to routine weekly deployments of well-tested features to existing surfaces. The overhead of a full gate process should be reserved for launches with meaningful blast radius. For routine releases, the CI/CD pipeline governance guide provides the appropriate level of controls.
 
 **Minimum threshold:** If rollback would take more than 30 minutes, run the gate process.
 
@@ -34,7 +34,7 @@ Code complete means all features in the launch scope have been merged, reviewed,
 - [ ] All launch-scope features merged and code-reviewed (no open PRs in scope)
 - [ ] Unit test coverage at or above team threshold (define threshold before launch date, not the day before)
 - [ ] Integration tests passing in staging environment
-- [ ] Performance benchmarks run and results reviewed — p50, p95, p99 latency under load conditions that represent the expected launch traffic, not just typical traffic
+- [ ] Performance benchmarks run and results reviewed — p50, p95, p99 latency under load conditions that represent expected launch traffic, not typical traffic
 - [ ] Load test completed at 2× expected peak traffic (or rationale documented for why this threshold is appropriate)
 - [ ] No P0 or P1 bugs open in launch scope; P2 bugs reviewed and either resolved or waivered with rationale
 - [ ] Feature flags configured correctly for launch state (confirm flags are in the expected position for launch, not left in a test state)
@@ -45,7 +45,7 @@ Code complete means all features in the launch scope have been merged, reviewed,
 
 ### Domain 2: Operations
 
-A feature that works but cannot be operated is not ready to launch. Operations readiness covers the tooling and documentation that the team will use after the launch, not just the launch itself.
+A feature that works but cannot be operated is not ready to launch. Operations readiness covers the tooling and documentation the team will use after the launch — the post-launch operating model, not the launch event.
 
 **Checklist:**
 - [ ] Runbooks written for the top 3–5 expected failure modes of the launched feature
@@ -68,7 +68,7 @@ Security review is not a checkbox that legal requires. It is the domain where un
 - [ ] Threat model reviewed and updated for the launched feature (if the feature processes new data types, integrates a new third party, or changes authentication/authorization logic — a fresh threat model is required)
 - [ ] Pen test scope defined: if the launch is compliance-relevant or involves a new attack surface, define what will be tested and by whom, even if the pen test runs post-launch
 - [ ] Dependency vulnerability scan completed and results reviewed (SCA); critical and high CVEs either remediated or waivered with expiration date
-- [ ] Authentication and authorization behavior verified in staging — test the paths that should fail, not just the paths that should succeed
+- [ ] Authentication and authorization behavior verified in staging — test the paths that should fail in addition to the paths that should succeed
 - [ ] Secrets management confirmed: no credentials, tokens, or API keys in application code or pipeline configuration
 - [ ] Data encryption confirmed: data at rest and in transit are encrypted per the organization's baseline
 - [ ] Access control review: who can access what the feature exposes, and does that match the intended design?
@@ -95,7 +95,7 @@ Customer support is the first team to feel the blast from a launch failure and t
 
 **Checklist:**
 - [ ] Support team trained on the feature before launch: what it does, what the expected user experience is, what the common error states look like, and how to interpret them
-- [ ] Escalation path defined: what questions or issues does support escalate to engineering, and to whom specifically? Named escalation contacts, not just "the engineering team"
+- [ ] Escalation path defined: what questions or issues does support escalate to engineering, and to whom specifically? Named escalation contacts, not "the engineering team"
 - [ ] Known issues documented for support: the bugs that exist and will not be fixed before launch — support needs to know about these before customers report them
 - [ ] Internal knowledge base or FAQ updated (if the feature changes existing workflows)
 - [ ] Support SLA impact assessed: will this launch meaningfully increase ticket volume? If yes, capacity planning completed
@@ -125,7 +125,7 @@ A launch without a rollout plan is a binary on/off event. Most non-trivial launc
 - [ ] Canary success criteria defined: which metrics must be healthy at canary scale before expanding rollout? (e.g., "error rate below 0.1%, p99 latency below 300ms, zero payment failures in the cohort")
 - [ ] Canary hold period defined: how long does the launch stay at canary scale before expanding? (minimum 1 hour for low-risk; 24–48 hours for high-risk)
 - [ ] Rollback trigger defined and documented: what specific metric or event causes the team to roll back, and who makes that call?
-- [ ] Rollback procedure tested: not just written — a person has run through the rollback procedure in staging and confirmed it works within the target time window
+- [ ] Rollback procedure tested end-to-end — a person has run through the rollback procedure in staging and confirmed it works within the target time window
 - [ ] Full rollout schedule defined: canary → partial (25–50%) → full, with time estimates between each phase
 
 **Owner:** Engineering lead, confirmed by TPM.
@@ -224,7 +224,7 @@ No verbal waivers. If it is not in the waiver log, it is not waivered — it is 
 ### T-0: Launch Begins
 
 - [ ] Deploy initiated by designated engineer
-- [ ] Canary traffic confirmed routing to new version (verify in monitoring, not just in the deployment tool)
+- [ ] Canary traffic confirmed routing to new version (verify in monitoring; the deployment tool alone is insufficient)
 - [ ] First 5-minute check: error rate, latency, primary success metric — compare to baseline
 - [ ] Internal announcement sent
 - [ ] Clock starts on canary hold period
@@ -288,7 +288,7 @@ Attendees: full domain owner group. 60 minutes.
 
 **Go/no-go by committee with no one owning the call.** The meeting ends with "we think we're good" and no one wrote down who said go. When the launch fails, no one remembers who made the call. Designate the decision-maker before the gate process begins. Record their decision.
 
-**Operations readiness treated as post-launch work.** "We'll add proper monitoring after we see how it behaves in production." This is not a plan — it is an intention to operate blind and learn from failures rather than from metrics. Monitoring and alerting are launch requirements, not follow-on items.
+**Operations readiness treated as post-launch work.** "We'll add proper monitoring after we see how it behaves in production." This is not a plan — it is an intention to operate blind and learn from failures because the metrics that would have prevented them do not exist yet. Monitoring and alerting are launch requirements, not follow-on items.
 
 **The readiness gate that is really a status broadcast.** Domain owners show up, report green across all domains, and the meeting ends in 10 minutes. No one asked hard questions. The gate is serving as a ceremony, not as a real control. A well-run gate asks: what could still go wrong, who would know first, and what would we do about it? If the answer to all three is clear, the gate is doing its job.
 
