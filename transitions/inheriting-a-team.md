@@ -10,7 +10,7 @@ The framework here is a companion to the [New Engineering Leader 30-60-90 Day Pl
 
 ## Background and Motivation
 
-This framework draws primarily on the ActBlue platform directorate transition (2022), where I inherited six teams and approximately fifty engineers from a prior organizational structure that had different reporting lines, team scope, and leadership philosophy. Many of the challenges described here — the informal authority figures, the personnel problems that surfaced early, the loyalty signals that were actually ambivalence tests — were encountered directly in that context. The CTA transition (2025) provided a contrasting case: inheriting a smaller team with a longer prior-leader tenure and more explicit institutional memory of how things had been done.
+This framework draws primarily on the ActBlue platform directorate transition (2022), where I inherited approximately twenty engineers across six teams from a prior organizational structure carrying different reporting lines, team scope, and leadership philosophy. Many of the challenges described here — the informal authority figures, the personnel problems that surfaced early, the loyalty signals that were actually ambivalence tests — were encountered directly in that context. The CTA transition (2025) provided a contrasting case: inheriting a smaller team with a longer prior-leader tenure and more explicit institutional memory of how things had been done.
 
 ## When to Use This
 

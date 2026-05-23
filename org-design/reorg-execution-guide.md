@@ -10,7 +10,7 @@ This guide is not about whether to reorg. That decision belongs in the topology 
 
 ## Background and Motivation
 
-This framework is grounded in the platform directorate formation at ActBlue Technical Services (2022), which involved significant structural change: chartering new teams (DevEx, Payments Architecture, Database Platform), realigning existing team scope, and shifting reporting structures across approximately fifty engineers. The framework also reflects observation of subsequent reorgs at ActBlue where I was an organizational stakeholder rather than the primary executor — which provided a contrasting view of what the process looks like from the receiving end.
+This framework is grounded in the platform directorate formation at ActBlue Technical Services (2022), which involved significant structural change: chartering new teams (DevEx, Payments Architecture, Database Platform), realigning existing team scope, and shifting reporting structures across approximately twenty engineers in six teams. The framework also reflects observation of subsequent reorgs at ActBlue where I was an organizational stakeholder rather than the primary executor — which provided a contrasting view of what the process looks like from the receiving end.
 
 For engineers stepping into the role of a newly reorganized team, the [Inheriting a Team You Didn't Hire](../transitions/inheriting-a-team.md) framework provides the complementary playbook.
 

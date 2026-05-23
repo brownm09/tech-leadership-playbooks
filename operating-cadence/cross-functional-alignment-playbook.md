@@ -2,16 +2,16 @@
 
 ## Leadership Context
 
-Engineering organizations that cannot align effectively with product, design, legal, finance, and sales do not just deliver slower — they deliver the wrong things, at the wrong time, with last-minute surprises that erode trust with every function they depend on. Cross-functional alignment is not a soft skill; it is an operational capability that determines whether engineering can make and keep commitments. The cost of misalignment compounds: a legal review that starts three weeks too late delays a launch by a quarter; a sales commitment made without engineering input creates a customer expectation no one can meet; a finance model built on the wrong headcount assumptions generates budget fights mid-year. This playbook establishes the decision authorities, rituals, and interfaces that keep engineering in alignment with every function it touches.
+Engineering organizations lacking effective alignment with product, design, legal, finance, and sales deliver slower and deliver the wrong things — wrong time, last-minute surprises eroding trust with every dependent function. Cross-functional alignment functions as an operational capability determining whether engineering can make and keep commitments; the soft-skill framing understates the stakes. The cost of misalignment compounds: a legal review starting three weeks too late delays a launch by a quarter; a sales commitment made without engineering input creates a customer expectation no one can meet; a finance model built on wrong headcount assumptions generates budget fights mid-year. This playbook establishes the decision authorities, rituals, and interfaces keeping engineering aligned with every function it touches.
 
 ## Background and Motivation
 
-This playbook was developed from the cross-functional coordination work on the PCI environment deprecation program at ActBlue Technical Services (2022–2025). I owned the program — the vision, the business case, the executive alignment, and the cross-team coordination across product, compliance, legal, finance, and account operations. The program ran against both external audit deadlines and internal milestones, requiring active alignment across stakeholders with different timelines and incentives. Outcome: full deprecation; 2,600+ accounts migrated; 30% codebase reduction.
+This playbook draws on the cross-functional coordination work on the PCI environment deprecation program at ActBlue Technical Services (2022–2025). I owned the program: the vision, the business case, the executive alignment, and the cross-team coordination across product, compliance, legal, finance, and account operations. The program ran against both external audit deadlines and internal milestones, requiring active alignment across stakeholders with differing timelines and incentives. Outcome: full deprecation; 2,600+ accounts migrated; 30% codebase reduction.
 
 ## When to Use This
 
 - A new engineering leader is onboarding and needs to understand how engineering relates to its cross-functional partners
-- A post-mortem on a missed launch or failed project reveals that coordination failure — not technical failure — was the root cause
+- A post-mortem on a missed launch or failed project reveals coordination failure (not technical failure) as the root cause
 - Rapid organizational growth (above ~30 engineers or after a significant acquisition) is creating coordination failures that did not exist when the org was smaller
 - An engineering Chief of Staff or TPM is being asked to design or repair the org's cross-functional operating model
 
@@ -19,7 +19,7 @@ This playbook was developed from the cross-functional coordination work on the P
 
 ## The Three Partnership Failure Modes
 
-Most cross-functional coordination problems trace to one of three root causes. Diagnosing the right one before attempting a fix matters — the solutions are different.
+Most cross-functional coordination problems trace to one of three root causes. Diagnose the right one before attempting a fix; the solutions diverge sharply.
 
 ### Failure Mode 1: Too Much Gate-Keeping
 
@@ -35,7 +35,7 @@ Engineering is not included in decisions until after they are made — product r
 
 **Signal:** Engineering leaders consistently describe being "surprised" by commitments, requirements, or decisions that were made without them.
 
-**Fix:** Define the earliest point at which engineering needs to be in the room for each type of decision. Build that into cross-functional processes, not as a gate, but as a standing invitation.
+**Fix:** Define the earliest point at which engineering needs to be in the room for each type of decision. Build that into cross-functional processes as a standing invitation; the gate framing produces resistance, the invitation framing produces participation.
 
 ### Failure Mode 3: No Shared Language for Priority
 
@@ -51,7 +51,7 @@ Engineering and its partners are operating with different mental models of what 
 
 ### Decision Authority Model
 
-The most durable source of engineering-product friction is ambiguity about who decides what. The following model, adapted from product management practice, has worked at companies ranging from ActBlue (mission-driven, low margin for error) to Capital One (regulated, compliance-heavy):
+The recurring source of engineering-product friction sits in ambiguity about who decides what. The following model, adapted from product management practice, has worked at companies ranging from ActBlue (mission-driven, low margin for error) to Capital One (regulated, compliance-heavy):
 
 | Decision type | Who decides | Who must be consulted | Who is informed |
 |---|---|---|---|
@@ -63,7 +63,7 @@ The most durable source of engineering-product friction is ambiguity about who d
 | Whether to accept technical debt to meet a deadline | Engineering manager | Product manager | Director |
 | Whether to deprecate a product capability | Product | Engineering (migration cost) | Legal, Support |
 
-"Engineering owns the when" is the principle with the highest leverage and the most friction. Product managers who believe they own the timeline, or who make external commitments about ship dates without engineering input, create the conditions for the delivery surprises that damage trust across the org. The fix is not to remove product's ability to advocate for dates — it is to establish that no date is a commitment until engineering has confirmed it.
+Treat "engineering owns the when" as load-bearing on every cross-functional commitment; the friction it produces with PMs who believe they own the timeline counts as the predictable cost. Product managers who believe they own the timeline, or who make external commitments about ship dates without engineering input, create the conditions for delivery surprises damaging trust across the org. The fix preserves product's ability to advocate for dates and establishes a single rule: no date counts as a commitment until engineering has confirmed it.
 
 ### Escalation Path
 
@@ -73,7 +73,7 @@ When engineering and product cannot agree on priority, scope, or timeline:
 2. If unresolved within 48 hours: Director-level conversation between engineering director and product director
 3. If unresolved within 48 hours: VP-level tiebreaker (VP Eng and CPO jointly, or escalated to CEO if both VPs cannot align)
 
-The escalation path should be explicitly known to both engineering managers and product managers. The failure mode is when disagreements fester for weeks without escalation because neither party wants to "make it a thing." Unresolved disagreements are always a thing; they just become a worse thing later.
+The escalation path should be explicitly known to both engineering managers and product managers. The failure mode arrives when disagreements fester for weeks without escalation because neither party wants to "make it a thing." Unresolved disagreements remain a thing; they become a worse thing later.
 
 ### The 3-Amigos Ritual
 
@@ -96,7 +96,7 @@ A 3-amigos session that produces no written artifact did not happen.
 
 ### Design Handoff SLA
 
-Unclear handoff between design and engineering is one of the highest-friction points in product development. The following handoff SLA defines what engineering needs from design before implementation begins, and what the timeline for receiving it is.
+Unclear handoff between design and engineering produces some of the highest friction in product development. The following handoff SLA defines what engineering needs from design before implementation begins, with the timeline for receiving it.
 
 **Engineering needs from design, 5 business days before implementation sprint:**
 - Final mockups in Figma (or equivalent) for all states: default, loading, error, empty, responsive breakpoints
@@ -109,7 +109,7 @@ Unclear handoff between design and engineering is one of the highest-friction po
 - Written answer to: "Is there anything in this design that engineering should know but cannot see in the mockup?"
 
 **What engineering does not need from design before starting:**
-- Perfect pixel fidelity on every edge case — this is resolved in implementation review
+- Perfect pixel fidelity on every edge case; implementation review resolves these
 - Animations that are "nice to have" but not in scope for the initial release
 
 ### Component Library Ownership
@@ -120,18 +120,18 @@ A component library is owned jointly by design and engineering but with clear in
 - **Engineering owns:** implementation, test coverage, documentation in the component catalog, deprecation process for old components
 - **Joint ownership:** decisions about adding new components (both parties must agree that a new component is warranted vs. extending an existing one)
 
-When a product team wants to ship a feature that requires a new component the design system does not have, the process is: design proposes the component, engineering estimates the implementation cost, the component team reviews for fit, and a decision is made before the implementation sprint begins. Not during it.
+When a product team wants to ship a feature requiring a new component the design system does not have, the process runs: design proposes the component, engineering estimates the implementation cost, the component team reviews for fit, and a decision lands before the implementation sprint begins. Not during it.
 
 ### When to Ship Without Perfect Design
 
-There are legitimate situations where the product needs to ship before the design is final. The criteria for this to be acceptable:
+Some legitimate situations call for shipping before the design lands as final. The criteria for acceptance:
 
 - The product manager and engineering manager have both agreed, in writing, that the current state is acceptable for launch
 - The design gap is documented with a specific plan to address it (not "backlog") — ideally in the next sprint
 - The design gap does not create an accessibility issue or a material UX degradation for users
 - Legal and compliance are not impacted by the design gap
 
-"We'll fix it after launch" is only acceptable if the fix has a date attached and an owner named.
+"We'll fix it after launch" earns acceptance only when the fix carries a date and a named owner.
 
 ---
 
@@ -158,7 +158,7 @@ What legal needs from engineering to start: a description of the third-party sof
 **Track 3: Compliance and regulatory**
 Applicable when: a feature touches a regulated domain (payments, healthcare, financial data, children's data); a new geographic market is being entered; an enterprise customer contract requires specific compliance certifications.
 
-Lead time needed: 15–30 business days for a standard compliance review. This is not negotiable — regulatory review has external dependencies.
+Lead time needed: 15–30 business days for a standard compliance review. The window does not bend; regulatory review carries external dependencies.
 
 What legal needs from engineering to start: a product brief from the product manager, the relevant regulatory framework (GDPR, HIPAA, PCI DSS, etc.), and a technical description of the implementation approach.
 
@@ -175,7 +175,7 @@ Legal can provide an expedited review (5–7 business days) for standard track i
 - Any contract that requires negotiation with a third party
 - Regulatory opinions in jurisdictions where outside counsel is required
 
-If engineering surfaces a legal requirement 48 hours before a launch date, the launch date moves, not the legal review. The escalation path is engineering director → CPO/CEO → legal leadership to confirm whether a risk acceptance decision is available. It sometimes is. But the default is: legal review that is not complete means the feature does not ship.
+If engineering surfaces a legal requirement 48 hours before a launch date, the launch date moves; the legal review does not. The escalation path runs engineering director → CPO/CEO → legal leadership to confirm whether a risk acceptance decision exists. Sometimes one does. The default holds: incomplete legal review means the feature does not ship.
 
 ---
 
@@ -186,10 +186,10 @@ If engineering surfaces a legal requirement 48 hours before a launch date, the l
 Finance operates on an annual headcount plan and often a quarterly re-forecast. Engineering's role in this process:
 
 **Annual plan (typically Q4 for the following year):**
-Engineering director and engineering managers submit a headcount plan by role, level, and team — not by name. Finance converts this to a budget number using their compensation models. The plan should include: current headcount, proposed adds by quarter, and the initiative or business outcome each role supports.
+Engineering director and engineering managers submit a headcount plan by role, level, and team; names come later. Finance converts this to a budget number using their compensation models. The plan should include: current headcount, proposed adds by quarter, and the initiative or business outcome each role supports.
 
 **Quarterly re-forecast:**
-Finance will ask engineering to confirm or revise the headcount plan based on what has actually been hired, what roles are being added to the plan, and what roles are being removed. Engineering should treat this as an opportunity to surface capacity constraints that affect delivery commitments.
+Finance will ask engineering to confirm or revise the headcount plan based on what has been hired, what roles are coming onto the plan, and what roles are coming off. Engineering should treat this as an opportunity to surface capacity constraints affecting delivery commitments.
 
 **Headcount requests outside the plan:**
 Use the headcount request memo format in the [Executive Communication Templates](executive-communication-templates.md). These requests require: business case, cost, and risk of not hiring. They are reviewed by the VP Eng (or Director in smaller orgs) and typically require CFO or CEO approval if above a threshold.
@@ -198,24 +198,24 @@ Use the headcount request memo format in the [Executive Communication Templates]
 
 This matters to finance and to the audit committee. Engineering leaders who understand the basics avoid surprises during audit cycles.
 
-**The rule (simplified from ASC 350-40):** Software development costs can be capitalized (treated as an asset on the balance sheet rather than an operating expense) once the project has reached the "application development stage" — after the preliminary project stage is complete and management has authorized funding. Costs in the planning phase are expensed.
+**The rule (simplified from ASC 350-40):** Software development costs can be capitalized (carried as a balance-sheet asset; the alternative is operating expense) once the project reaches the "application development stage": after the preliminary project stage completes and management authorizes funding. Costs in the planning phase get expensed.
 
 **In practice for engineering:** Work on new features and products that meet the capitalization criteria can be tracked as a capitalized asset. This affects gross margin and EBITDA. Finance will ask engineering to classify projects as capitalized or expensed and to track engineering time allocation accordingly.
 
 **What engineering needs to do:**
 - Work with finance to understand which projects are classified as capitalized development
 - Ensure engineering managers are tracking time allocation for capitalized projects (even a rough percentage split by engineer is usually sufficient for smaller orgs)
-- Surface project completions to finance — a capitalized project that has shipped should stop accruing capitalized costs
+- Surface project completions to finance; a capitalized project after ship should stop accruing capitalized costs
 
 Most engineering leaders never need to present this to a board. But engineering leaders who are involved in investor due diligence, who are building the financial model for a fundraise, or who work at a public company will encounter it. Understanding enough to ask the right questions is the goal.
 
 ### Cost Center Reporting
 
-Engineering is typically a cost center — it does not generate revenue directly but supports the product that does. Finance will report engineering costs against budget on a monthly and quarterly basis. Engineering leaders should:
+Engineering typically operates as a cost center: no direct revenue, supporting the product generating it. Finance will report engineering costs against budget on a monthly and quarterly basis. Engineering leaders should:
 
 - Know their run-rate cost (headcount loaded + tools + infrastructure), updated monthly
 - Know which costs are variable (cloud infrastructure scales with product usage) vs. fixed (headcount, tooling subscriptions)
-- Flag cost overruns before they appear in the finance report — finance should never surface a cost overrun to the CFO that engineering did not already know about and communicate
+- Flag cost overruns before they appear in the finance report; finance should never surface a cost overrun to the CFO without engineering already knowing about it and communicating it
 
 ---
 
@@ -223,7 +223,7 @@ Engineering is typically a cost center — it does not generate revenue directly
 
 ### Feature Request Intake
 
-Sales will bring customer feature requests to engineering. Without a defined intake process, these requests land informally (in Slack, in a hallway conversation, in a customer call), are routed inconsistently, and create commitments that engineering did not agree to.
+Sales will bring customer feature requests to engineering. Without a defined intake process, these requests land informally (in Slack, in a hallway conversation, in a customer call), route inconsistently, and create commitments engineering never agreed to.
 
 **The intake process:**
 1. Sales logs feature requests in a shared system (Productboard, Jira, or equivalent) with: customer name, ARR of that customer, what the customer asked for, and what problem the customer is trying to solve.
@@ -231,7 +231,7 @@ Sales will bring customer feature requests to engineering. Without a defined int
 3. Product communicates the triage outcome to sales with a timeline expectation or a "not in plan" response.
 4. Engineering is not in the intake loop until product has triaged the request. Engineering does not receive feature requests directly from sales.
 
-The reason for this: engineering receiving feature requests directly from sales creates pressure on ICs that bypasses product prioritization. It also creates inconsistent commitments when ICs give informal timeline estimates to customer-facing teams.
+The reason: engineering receiving feature requests directly from sales creates pressure on ICs bypassing product prioritization. It also creates inconsistent commitments when ICs give informal timeline estimates to customer-facing teams.
 
 ### Customer Commitment Process
 
@@ -244,7 +244,7 @@ The reason for this: engineering receiving feature requests directly from sales 
 When a customer is asking for a commitment that sales cannot make, the escalation path is: sales → product (for roadmap commitments) or sales → engineering director (for technical or security commitments). This conversation happens before the customer is given any response.
 
 **The danger of informal commitments:**
-A sales engineer telling a customer "I think we can have that in 6 months" is a commitment in the customer's mind even if it is not in any contract. Engineering leaders who inherit customer expectation mismatches discover them at the worst time — when the customer is renewing, escalating, or churning. The fix is clear rules about who can say what to customers about engineering timelines.
+A sales engineer telling a customer "I think we can have that in 6 months" lands as a commitment in the customer's mind even when no contract reflects it. Engineering leaders inheriting customer expectation mismatches discover them at the worst time: when the customer renews, escalates, or churns. The fix: clear rules about who can say what to customers about engineering timelines.
 
 ---
 
@@ -270,7 +270,7 @@ Use this template when a cross-functional program involves decisions that need c
 **C (Consulted):** Must be consulted before the decision is made.
 **I (Informed):** Told about the decision after it is made.
 
-When two functions are listed as A/R jointly, both must agree before the decision is finalized. Use this sparingly — shared accountability often means no accountability. Joint ownership only makes sense when both parties have a genuinely equal stake in the outcome and no tiebreaker mechanism exists.
+When two functions appear as A/R jointly, both must agree before the decision finalizes. Use this sparingly: shared accountability often means no accountability. Joint ownership only makes sense when both parties hold a genuinely equal stake in the outcome and no tiebreaker mechanism exists.
 
 ---
 
@@ -290,7 +290,7 @@ Run this check quarterly, either in the engineering leadership retrospective or 
 
 5. **Is there any decision that engineering is currently delaying because the accountability is unclear?** Name it and assign it before leaving the room.
 
-If the answer to all five questions is "no, nothing notable," either alignment is working well or the check-in is not surfacing real information. The tie-breaker is to ask each function's leader separately whether they have any friction with engineering. If the answers differ from what engineering leadership reported, the problem is information flow, not alignment.
+If the answer to all five questions runs "no, nothing notable," either alignment works well or the check-in fails to surface real information. The tie-breaker: ask each function's leader separately whether they carry any friction with engineering. If the answers diverge from what engineering leadership reported, the problem lies in information flow; alignment may still hold.
 
 ## Further Reading
 
