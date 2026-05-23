@@ -8,7 +8,7 @@ documentation, design documents, ADRs, playbooks, or technical recommendations
 
 ## Background and Motivation
 
-These standards were developed from the Claude Code and Claude integration initiative at Community Tech Alliance (2025–2026). I designed the phased rollout plan with separate use cases for engineers and managers and developed a structured evaluation rubric for measuring impact. The auditability requirements here emerged from the recognition that AI-generated documentation lacks the same provenance chain as human-authored documentation — and that for regulated environments and portfolio-quality work, that gap needs to be closed explicitly.
+I developed these standards during the Claude Code and Claude integration initiative at Community Tech Alliance (2025–2026). I designed the phased rollout plan with separate use cases for engineers and managers and developed a structured evaluation rubric for measuring impact. The auditability requirements here came out of one observation: AI-generated documentation lacks the provenance chain human-authored documentation carries by default, and in regulated environments or portfolio-quality work the gap has to be closed explicitly.
 
 > **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook)
 > is a personal-project monorepo, not a production system at scale. The artifacts linked
@@ -21,22 +21,22 @@ These standards were developed from the Claude Code and Claude integration initi
 
 ## Core Principle: AI Recommendations Must Be Sourced
 
-When an AI assistant produces documentation that names a technology, pattern, protocol, or
-compliance framework as a recommendation, that recommendation must be traceable to a primary
-source. Unsourced AI output is unverifiable — a reader cannot distinguish a well-grounded
-recommendation from a confident-sounding hallucination.
+When an AI assistant produces documentation naming a technology, pattern, protocol, or
+compliance framework as a recommendation, the recommendation has to trace to a primary
+source. Unsourced AI output cannot be verified: a reader has no way to distinguish a
+well-grounded recommendation from a confident-sounding hallucination.
 
-This is not primarily a hallucination-prevention rule. It is an intellectual integrity rule:
-the same standard that applies to a staff engineer writing a design document applies to
-AI-generated output that carries the same weight.
+Hallucination prevention is the secondary concern. The primary concern is intellectual
+integrity — the same standard a staff engineer meets when writing a design document also
+binds AI-generated output carrying the same weight.
 
 ---
 
 ## What Must Be Cited
 
 ### Technology and framework choices
-Link to the official documentation for every tool selected. The official docs are the
-authoritative source for capability claims, configuration, and limitations.
+Link to the official documentation for every tool selected. Official docs carry the
+authoritative claims on capability, configuration, and limitations.
 
 **Examples:**
 - Choosing NestJS → link to [docs.nestjs.com](https://docs.nestjs.com)
@@ -53,8 +53,8 @@ Link to the normative specification for every protocol or standard referenced.
 - OIDC → [openid.net/specs/openid-connect-core-1_0.html](https://openid.net/specs/openid-connect-core-1_0.html)
 
 ### Architectural patterns
-Link to the original paper, article, or book chapter that introduced or best defines the
-pattern. Do not cite secondary summaries or Wikipedia.
+Link to the original paper, article, or book chapter introducing the pattern or giving its
+clearest treatment. Do not cite secondary summaries or Wikipedia.
 
 **Examples:**
 - Hexagonal Architecture → [Cockburn (2005)](https://alistair.cockburn.us/hexagonal-architecture/)
@@ -87,14 +87,14 @@ one sentence describing what decision in the ADR it supports.
 ```
 
 ### In playbooks
-A `## References` section at the bottom of any playbook that cites a specific framework,
-methodology, or standard. Playbooks that contain only internal process guidance with no
-external dependencies do not require citations.
+A `## References` section at the bottom of any playbook citing a specific framework,
+methodology, or standard. Playbooks covering internal process guidance with no external
+dependencies do not require citations.
 
 ### In AI responses
-When Claude recommends a technology in a response (not only in committed documentation),
-it should include the official documentation link inline. This makes the recommendation
-immediately verifiable without requiring a follow-up search.
+When Claude recommends a technology in a response (in addition to committed documentation),
+it should include the official documentation link inline. A reader verifies the
+recommendation in one click rather than running a follow-up search.
 
 ---
 
@@ -109,7 +109,7 @@ immediately verifiable without requiring a follow-up search.
 ## Consolidated Reference Index
 
 For projects with multiple ADRs, maintain a consolidated reference index (e.g.,
-`docs/adr-references.md`) that groups all sources by domain. This serves as:
+`docs/adr-references.md`) grouping all sources by domain. The index serves as:
 - A single place to audit coverage ("are all our technology choices sourced?")
 - A reading list for new contributors onboarding to the architecture
 - A starting point for due-diligence reviews (security, ARB, compliance audits)
