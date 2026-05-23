@@ -55,7 +55,7 @@ Track the P90 alongside the median. A P90 two or three times the median means a 
 Distinct from lead time. This metric captures the code review and merge window. A PR sitting three days before its first review signals team health as much as delivery; the team is usually heads-down on incidents, on-call, or a high-priority fire, and code review has been deprioritized.
 
 - Target: <24 hours for P90 on standard PRs (not draft/WIP)
-- Watch for: specific engineers whose PRs consistently sit longer — may indicate a review bottleneck or an interpersonal dynamic
+- Watch for: specific engineers whose PRs consistently sit longer; the pattern points to a review bottleneck or an interpersonal dynamic
 
 **Change failure rate (trailing 30 days, per team)**
 
@@ -102,7 +102,7 @@ Most HoE dashboards omit this domain, and the omission causes the expensive surp
 
 Actual engineers on staff versus planned headcount, broken down by team. Include contractor ratio if contractors carry production load. Also: open requisitions and their age. A req open for 90 days without a hire represents a present capacity gap; treating it as a future one understates the load already on the team.
 
-- Watch for: teams operating at >20% below planned headcount for more than 60 days — delivery risk accumulates silently before it shows up in DORA metrics
+- Watch for: teams operating at >20% below planned headcount for more than 60 days; delivery risk accumulates silently before it shows up in DORA metrics
 
 **On-call incident load per engineer (P2+, per week, trailing 4 weeks)**
 

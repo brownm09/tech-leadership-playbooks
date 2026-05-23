@@ -97,7 +97,7 @@ Percentage of bugs found in production versus bugs found in pre-production. A hi
 - Target: <20% of reported defects first detected in production
 - Warning threshold: >35%
 
-*How to instrument:* Jira bug label + environment field at time of creation. Requires discipline about where bugs are logged. If your team logs all bugs as customer-reported issues after the fact, the data will be noisy — establish a classification convention first.
+*How to instrument:* Jira bug label + environment field at time of creation. Requires discipline about where bugs are logged. If your team logs all bugs as customer-reported issues after the fact, the data will run noisy; establish a classification convention first.
 
 **P0/P1 Incident Count (Quality-Attributed)**
 
@@ -119,7 +119,7 @@ Total number of incidents per time period, segmented by severity tier. Frequency
 
 *Segment by:* P0/P1 (customer-impacting), P2 (degraded service, users affected), P3 (internal/latent).
 
-*How to instrument:* PagerDuty incident count by severity. Requires consistent severity classification at incident open time — not after the fact.
+*How to instrument:* PagerDuty incident count by severity. Requires consistent severity classification at incident open time; post-hoc reclassification breaks the trend line.
 
 **MTTR (see also Delivery domain)**
 
@@ -162,9 +162,9 @@ Percentage of sprint capacity consumed by work not planned at sprint start: reac
 - Target: <25%
 - Warning threshold: >40% (sustained over two or more sprints)
 
-*How to instrument:* Jira sprint report — tickets added after sprint start versus at sprint start. Requires consistent sprint planning discipline. If your team does not use sprints, use a weekly capacity tracking mechanism instead.
+*How to instrument:* Jira sprint report: tickets added after sprint start versus at sprint start. Requires consistent sprint planning discipline. If your team does not use sprints, use a weekly capacity tracking mechanism instead.
 
-**On-Call Load** (see Reliability domain — the same metric appears here as a team health signal)
+**On-Call Load** (see Reliability domain; the same metric appears here as a team health signal)
 
 **Voluntary Attrition (Engineering)**
 
