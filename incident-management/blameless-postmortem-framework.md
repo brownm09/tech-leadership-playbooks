@@ -2,15 +2,15 @@
 
 ## Leadership Context
 
-Most engineering orgs treat the post-mortem as a documentation ritual. The format below treats it as an instrument for surfacing systemic causes. The intended purpose: structured learning from an incident in a way that reduces the probability of the next one. The common practice: a checkbox written after a significant outage, filed in a wiki nobody reads, or — worse — a mechanism for assigning responsibility on terms defensible to leadership while degrading engineering judgment.
+Most engineering orgs treat the post-mortem as a documentation ritual. The format below treats it as an instrument for surfacing systemic causes. The intended purpose: structured learning from an incident in a way that reduces the probability of the next one. The common practice: a checkbox written after a significant outage, filed in a wiki nobody reads, or — worse — a mechanism for assigning responsibility on terms defensible to leadership and inert as a basis for change.
 
-This document complements the [Disaster Recovery Fire Drill Template](../disaster-recovery/fire-drill-template.md), which covers proactive resilience testing. The post-mortem operates as a reactive artifact, written after a real incident has occurred. The fire drill produces evidence of systems working as designed; the post-mortem produces learning from the failures the fire drill did not predict.
+This document complements the [Disaster Recovery Fire Drill Template](../disaster-recovery/fire-drill-template.md), which covers proactive resilience testing. The post-mortem operates as a reactive artifact, written after a real incident has occurred. The fire drill produces evidence of systems working as designed; the post-mortem produces learning when systems fail under real conditions.
 
 The "blameless" framing requires more precision than it usually receives. Blameless does not mean consequence-free. It means the analysis points at systems, processes, and conditions instead of at individuals. An engineer who made an error contributing to an incident did so within a system permitting that error to happen. The post-mortem's job: understand the system. If the human appears as the cause, the system created the conditions in which the human cause became possible — and the system is what the post-mortem should analyze.
 
 ## Background and Motivation
 
-This framework is grounded in incident response operations at ActBlue Technical Services (2022–2025). I owned post-mortem practice for the teams I managed within a platform directorate including high-availability payments infrastructure. The payments context — PCI compliance, SLA obligations, and voter data sensitivity — created genuine organizational consequences for how incidents were analyzed and documented. The blameless framing was not aspirational in that context; it was operationally necessary. Attribution-focused post-mortems in a regulated environment produce two outcomes: engineers afraid to make changes, and documentation obscuring more than it reveals.
+This framework is grounded in incident response operations at ActBlue Technical Services (2022–2025). I owned post-mortem practice for the teams I managed within a platform directorate spanning payments infrastructure and developer experience. The payments context — PCI compliance, SLA obligations, and voter data sensitivity — created genuine organizational consequences for how incidents were analyzed and documented. The blameless framing was not aspirational in that context; it was operationally necessary. Attribution-focused post-mortems in a regulated environment produce two outcomes: engineers afraid to make changes, and documentation obscuring more than it reveals.
 
 The five-part structure in this framework is an adaptation of the Google SRE post-mortem format[^1], modified for team-level use in contexts without a dedicated SRE function.
 
@@ -297,7 +297,7 @@ Post-mortem AI tracking table — created [date], incident [ID]
 A post-mortem meeting where the on-call owner spends the first ten minutes apologizing and the rest of the meeting defending their decisions. The facilitator's job: interrupt this pattern before it begins. An opening statement naming the blameless frame explicitly reduces the probability of the shame spiral.
 
 **The Single Point of Failure Attribution.**
-A post-mortem concluding "the engineer should have tested this before deploying" and stopping there. Almost never the root cause — only the proximate cause. The root cause: whatever in the system made inadequate testing possible. No automated test gate, insufficient review coverage, no deploy checklist, inadequate staging environment fidelity. Person-as-root-cause warrants the conclusion only after the search for systemic causes returns empty.
+A post-mortem concluding "the engineer should have tested this before deploying" and stopping there. Almost never the root cause — only the proximate cause. The root cause: whatever in the system made inadequate testing possible. No automated test gate, insufficient review coverage, no deploy checklist, inadequate staging environment fidelity. Stop the analysis at the individual only after the search for systemic causes has returned empty.
 
 **The Orphaned Action Item.**
 A post-mortem action item without a single named owner. Teams, committees, and "we" do not own action items. When the action requires coordination across multiple owners, one of them takes the lead and the others contribute.

@@ -33,8 +33,8 @@ inspection. They test by poking and observing — slow and unreliable under pres
 **Runtime legibility** asks whether an engineer can understand what the system is doing *right
 now*. Traditional monitoring — dashboards of predefined metrics — operates as legibility theater:
 it makes a system look understandable while hiding the state space producing incidents.
-High-cardinality, high-dimensionality telemetry remains the only way to make a running system legible
-against novel failure modes.[^1] A system legible only against anticipated failures is illegible
+High-cardinality, high-dimensionality telemetry keeps a running system legible against novel failure
+modes that predefined metrics cannot anticipate.[^1] A system legible only against anticipated failures is illegible
 against the failures that matter most.
 
 Both kinds of legibility require active maintenance. Neither is a one-time documentation
@@ -147,8 +147,8 @@ anything:
 4. Who wrote it and who operates it?
 
 A service catalog — with those four fields, kept current, and linked from the alerting system —
-delivers the single highest-leverage investment for onboarding legibility. Spotify's Backstage[^4]
-provides the reference implementation, but the format matters less than the discipline: every service has
+delivers high leverage for onboarding legibility at low maintenance cost. Spotify's Backstage[^4]
+provides a reference implementation, but the format matters less than the discipline: every service has
 an entry, entries are owner-maintained, and alerts link to them.
 
 A catalog is not a wiki. It functions as a machine-readable registry with a human-readable summary.
@@ -156,7 +156,7 @@ Wikis rot; catalogs with ownership fields have someone accountable for keeping t
 
 ### Layer 2: Distributed Tracing with Meaningful Context
 
-Tracing remains the only observability primitive preserving causality across service boundaries.
+Tracing preserves causality across service boundaries in a way metrics and logs do not.
 For an onboarding engineer, this draws the line between "the checkout service is slow" and
 "the checkout service is slow because a downstream call to the inventory service is timing out,
 and here is the specific request path." The first requires system knowledge to diagnose; the
