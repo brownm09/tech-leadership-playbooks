@@ -161,7 +161,7 @@ The PRD goes read-only. A brief post-ship retrospective appended to the changelo
 
 ## Background and Motivation
 
-This lifecycle model was developed from the feature lifecycle and roadmapping process revision at Community Tech Alliance (2025–2026). I designed and drove the process changes; the team adopted them. The revision shifted emphasis from scope-locked product specifications to outcome-oriented living documents — a change that reduced planning debt and improved IC alignment with the problems the engineering org was actually trying to solve.
+I developed this lifecycle model during the feature lifecycle and roadmapping process revision at Community Tech Alliance (2025–2026). I designed and drove the process changes; the team adopted them. The revision shifted emphasis from scope-locked product specifications to outcome-oriented living documents — a change reducing planning debt and improving IC alignment with the problems the engineering org needed to solve.
 
 ---
 
@@ -188,13 +188,13 @@ The artifacts below illustrate the lifecycle stages described in this playbook a
 
 ### What this sandbox does *not* demonstrate
 
-- **Personas and the job-outcome table** are minimally represented — the project has one user (the author), so Section 2 and Section 3 of the playbook collapse. The lifecycle structure transfers; the user-research discipline that animates Sections 1–3 in a real product context does not.
-- **Tier 1 / Tier 2 update process** does not appear, because the same person is PM and EM. The state-machine and changelog discipline transfers; the alignment process does not.
+- **Personas and the job-outcome table** are minimally represented — the project has one user (the author), so Section 2 and Section 3 of the playbook collapse. The lifecycle structure transfers; the user-research discipline animating Sections 1–3 in a real product context does not transfer here.
+- **Tier 1 / Tier 2 update process** does not appear, because the same person is PM and EM. The state-machine and changelog discipline transfers; the alignment process does not transfer.
 
 ---
 
 ## References
 
 - [Clayton Christensen, Taddy Hall, Karen Dillon, and David Duncan — "Know Your Customers' 'Jobs to Be Done'" (*Harvard Business Review*, September 2016)](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done) — The canonical HBR treatment of the Jobs to Be Done framework. Establishes that customers hire products to accomplish specific outcomes, not to consume features. The job-outcome table format in §2 (job + "success looks like") is a direct application.
-- [Alan Cooper — *The Inmates Are Running the Asylum* (Sams, 1998)](https://www.amazon.com/Inmates-Are-Running-Asylum-Products/dp/0672326140) — Origin of Goal-Directed Design and user personas as a product design tool. The guidance to keep personas to two or three reflects Cooper's observation that more personas typically indicate unclear product scope rather than genuine user diversity.
-- [Marty Cagan — *Inspired: How to Create Tech Products Customers Love*, 2nd ed. (Wiley, 2018)](https://www.svpg.com/books/inspired-how-to-create-tech-products-customers-love-2nd-edition/) — Establishes continuous discovery and outcome-oriented product thinking. The "one living PRD" design and the rejection of per-version document freezes aligns with Cagan's product-team model, where the document tracks evolving product understanding rather than locking scope.
+- [Alan Cooper — *The Inmates Are Running the Asylum* (Sams, 1998)](https://www.amazon.com/Inmates-Are-Running-Asylum-Products/dp/0672326140) — Origin of Goal-Directed Design and user personas as a product design tool. The guidance to keep personas to two or three reflects Cooper's observation: more personas typically indicate unclear product scope, not genuine user diversity.
+- [Marty Cagan — *Inspired: How to Create Tech Products Customers Love*, 2nd ed. (Wiley, 2018)](https://www.svpg.com/books/inspired-how-to-create-tech-products-customers-love-2nd-edition/) — Establishes continuous discovery and outcome-oriented product thinking. The "one living PRD" design and the rejection of per-version document freezes aligns with Cagan's product-team model, where the document tracks evolving product understanding instead of locking scope.

@@ -94,7 +94,7 @@ dependencies do not require citations.
 ### In AI responses
 When Claude recommends a technology in a response (in addition to committed documentation),
 it should include the official documentation link inline. A reader verifies the
-recommendation in one click rather than running a follow-up search.
+recommendation in one click; no follow-up search needed.
 
 ---
 
@@ -150,5 +150,5 @@ The artifacts below illustrate the citation, attribution, and authoring discipli
 
 ### What this sandbox does *not* demonstrate
 
-- **Compliance and regulatory citations** are absent because the project has no compliance posture — there is no GDPR / HIPAA / PCI footprint to require citations to primary regulatory sources. The technology, specification, and pattern citation discipline transfers; the regulatory citation discipline is only exercised in scopes where the rules actually bind.
+- **Compliance and regulatory citations** are absent because the project has no compliance posture — there is no GDPR / HIPAA / PCI footprint to require citations to primary regulatory sources. The technology, specification, and pattern citation discipline transfers; the regulatory citation discipline gets exercised only in scopes where the rules bind.
 - **A consolidated reference index** (the `docs/adr-references.md` artifact recommended above) is not yet maintained. References live per-ADR; aggregating them across the series is a recognized gap.
