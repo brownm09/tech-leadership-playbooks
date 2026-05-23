@@ -4,7 +4,7 @@
 
 A Director or Head of Engineering without a way to quantify org health depends on narratives no one can validate and anyone can challenge. In a QBR, a board meeting, or an M&A diligence session, "the team ships fast and quality stays high" without supporting data lands as an assertion. The engineering health scorecard converts the assertion into a structured, defensible position: four domains measured, targets set, current values, trend direction, and a named owner per number.
 
-Engineers need granular telemetry; this artifact serves a different audience. The health scorecard functions as a leadership communication artifact — 8–12 metrics organized by domain, answering the questions a non-technical executive will ask about engineering capability, reliability, and sustainability.
+Engineers need granular telemetry; this artifact serves a different audience. The health scorecard functions as a leadership communication artifact: 8–12 metrics organized by domain, answering the questions a non-technical executive will ask about engineering capability, reliability, and sustainability.
 
 ## Background and Motivation
 
@@ -97,7 +97,7 @@ Percentage of bugs found in production versus bugs found in pre-production. A hi
 - Target: <20% of reported defects first detected in production
 - Warning threshold: >35%
 
-*How to instrument:* Jira bug label + environment field at time of creation. Requires discipline about where bugs are logged. If your team logs all bugs as customer-reported issues after the fact, the data will run noisy; establish a classification convention first.
+*How to instrument:* Jira bug label + environment field at time of creation. Requires discipline about where bugs are logged. If your team logs all bugs as customer-reported issues after the fact, the data turns noisy; establish a classification convention first.
 
 **P0/P1 Incident Count (Quality-Attributed)**
 
@@ -226,11 +226,11 @@ A common mistake in scorecard setup: adopting DORA industry benchmarks as target
 
 2. **Set 90-day improvement targets; industry benchmarks come later.** "We will improve deployment frequency from 3/week to 5/week" reads as a credible target. "We will be an elite performer by Q3" reads as a slogan.
 
-3. **Anchor on the trajectory; absolute value follows.** A metric below benchmark but improving every quarter carries a stronger leadership story than one with a single benchmark hit and a flat curve since.
+3. **Anchor on the trajectory; absolute value follows.** A metric below benchmark but improving every quarter carries a stronger leadership story than one with a single benchmark hit and a flat curve in the quarters since.
 
 4. **Re-baseline annually.** As the org matures, benchmarks should tighten. Do not leave targets unchanged for more than 12 months — they become wallpaper.
 
-5. **Define the instrumentation for each metric before the scorecard goes to leadership.** A metric with an undefined data source becomes a liability; the first time someone asks "how did you calculate that" and "we estimated" comes back, the scorecard loses credibility.
+5. **Define the instrumentation for each metric before the scorecard goes to leadership.** A metric with an undefined data source becomes a liability; the first time someone asks "how did you calculate that" and the answer comes back "we estimated," the scorecard loses credibility.
 
 ---
 
@@ -258,7 +258,7 @@ A leadership scorecard with too many metrics becomes harder to act on than one w
 
 **Metrics to exclude:**
 
-- **Lines of code / commit count:** Captures activity; output stays unmeasured. By this metric, the team that wrote 10,000 lines outranks the team that later refactored those lines into 1,000 cleaner ones — an inversion of the actual value created.
+- **Lines of code / commit count:** Captures activity; output stays unmeasured. By this metric, the team writing 10,000 lines outranks the team later refactoring those lines into 1,000 cleaner ones — an inversion of the actual value created.
 - **Story points completed:** Velocity serves as a sprint planning tool; performance evaluation breaks the metric. Story point inflation, scope change, and estimation variance make cross-team and cross-quarter comparisons meaningless.
 - **PR count:** Same problem as commit count. Optimizes for small PRs; impactful work stays invisible.
 - **Test coverage percentage (as a standalone metric):** 80% coverage with tests asserting nothing meaningful loses to 60% coverage with tests catching real regressions. Track defect escape rate instead.

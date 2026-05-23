@@ -6,7 +6,7 @@ The [Engineering Health Scorecard](engineering-health-scorecard.md) functions as
 
 The distinction matters because the two artifacts optimize for different things. A scorecard targets credibility with an audience holding no context; it must be curated, narrativized, and defensible. A dashboard targets speed for the one person holding full context; it must surface anomalies immediately, require no manual curation, and answer the Monday morning question: *is anything wrong I do not already know about?*
 
-If everything is green, the dashboard should take 90 seconds to review. The value shows up on the weeks when something is amber or red and you already know where to look.
+If everything is green, the dashboard should take 90 seconds to review. The value shows up in the weeks when something is amber or red and you already know where to look.
 
 ## Background and Motivation
 
@@ -34,7 +34,7 @@ The dashboard does not function as a management tool for engineers. Do not share
 
 **Question it answers:** Are we shipping, and is the pipeline healthy?
 
-Delivery typically carries the heaviest instrumentation and the most-trodden patterns. The risk: aggregate numbers mask team-level outliers.
+Delivery carries heavy instrumentation and well-trodden patterns. The risk: aggregate numbers mask team-level outliers.
 
 **Deployment frequency (per team, trailing 7 days)**
 
@@ -78,7 +78,7 @@ More useful than point-in-time SLO attainment because burn rate tells you whethe
 
 Track the count, then read the trend. Two P1s per month reads fine after four last month and two the month before. Two P1s per month reads alarming after zero for the prior two quarters.
 
-- Watch for: MTTR trending up over multiple weeks (recovery slowing instead of accelerating); incident count that stops declining after a remediation effort (the fix landed as cosmetic, the root cause untouched)
+- Watch for: MTTR trending up over multiple weeks (recovery slowing instead of accelerating); incident count stalling after a remediation effort (the fix landed as cosmetic, the root cause untouched)
 
 **Escaped defect rate (monthly refresh)**
 
@@ -178,7 +178,7 @@ Already in Domain 3 as a capacity signal; it appears here as a cost signal becau
 
 ## Dashboard Format
 
-The dashboard belongs in a system that refreshes automatically; a slide deck or a manually updated spreadsheet decays within weeks. Grafana, Datadog dashboards, or a simple internal tool all work. The format:
+The dashboard belongs in a system refreshing automatically; a slide deck or a manually updated spreadsheet decays within weeks. Grafana, Datadog dashboards, or a simple internal tool all work. The format:
 
 **Top-level view:** Five rows, one per domain. Each row shows a RAG status (green/amber/red) and a one-line summary. If all five are green, the review takes 90 seconds.
 
@@ -208,9 +208,9 @@ A common dashboard failure mode: treating amber as "informational." Amber withou
 
 The same exclusion principles from the scorecard apply here, with one addition:
 
-**Individual engineer metrics.** The dashboard operates at team and system resolution, never at individual contributor resolution. Monitoring individual output here lands as methodologically unsound (the metrics lack the fidelity) and as corrosive to the trust making the people signals useful. Evaluation of an individual's output belongs in a performance conversation with their manager; the dashboard is the wrong instrument.
+**Individual engineer metrics.** The dashboard operates at team and system resolution, never at individual contributor resolution. Monitoring individual output here lands as methodologically unsound (the metrics lack the fidelity) and as corrosive to the trust making the people signals useful. Evaluation of an individual's output belongs in a performance conversation with their manager; the dashboard does not have the resolution for that work.
 
-**Metrics requiring manual input.** A metric that cannot be pulled from a system will not stay current. A manually updated dashboard decays within two weeks; the cost of keeping it fresh exceeds the value it provides. Every metric on the operational dashboard must have an automated data source. Where automated sources are unavailable for people-domain metrics, start with the signals you can instrument and add the rest as tooling matures; a partially automated dashboard outperforms a fully manual one.
+**Metrics requiring manual input.** If a metric cannot be pulled from a system, it will not stay current. A manually updated dashboard decays within two weeks; the cost of keeping it fresh exceeds the value it provides. Every metric on the operational dashboard must have an automated data source. Where automated sources are unavailable for people-domain metrics, start with the signals you can instrument and add the rest as tooling matures; a partially automated dashboard outperforms a fully manual one.
 
 **Engagement survey scores.** Useful in a quarterly HR review; too noisy and infrequent for a weekly operational signal.
 
