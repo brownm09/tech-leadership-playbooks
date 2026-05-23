@@ -4,7 +4,7 @@
 
 How you structure your engineering organization determines what your software architecture becomes — not the reverse. Conway's Law is not a metaphor; it is a predictive model. When two teams share ownership of a service boundary, that boundary will accumulate negotiation overhead and slow down both teams. When a platform team has no explicit charter to reduce cognitive load on stream-aligned teams, it becomes a bureaucratic gate. Org design is architecture work, and it has the same stakes: get it wrong and you spend years paying the interest.
 
-This playbook treats org structure as a first-class engineering decision with measurable outcomes: deployment frequency, time to detect and recover from incidents, and the percentage of sprint capacity spent on coordination rather than delivery. Designed for Directors and Heads of Engineering who are inheriting a structure, scaling through a growth inflection, or rationalizing after an acquisition.
+This playbook treats org structure as a first-class engineering decision with measurable outcomes: deployment frequency, time to detect and recover from incidents, and the percentage of sprint capacity spent on coordination instead of delivery. Designed for Directors and Heads of Engineering inheriting a structure, scaling through a growth inflection, or rationalizing after an acquisition.
 
 ## Background and Motivation
 
@@ -25,13 +25,13 @@ Org redesign carries real cost — migration periods, team disruption, knowledge
 | New Director taking over | Inherited structure that was designed for a different stage or strategy |
 | DORA metrics plateau or regress | Deployment frequency, lead time, or MTTR has stopped improving despite technical investment; structural friction is the likely cause |
 
-Do not reorg in response to interpersonal conflict, a single bad quarter, or as a substitute for addressing a performance problem. Reorgs that are actually people moves in disguise produce cynicism that persists for years.
+Do not reorg in response to interpersonal conflict, a single bad quarter, or as a substitute for addressing a performance problem. Reorgs serving as disguised people moves produce cynicism persisting for years.
 
 ---
 
 ## The Four Team Types
 
-The Team Topologies framework (Skelton & Pais, 2019) identifies four fundamental team types. The value of the framework is not the labels — it is the explicit recognition that different team types have different interaction modes and different mandates, and conflating them causes predictable failure.
+The Team Topologies framework (Skelton & Pais, 2019) identifies four fundamental team types. The labels themselves carry little of the framework's value; the explicit recognition that different team types operate under different interaction modes and different mandates does the work. Conflating them causes predictable failure.
 
 ### Stream-Aligned Teams
 
@@ -62,7 +62,7 @@ The Team Topologies framework (Skelton & Pais, 2019) identifies four fundamental
 
 **When to use:** When 3+ stream-aligned teams are doing the same infrastructure or tooling work independently, or when SRE/infrastructure work is too intertwined with product delivery to be done well by any single product team.
 
-**Critical constraint:** A platform team that requires stream-aligned teams to file tickets and wait is not a platform team — it is a gatekeeper. The success metric for a platform team is reduction in time-to-production for stream-aligned teams, not utilization of the platform team's engineers.
+**Critical constraint:** A platform team requiring stream-aligned teams to file tickets and wait operates as a gatekeeper; calling it a platform does not change the dependency dynamic. The success metric for a platform team measures reduction in time-to-production for stream-aligned teams; utilization of the platform team's engineers is the wrong metric.
 
 **Size:** Platform teams are typically smaller than the teams they serve. A 4–6 person platform team can support 30–50 engineers if the self-service surface is well designed. If the platform team is larger than 20% of the total engineering org, something is wrong — either scope is too broad or the team is compensating for poor self-service with manual support.
 
@@ -83,7 +83,7 @@ The Team Topologies framework (Skelton & Pais, 2019) identifies four fundamental
 - After an acquisition, to transfer institutional knowledge between codebases
 - When stream-aligned teams consistently struggle with a specific domain (database performance, ML model deployment) that does not justify a full-time specialist on every team
 
-**What it is not:** An enabling team is not a shared services team that does work on behalf of other teams indefinitely. If that is what is happening, the team has drifted into a bottleneck.
+**What it is not:** An enabling team operates differently from a shared services team; shared services do work on behalf of other teams indefinitely, and an enabling team drifting into the same pattern has become a bottleneck.
 
 **Size:** 3–5. Enabling teams should be small and temporary. If an enabling team is permanent and large, it has become a de facto platform team and should be chartered as one.
 
@@ -97,7 +97,7 @@ The Team Topologies framework (Skelton & Pais, 2019) identifies four fundamental
 
 **Example:** A Pricing Engine team at an insurance company owns a real-time actuarial pricing model. The underlying risk calculations require actuarial expertise that the rest of the engineering org does not have and cannot reasonably acquire. Stream-aligned teams call the pricing API; the team of actuarial engineers owns the model.
 
-**When to use:** Sparingly. This team type is only appropriate when the complexity genuinely requires specialists that cannot be distributed across stream-aligned teams. If the justification is "it's just complex," that is not sufficient — complexity that can be learned is a stream-aligned team problem.
+**When to use:** Sparingly. This team type fits only when the complexity genuinely requires specialists who cannot be distributed across stream-aligned teams. When the justification reduces to "it's complex," the team type is wrong; complexity engineers can learn belongs on a stream-aligned team.
 
 **Warning signs of overuse:** If more than 10% of the engineering org is on complicated-subsystem teams, you probably have a platform problem being mislabeled, or a knowledge-hoarding dynamic that has been institutionalized.
 
@@ -146,7 +146,7 @@ Conway's Law predicts that organizations produce systems that mirror their commu
 
 3. **Identify the delta.** List the ownership changes required to match the target architecture. Some are team splits; some are team merges; some are responsibility transfers between existing teams.
 
-4. **Execute incrementally.** Full reorgs are high-risk. The safest execution path is to transfer ownership of one service domain at a time, with a defined overlap period (see Reorg Execution Checklist below).
+4. **Execute incrementally.** Full reorgs carry high risk. The lower-risk execution path transfers ownership of one service domain at a time, with a defined overlap period (see Reorg Execution Checklist below).
 
 **Example:** A platform engineering team at a 200-person engineering org wants to move from a shared monolithic data platform to domain-oriented data ownership (Data Mesh pattern). The Inverse Conway Maneuver means: before writing the first line of code for domain data products, reorganize so that each domain team (Payments, Identity, Growth) has an embedded data engineer. The architecture follows the org; trying to ship the architecture without the org change fails because teams will not own data products they were not structured to maintain.
 
@@ -158,7 +158,7 @@ Conway's Law predicts that organizations produce systems that mirror their commu
 
 **Reorg that increases coupling**
 
-A reorg that merges teams with complementary ownership domains (to "improve alignment") often increases coupling because the combined team now has a wider mandate but no cleaner boundaries. Engineers who were previously blocked by cross-team dependencies are still blocked — they are just blocked by internal team priorities now.
+A reorg merging teams with complementary ownership domains (to "improve alignment") often increases coupling because the combined team now holds a wider mandate but no cleaner boundaries. Engineers previously blocked by cross-team dependencies remain blocked; the block now lives inside the team instead of between teams.
 
 *Detection:* If the reorg does not reduce the number of inter-team dependencies in your DORA data, it made things worse.
 
@@ -166,7 +166,7 @@ A reorg that merges teams with complementary ownership domains (to "improve alig
 
 The platform team is formed with the right intent but never builds a self-service surface. Stream-aligned teams file tickets; the platform team has a growing backlog; everyone is frustrated. The platform team is understaffed and overloaded; the stream-aligned teams are slower than before the platform team existed.
 
-*Fix:* Set an explicit KPI for the platform team: percentage of platform interactions that are self-service (no ticket, no Slack request). Target 80%+ within 12 months. Below 50% means the platform team needs to rebuild the interface, not add more capacity.
+*Fix:* Set an explicit KPI for the platform team: percentage of platform interactions resolving as self-service (no ticket, no Slack request). Target 80%+ within 12 months. Below 50% means the platform team needs to rebuild the interface; adding capacity does not address the root cause.
 
 **Enabling team that never exits**
 
@@ -176,7 +176,7 @@ An enabling team gets stood up to spread a new practice, does excellent work, an
 
 **Reorg as cover for a people problem**
 
-A reorg that is actually designed to move a difficult person or a low-performing team out of a reporting line it has been blocking will not fix the underlying problem. The people problem will re-emerge in the new structure, usually faster, and the reorg will have cost the org 3–6 months of productivity.
+A reorg whose real purpose is moving a difficult person or a low-performing team out of a reporting line they have been blocking will not fix the underlying problem. The people problem re-emerges in the new structure, usually faster, and the reorg has cost the org 3–6 months of productivity.
 
 **Over-specialization too early**
 
@@ -189,13 +189,13 @@ A 30-engineer org creating 4 team types because the framework says so. Complicat
 | Signal | Recommended Action |
 |--------|--------------------|
 | Multiple teams duplicating infrastructure work | Stand up a Platform team; define the self-service interface first |
-| One team owns too many service domains | Split into two stream-aligned teams along the most natural ownership boundary |
+| One team owns too many service domains | Split into two stream-aligned teams along a clean ownership boundary |
 | A capability gap (observability, security, ML) is blocking multiple teams | Time-bounded enabling team engagement; exit criteria defined upfront |
 | A mathematical/scientific component requires deep specialists | Evaluate complicated-subsystem team; validate that the complexity is truly non-distributable |
 | Team has >9 engineers with shared ownership | Split the team; split the service boundary with it |
 | Team has <4 engineers carrying on-call rotation | Merge with adjacent team or redistribute ownership to reduce on-call risk |
 | Post-acquisition team integration | Treat as Inverse Conway Maneuver; target architecture first, then org delta |
-| DORA metrics plateau despite technical investment | Run cognitive load audit before assuming structural change is needed; audit may reveal it is a tool problem, not a structure problem |
+| DORA metrics plateau despite technical investment | Run cognitive load audit before assuming structural change is needed; the audit may surface a tool problem when a structure problem looks likely |
 
 ---
 
@@ -215,22 +215,22 @@ The mechanics of a reorg matter as much as the design. A well-designed reorg exe
 
 ### Announcement
 
-- [ ] Announce the full structure simultaneously, not in stages — partial announcements create anxiety in the groups that have not heard yet
-- [ ] Explain the "why" in terms of business outcomes, not just org efficiency: "We are restructuring so that the Payments team can deploy independently without waiting on the Gateway team" is more credible than "We are restructuring to improve team autonomy"
+- [ ] Announce the full structure simultaneously; staged announcements create anxiety in the groups who have not heard yet
+- [ ] Explain the "why" in terms of business outcomes; org efficiency alone reads as a platitude. "We are restructuring so that the Payments team can deploy independently without waiting on the Gateway team" lands more credibly than "We are restructuring to improve team autonomy"
 - [ ] Separate the announcement from the effective date; give engineers 2–4 weeks between "this is happening" and "this is your team starting Monday"
 - [ ] Provide a written FAQ that directly addresses: reporting changes, on-call rotation changes, project ownership changes, what stays the same
 
 ### Transition period
 
 - [ ] Dual-rostering during overlap: engineers from both old and new teams are on-call together for transitioning services
-- [ ] Runbooks and architecture documentation for transferred services are completed before the transition date, not promised for after
+- [ ] Runbooks and architecture documentation for transferred services are completed before the transition date; post-dated promises do not count
 - [ ] A single DRI owns the transition for each service transfer; ambiguity about who is responsible for what produces incidents
 - [ ] Weekly check-in with new team leads to surface friction early; the first 60 days are when structural problems become visible
 
 ### Post-reorg stabilization (30–90 days)
 
 - [ ] First sprint retrospectives in the new structure are deliberately run; surface structural issues before they become resentments
-- [ ] Measure: are the cross-team dependencies that motivated the reorg actually reduced? (Check DORA inter-team dependency data)
+- [ ] Measure: have the cross-team dependencies that motivated the reorg dropped? (Check DORA inter-team dependency data)
 - [ ] Check on-call load distribution: is the reorg moving toward its load-balancing goal?
 - [ ] Check in with engineers who changed teams; track engagement signals
 
@@ -262,7 +262,7 @@ Do not reorg and then wait 18 months to find out if it worked. Define a measurem
 | Metric | Target | Notes |
 |--------|--------|-------|
 | % of platform interactions that are self-service | >70% at 6 months, >85% at 12 months | Ticket count as denominator; self-service interactions as numerator |
-| Time-to-first-deploy for new service | Should decrease quarter-over-quarter | The clearest outcome metric for a platform team |
+| Time-to-first-deploy for new service | Should decrease quarter-over-quarter | A clear outcome metric for a platform team |
 
 **What not to measure:** Do not track individual engineer productivity in the 90 days post-reorg. Context switching, knowledge transfer, and team forming all suppress individual output temporarily. This is expected and healthy. Measuring individual productivity during a transition creates pressure to avoid the knowledge transfer work that makes the transition succeed.
 
