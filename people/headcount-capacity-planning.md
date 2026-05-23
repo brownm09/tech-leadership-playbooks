@@ -28,9 +28,9 @@ This playbook was developed from the headcount modeling work for the platform di
 
 Before building a model, acknowledge that engineering time is not uniformly available for new work. Four inputs consume available capacity before any line of new product code is written:
 
-**1. Net new work.** The roadmap initiatives — the things the business is asking engineering to build. This is where most headcount models start and stop, which is why they are wrong.
+**1. Net new work.** The roadmap initiatives — the things the business is asking engineering to build. Headcount models that start and stop here produce wrong answers.
 
-**2. Maintenance and toil.** Production systems require ongoing attention: dependency upgrades, security patches, performance fixes, monitoring improvements, infrastructure drift, and the long tail of technical debt that never quite makes the sprint but never quite goes away. In most mature engineering orgs, 20–30% of engineering time is absorbed here. For orgs with significant legacy debt, the number is higher. It does not go on the roadmap; it is always there.
+**2. Maintenance and toil.** Production systems require ongoing attention: dependency upgrades, security patches, performance fixes, monitoring improvements, infrastructure drift, and the long tail of technical debt that never quite makes the sprint but never quite goes away. In a mature engineering org, 20–30% of engineering time is absorbed here. For orgs with significant legacy debt, the number is higher. It does not go on the roadmap; it is always there.
 
 **3. Org overhead.** Engineering time spent on activities that are necessary but do not directly produce code: sprint ceremonies, 1:1s, hiring (phone screens, loops, debrief time), on-call rotations, cross-functional meetings, documentation, and onboarding new hires. Rule of thumb: 15–25% of time depending on team seniority and org scale. Senior engineers in hiring-intensive environments can lose 30%+ of their time to recruiting in a hot quarter.
 
@@ -140,7 +140,7 @@ When a headcount request is for a departing engineer's replacement, the instinct
 - The departing engineer owned critical institutional knowledge that needs to stay on the team
 
 **Backfill at a different level when:**
-- The departing engineer was overleveled for the work that actually needs doing (common after rapid growth; orgs hire at senior levels when the work does not require seniority, then find themselves with a senior engineer backlog problem)
+- The departing engineer was overleveled for the work the team needs done (common after rapid growth; orgs hire at senior levels when the work does not require seniority, then find themselves with a senior-engineer backlog problem)
 - The team has grown in seniority and the work distribution has shifted — what you needed two years ago is not what you need now
 - You have an internal promotion candidate who can fill the vacated scope if supported
 
@@ -179,7 +179,7 @@ Contractors are expensive on a per-hour basis but have no benefits, no equity, n
 
 ### Counting Engineers as Fungible
 
-Not all engineers can do all work. A backend engineer specialized in distributed systems cannot immediately contribute to a mobile codebase. A data engineer cannot immediately staff a platform reliability initiative. When planning headcount, the model needs to account for role specificity — not just "4 engineers" but "4 engineers with the specific skills the initiative requires."
+Not all engineers can do all work. A backend engineer specialized in distributed systems cannot immediately contribute to a mobile codebase. A data engineer cannot immediately staff a platform reliability initiative. When planning headcount, the model needs to account for role specificity — "4 engineers" is not the unit, "4 engineers with the specific skills the initiative requires" is.
 
 ---
 

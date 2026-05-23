@@ -2,7 +2,7 @@
 
 ## Leadership Context
 
-The manager-IC relationship at the senior level is one of the most underspecified partnerships in engineering organizations. At the Staff level — Staff Engineer, Principal Engineer, and their manager-track equivalents — the relationship changes character in ways that most engineering management frameworks do not describe adequately. The Staff IC is not a very good senior engineer who needs more coaching. They are a peer operating in a different functional dimension: where the manager owns the org, the Staff IC owns the technical direction, and both need the other to do their job well.
+The manager-IC relationship at the senior level remains underspecified in most engineering organizations. At the Staff level — Staff Engineer, Principal Engineer, and their manager-track equivalents — the relationship changes character in ways engineering management frameworks rarely describe adequately. The Staff IC is not a strong senior engineer who needs more coaching. They are a peer operating in a different functional dimension: where the manager owns the org, the Staff IC owns the technical direction, and both need the other to do their job well.
 
 The failure mode is predictable: either the manager over-controls the technical domain (producing an IC who stops taking technical initiative) or the IC operates with full independence in a way that disconnects from organizational priorities (producing technical work that nobody asked for). The partnership model described here is a forcing function against both failure modes. It requires both parties to make the implicit explicit: who owns what, how decisions get made when they conflict, and what each party needs from the other to operate at full effectiveness.
 
@@ -28,7 +28,7 @@ The "sponsor/coach/peer" distinction is grounded in the work of Lara Hogan and t
 
 ## Part 1: The Authority Split
 
-The most important thing to make explicit in a Staff partnership is who has authority over what. Ambiguity here is the root cause of most partnership failures — not personality conflict, not misaligned goals, but unstated assumptions about who gets to make which decisions.
+The first thing to make explicit in a Staff partnership is who has authority over what. Ambiguity here is the root cause of partnership failures — not personality conflict, not misaligned goals, but unstated assumptions about who gets to make which decisions.
 
 ### What Belongs to the Manager
 
@@ -54,7 +54,7 @@ There is a category of decisions where the authority is genuinely shared and nee
 - **Technical hiring decisions.** The manager owns the hire; the Staff IC's technical bar-setting defines what a passing candidate looks like. Disagreements here require resolution before the loop begins, not during the debrief.
 - **"Make vs. adopt" decisions** (build something internally vs. integrate a vendor or open-source tool). These carry both technical and business implications — see [Build vs. Buy Framework](../strategy/build-vs-buy-framework.md).
 
-The charter template at the end of this document is a mechanism for making these three overlap-zone categories explicit at the start of the partnership, rather than discovering the ambiguity in the middle of a conflict.
+The charter template at the end of this document is a mechanism for making these three overlap-zone categories explicit at the start of the partnership, before the ambiguity gets discovered in the middle of a conflict.
 
 ---
 
@@ -64,7 +64,7 @@ The manager's role relative to a Staff IC is not static — it shifts depending 
 
 ### Sponsor Mode
 
-A sponsor actively uses their organizational position to create visibility and opportunity for the IC. This is the mode most appropriate for an IC who is approaching Staff readiness or who has recently been promoted and needs to establish their scope in the eyes of the broader organization.
+A sponsor actively uses their organizational position to create visibility and opportunity for the IC. This mode fits an IC who is approaching Staff readiness or who has recently been promoted and needs to establish their scope in the eyes of the broader organization.
 
 In practice, sponsorship looks like:
 - Naming the IC's work and decisions in senior leadership conversations
@@ -76,7 +76,7 @@ Sponsorship is not advocacy for its own sake — it is creating the organization
 
 ### Coach Mode
 
-A coach helps the IC identify and work through professional development edges that are not self-evident. This is the mode most appropriate for a technically strong IC who is not yet operating with consistent organizational influence.
+A coach helps the IC identify and work through professional development edges that are not self-evident. This mode fits a technically strong IC who is not yet operating with consistent organizational influence.
 
 The coaching relationship at the Staff level is qualitatively different from coaching at the senior level. A senior IC typically needs coaching on deepening technical judgment and extending impact beyond their immediate projects. A Staff IC who needs coaching is usually working on something more subtle: how to make their technical positions land in cross-functional conversations, how to navigate organizational resistance to technical direction, or how to build influence with stakeholders who do not share their technical vocabulary.
 
@@ -84,7 +84,7 @@ The [One-on-One Coaching Framework](one-on-one-coaching-framework.md) covers the
 
 ### Peer Mode
 
-A peer relationship is appropriate when the Staff IC is operating at full scope and the manager's primary function is coordination and organizational support rather than direction. This is the mode that most managers are least practiced in: stepping back from the guidance posture and operating as a peer who has a different functional view.
+A peer relationship is appropriate when the Staff IC is operating at full scope and the manager's primary function shifts to coordination and organizational support, away from direction. This is the mode managers tend to be least practiced in: stepping back from the guidance posture and operating as a peer who has a different functional view.
 
 In peer mode, the manager's 1:1 with the Staff IC looks less like a coaching conversation and more like a partner sync: what are you working on that I should know about, what organizational friction are you experiencing that I can clear, what decisions are coming that require our shared input.
 
@@ -100,7 +100,7 @@ A technical roadmap co-owned by a manager and a Staff IC needs a decision proces
 
 **Input phase:** The Staff IC identifies technical priorities based on technical risk, dependency sequencing, and team capability gaps. The manager maps organizational priorities from the planning cycle, stakeholder commitments, and headcount constraints. Both inputs enter the roadmap process simultaneously — neither is a filter on the other.
 
-**Synthesis phase:** The two inputs are combined into a single view. Where they align, the synthesis is straightforward. Where they conflict — an organizational priority that creates technical debt, or a technical priority that does not map to any current business objective — the conflict is named explicitly rather than resolved through implicit deference.
+**Synthesis phase:** The two inputs are combined into a single view. Where they align, the synthesis is straightforward. Where they conflict — an organizational priority that creates technical debt, or a technical priority that does not map to any current business objective — the conflict is named explicitly; implicit deference does not resolve it.
 
 **Conflict resolution:** When technical priority and organizational priority are in genuine tension, the resolution mechanism should be agreed upon in advance. A common pattern: the Staff IC has decision authority on anything within the team's technical scope with no cross-team dependencies; the manager has decision authority on anything with significant cross-team or stakeholder implications; genuinely contested cases escalate to a short joint session with the manager's manager and the Staff IC together.
 
@@ -126,7 +126,7 @@ The scope expansion is not automatic at promotion. Many engineers are promoted t
 
 The annual calibration for a Staff IC should include an explicit conversation about which scope level they are operating at and what would constitute a move to the next level. This conversation belongs in the 1:1, not the calibration session. By the time calibration arrives, both parties should already know where the IC stands.
 
-The [Career Ladder and Calibration Playbook](career-ladder-calibration.md) provides the four-axis framework for this evaluation. The axis most relevant to Staff-level calibration is impact scope — not the most technically impressive work, but the work with the largest organizational reach.
+The [Career Ladder and Calibration Playbook](career-ladder-calibration.md) provides the four-axis framework for this evaluation. The axis that carries the most weight at Staff-level calibration is impact scope — not the technically impressive work, but the work with the largest organizational reach.
 
 ---
 
@@ -136,7 +136,7 @@ Not every manager-Staff IC partnership works. The failure modes are worth naming
 
 ### Misalignment on Priorities
 
-The most common failure: the Staff IC believes the most important technical work is X, the manager's organizational priorities require Y, and neither party has surfaced the tension explicitly. The IC works on X, the manager repeatedly redirects toward Y, and both parties become frustrated without understanding why.
+The recurring failure: the Staff IC believes the central technical work is X, the manager's organizational priorities require Y, and neither party has surfaced the tension explicitly. The IC works on X, the manager repeatedly redirects toward Y, and both parties become frustrated without understanding why.
 
 Fix: establish the shared roadmap process described above before priorities are in conflict. If the conflict has already arrived, surface it explicitly in a 1:1 before it calcifies into a trust problem.
 
@@ -232,9 +232,9 @@ A Staff IC who treats technical authority as absolute and the manager as an orga
 A manager who uses the 1:1 with a Staff IC to participate in technical decision-making — not as a sounding board, but as a design partner. The problem is not the engagement; it is the accountability gap. The manager is making decisions they will not be held responsible for while the IC carries accountability for outcomes they did not fully control.
 
 **The Undefined Overlap.**
-A partnership where the three overlap-zone categories (roadmap sequencing, technical hiring bar, build/buy decisions) have never been explicitly discussed. Every conflict in these zones becomes a negotiation about authority rather than a conversation about the decision, because the authority has not been established.
+A partnership where the three overlap-zone categories (roadmap sequencing, technical hiring bar, build/buy decisions) have never been explicitly discussed. Every conflict in these zones becomes a negotiation about authority instead of a conversation about the decision, because the authority has not been established.
 
 **The One-Mode Manager.**
-A manager who operates exclusively in one mode — always coaching, always sponsoring, always treating the IC as a peer — regardless of what the IC actually needs. A Staff IC in a new technical domain needs coaching, not peer-mode. A Staff IC whose work is invisible to senior leadership needs sponsorship, not coaching. The mode should adapt to what the IC needs at this moment, not to the manager's default style.
+A manager who operates exclusively in one mode — always coaching, always sponsoring, always treating the IC as a peer — regardless of what the IC needs. A Staff IC in a new technical domain needs coaching; peer-mode misses the moment. A Staff IC whose work is invisible to senior leadership needs sponsorship; coaching does not close the visibility gap. The mode should adapt to what the IC needs at this moment, not to the manager's default style.
 
 [^1]: Hogan, L. (2019). *Resilient Management*. A Book Apart. The sponsor/coach distinction is developed in Chapter 3 and applied specifically to senior IC career development.

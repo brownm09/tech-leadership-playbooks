@@ -2,13 +2,13 @@
 
 ## Leadership Context
 
-A career ladder is not an HR artifact — it is the primary mechanism by which an engineering organization makes compensation, promotion, and retention decisions consistently at scale. Without a shared level definition, managers in the same org will promote different engineers for different reasons, pay bands will drift, and high performers will leave when they conclude that advancement depends on who their manager is. This playbook covers building a ladder from scratch, running calibration sessions that hold up under scrutiny, and handling the failure modes that quietly undermine both.
+A career ladder operates as the primary mechanism by which an engineering organization makes compensation, promotion, and retention decisions consistently at scale; treating it as an HR artifact misreads the role. Without a shared level definition, managers in the same org will promote different engineers for different reasons, pay bands will drift, and high performers will leave when they conclude that advancement depends on who their manager is. This playbook covers building a ladder from scratch, running calibration sessions that hold up under scrutiny, and handling the failure modes that quietly undermine both.
 
 The business outcome is straightforward: equitable promotion decisions reduce regrettable attrition, reduce the cost of external hiring (replacing a mid-level engineer typically runs 0.5–1x their annual salary in recruiting and ramp costs), and give managers a shared vocabulary for growth conversations that do not depend on a single person's judgment.
 
 ## Background and Motivation
 
-This playbook was developed from the talent development work at ActBlue Technical Services (2022–2025). I drove five engineer promotions across three engineers within three years through deliberate project placement, calibration preparation, and sustained advocacy — two engineers who advanced from SE2 to SSE2 through back-to-back promotions (SE2→SSE1→SSE2), and one from SSE1 to SSE2. I also founded and ran the Engineering Management Community of Practice, which systematized calibration coaching, talent development, and recruiting partnership across the manager group.
+This playbook was developed from the talent development work at ActBlue Technical Services (2022–2025). I drove promotions for three engineers within three years through deliberate project placement, calibration preparation, and sustained advocacy; two of the three were promoted twice each (from SE2 to SSE2), and one was promoted from SSE to SSE2. Five total promotion events across the three. I also founded and ran the Engineering Management Community of Practice, which systematized calibration coaching, talent development, and recruiting partnership across the manager group.
 
 ## When to Use This
 
@@ -28,13 +28,13 @@ This playbook was developed from the talent development work at ActBlue Technica
 
 Fork the IC and manager tracks at the level where pure technical execution is no longer the primary job. For most engineering organizations, this is the transition from Senior (L5 equivalent) to Staff/Lead (L6 equivalent) on the IC side, and from Senior to EM or TL/M on the manager side.
 
-The fork matters because the leadership behaviors required to be an effective Director of Engineering are not a superset of what makes a great Staff Engineer. Both paths lead to significant organizational influence — they are parallel, not hierarchical. Treating them as hierarchical (IC as "lesser" than management) produces exactly the wrong incentive: technical leaders feel they must enter management to advance, even when that is not where they create the most value.
+The fork matters because the leadership behaviors required to be an effective Director of Engineering are not a superset of what makes a great Staff Engineer. Both paths lead to significant organizational influence; the tracks run parallel, without one sitting above the other. Treating them as hierarchical (IC as "lesser" than management) produces exactly the wrong incentive: technical leaders feel they must enter management to advance, even when that is not where they create the most value.
 
-The fork should be explicit in the written ladder. Show both tracks side by side at the Senior level so that the choice is visible and deliberate, not something engineers discover when it is already too late to change course.
+The fork should be explicit in the written ladder. Show both tracks side by side at the Senior level so that the choice is visible and deliberate; engineers should not discover it after the moment to change course has passed.
 
 ### What Staff+ Looks Like in Practice
 
-Staff Engineer is where most career ladders become vague and unhelpful. Descriptions like "leads technical direction" or "drives cross-team alignment" are true but not actionable. Here is what Staff-level work actually looks like in a mid-size engineering org (100–500 engineers):
+Career ladders go vague and unhelpful at Staff Engineer. Descriptions like "leads technical direction" or "drives cross-team alignment" are true but not operational. Here is what Staff-level work looks like in a mid-size engineering org (100–500 engineers):
 
 - **Initiative scope:** Owns a technical problem that spans at least two teams and has a meaningful business dependency. At ActBlue, this looked like: driving the migration of payment processing from a legacy monolith to an event-driven architecture, coordinating across the payments team, platform team, and compliance team over 18 months.
 - **Ambiguity tolerance:** Given a problem with no specified solution, produces a structured proposal with trade-offs, a recommended path, and a timeline — without requiring a manager to decompose it first.
@@ -58,7 +58,7 @@ The definition format that holds up in calibration is structured around four axe
 3. **Execution expectations** — What does "done" look like at this level, and over what time horizon?
 4. **Collaboration expectations** — Who does this person lead, influence, and coordinate with?
 
-These axes force the discussion toward evidence — "what did this person actually do?" — rather than toward abstract capability assessments.
+These axes force the discussion toward evidence — "what did this person do?" — and away from abstract capability assessments.
 
 ---
 
@@ -68,7 +68,7 @@ These axes force the discussion toward evidence — "what did this person actual
 
 **Impact scope:** Owns individual features and bug fixes within a single, well-scoped system. Work is reviewed and guided by L4+ engineers. Mistakes are caught in code review or testing before they reach production.
 
-**Decision autonomy:** Chooses implementation approach within an established design. Does not make architectural choices. Escalates blockers to senior teammates within 24 hours rather than staying stuck.
+**Decision autonomy:** Chooses implementation approach within an established design. Does not make architectural choices. Escalates blockers to senior teammates within 24 hours instead of staying stuck.
 
 **Execution expectations:** Completes well-specified tasks in days to a few weeks. Work is accurate and follows team conventions. Produces readable code and adequate test coverage without prompting.
 
@@ -84,7 +84,7 @@ These axes force the discussion toward evidence — "what did this person actual
 
 **Decision autonomy:** Makes implementation and local design decisions autonomously. Escalates decisions that carry cross-team risk or that affect the system's overall architecture. Writes design docs for non-trivial work.
 
-**Execution expectations:** Delivers multi-week initiatives on schedule. Identifies scope risk early and surfaces trade-offs rather than silently accumulating delay. Test coverage, error handling, and observability are part of the definition of done — not afterthoughts.
+**Execution expectations:** Delivers multi-week initiatives on schedule. Identifies scope risk early and surfaces trade-offs; does not let delay silently accumulate. Test coverage, error handling, and observability are part of the definition of done — not afterthoughts.
 
 **Collaboration expectations:** Runs code review for L3 engineers on the team. Mentors new hires through onboarding. Capable of representing the team's technical work to stakeholders outside engineering without losing accuracy.
 
@@ -96,7 +96,7 @@ These axes force the discussion toward evidence — "what did this person actual
 
 **Decision autonomy:** Makes consequential technical decisions — service boundaries, data model choices, major dependency selections — with appropriate stakeholder review. Does not require a manager to decompose problems before beginning work. Escalates decisions with org-wide implications.
 
-**Execution expectations:** Owns outcomes, not just outputs. Identifies when the defined solution is wrong and redirects without requiring permission. Manages external dependencies (vendor APIs, platform team deliverables, infra capacity) as part of delivery.
+**Execution expectations:** Owns outcomes beyond outputs. Identifies when the defined solution is wrong and redirects without requiring permission. Manages external dependencies (vendor APIs, platform team deliverables, infra capacity) as part of delivery.
 
 **Collaboration expectations:** Informal technical lead for one or more features in flight. Known across the engineering org as a reliable source of expertise for their domain. Writes documentation that enables teammates to work independently. Makes peers more effective.
 
@@ -106,7 +106,7 @@ These axes force the discussion toward evidence — "what did this person actual
 
 **Impact scope:** Technical owner of an initiative that spans multiple teams, affects a product line, or addresses a platform-level risk. Work creates leverage across the org — reduces toil, unblocks future roadmap, or closes a risk that would otherwise require executive attention.
 
-**Decision autonomy:** Operates with a high degree of autonomy on technical architecture, tooling choices, and cross-team technical standards. Accountable for the outcomes of those decisions, including when they are wrong. Escalates decisions that have significant cost, compliance, or strategic implications — but arrives at escalation with a recommendation, not just a question.
+**Decision autonomy:** Operates with a high degree of autonomy on technical architecture, tooling choices, and cross-team technical standards. Accountable for the outcomes of those decisions, including when they are wrong. Escalates decisions that have significant cost, compliance, or strategic implications; the escalation arrives with a recommendation in hand, not a bare problem.
 
 **Execution expectations:** Drives multi-month technical programs with ambiguous initial scope. Creates the structure that allows others to execute. Writes the technical design that becomes the team's shared understanding. Holds a high quality bar without being a bottleneck.
 
@@ -203,7 +203,7 @@ The legitimate version of forced ranking is using it as a calibration check, not
 
 **Why it happens:** Recency is cognitively easier than sustained evaluation. Visible projects get promoted; steady contributors are overlooked.
 
-**How to catch it:** During calibration, ask managers to cite evidence from the full review period, not just the last quarter. If all the evidence in a write-up is from the past 90 days, flag it.
+**How to catch it:** During calibration, ask managers to cite evidence from the full review period — not from the last quarter alone. If all the evidence in a write-up is from the past 90 days, flag it.
 
 **How to address it:** The pre-read format requires evidence across the review period. The facilitator's job is to name recency bias when it is happening: "You've cited three things from Q4. What do you have from Q1–Q3?"
 
@@ -275,7 +275,7 @@ Corrections should be handled before they become retention problems. The signal 
 
 ## Part 8: 6-Month Check-In Template for New Levels
 
-When an engineer is promoted, the most common failure is that no one revisits the expectations for the new level until the next performance cycle. The engineer got the title and the raise; the conversation about what is expected at the new level does not happen systematically.
+When an engineer is promoted, the recurring failure is that no one revisits the expectations for the new level until the next performance cycle. The engineer got the title and the raise; the conversation about what is expected at the new level does not happen systematically.
 
 Run this check-in at the 6-month mark after every promotion:
 
@@ -328,9 +328,9 @@ The check-in is not a mini-performance review. It is a calibration conversation 
 
 ## Common Failure Modes
 
-**Publishing a ladder and not using it.** The ladder only has value if calibration decisions reference it explicitly. If managers are not citing level definitions during calibration, the ladder is a document, not a system.
+**Publishing a ladder and not using it.** The ladder only has value if calibration decisions reference it explicitly. If managers are not citing level definitions during calibration, the ladder is a document; it is not yet a system.
 
-**Level definitions that describe potential.** "Has the potential to operate at Staff scope" is not an evidence-based statement. Calibration must be grounded in what has already happened. Promote on evidence, not on prediction.
+**Level definitions that describe potential.** "Has the potential to operate at Staff scope" is not an evidence-based statement. Calibration must be grounded in what has already happened. Promote on evidence; prediction does not survive contact with the next review cycle.
 
 **Skipping calibration for years.** Level drift accumulates silently. Two years without calibration produces a distribution where some teams have been promoting aggressively and others have not, and the discrepancy is invisible until someone's lateral transfer exposes it.
 

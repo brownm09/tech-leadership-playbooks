@@ -2,13 +2,13 @@
 
 ## Leadership Context
 
-A manager who avoids difficult conversations is not being kind — they are being negligent. The engineer who is underperforming and never told clearly is not given the opportunity to improve. The team watching the performance problem go unaddressed concludes that the manager will not hold standards. The high performer who shares a team with someone carrying a performance gap experiences that gap as an unfairness, and eventually leaves. The avoidance that felt like compassion produces the worst outcomes for everyone involved.
+A manager who avoids difficult conversations is not being kind; the avoidance is a form of negligence. The engineer who is underperforming and never told clearly is not given the opportunity to improve. The team watching the performance problem go unaddressed concludes the manager will not hold standards. The high performer who shares a team with someone carrying a performance gap experiences that gap as an unfairness, and eventually leaves. The avoidance that felt like compassion produces bad outcomes for everyone involved.
 
-This playbook covers the mechanics of the four most common difficult conversations in engineering management: underperformance, role mismatch, team conflict, and leveling disagreements. It does not cover HR process — that is jurisdiction-specific and owned by your People team. It covers the conversation that has to happen before the process does.
+This playbook covers the mechanics of four recurring difficult conversations in engineering management: underperformance, role mismatch, team conflict, and leveling disagreements. It does not cover HR process — the process is jurisdiction-specific and owned by your People team. It covers the conversation that has to happen before the process does.
 
 ## Background and Motivation
 
-The most direct context for this framework is calibration and career development work at ActBlue Technical Services (2022–2025): three engineer promotions over three years, including two where the conversation required sustained advocacy against calibration pressure, and one where the conversation required honesty about a leveling dispute that the engineer did not initially agree with. The latter involved naming clearly, and with evidence, the gap between the engineer's self-assessment and the calibration panel's read. That conversation was uncomfortable and necessary; the alternative — deferring the feedback to avoid the discomfort — would have produced a delayed and more damaging version of the same conversation at the next cycle.
+The direct context for this framework is calibration and career development work at ActBlue Technical Services (2022–2025): promotions for three engineers over three years (two of whom were promoted twice each, SE2 to SSE2, and one promoted from SSE to SSE2), including two where the conversation required sustained advocacy against calibration pressure, and one where the conversation required honesty about a leveling dispute the engineer did not initially agree with. The latter involved naming clearly, and with evidence, the gap between the engineer's self-assessment and the calibration panel's read. That conversation was uncomfortable and necessary; deferring the feedback to avoid the discomfort would have produced a delayed and more damaging version of the same conversation at the next cycle.
 
 ---
 
@@ -36,7 +36,7 @@ Example: "In the all-hands on Thursday [situation], you responded to [product ma
 
 The SBI structure makes it harder to argue with the observation and easier to focus the conversation on the impact and the path forward.
 
-SBI is also the feedback model used in regular 1:1s — see the [1:1 Coaching Framework](one-on-one-coaching-framework.md) for how it integrates into the weekly feedback cadence rather than high-stakes conversations only.
+SBI is also the feedback model used in regular 1:1s — see the [1:1 Coaching Framework](one-on-one-coaching-framework.md) for how it integrates into the weekly feedback cadence beyond high-stakes conversations.
 
 ### When Not to Have the Conversation
 
@@ -85,12 +85,12 @@ Common scenarios:
 
 ### Team Conflict
 
-Team conflict between two engineers, or between an engineer and another team, is among the most difficult conversations because it often involves competing valid perspectives. The manager's job is not to adjudicate who is right — it is to restore the conditions for collaborative work.
+Team conflict between two engineers, or between an engineer and another team, ranks among the harder conversations because it often involves competing valid perspectives. The manager's job is to restore the conditions for collaborative work; adjudicating who is right is not the goal.
 
 **The structure for a peer conflict:**
 
 1. **Have separate conversations first.** Talk to each party individually before bringing them together. Understand each person's experience of the conflict before trying to resolve it. Do not share what one person said with the other in a way that escalates the conflict.
-2. **Name the behavior, not the person.** "I have heard [specific behavior that is creating friction]" rather than "I have heard you are difficult to work with."
+2. **Name the behavior; the person is not the target.** "I have heard [specific behavior that is creating friction]" instead of "I have heard you are difficult to work with."
 3. **Name the impact on the team.** "The current situation is affecting [sprint velocity / code review culture / the team's ability to collaborate on X]. That is the problem I need to solve."
 4. **Bring the parties together with a specific agenda.** Not "let's talk about the conflict" — "I want to agree on how we are going to handle [specific recurring situation] going forward." The conversation should produce a behavioral agreement, not a feelings resolution.
 
@@ -106,7 +106,7 @@ The calibration session structure, level definition format, and failure modes (g
 Leveling disagreements are difficult because they combine two elements that rarely go well together: a consequential decision (compensation, title, promotion) and a subjective assessment that the person being assessed almost always sees differently than the assessor.
 
 **Before calibration:**
-The most effective leveling conversation is the one that happens before calibration, not after. If an engineer believes they are at the next level and calibration is likely to disagree, have the conversation in advance:
+The leveling conversation that lands is the one that happens before calibration; conversations after the decision rarely change anything. If an engineer believes they are at the next level and calibration is likely to disagree, have the conversation in advance:
 
 1. **Share your read, with evidence.** "I want to give you my honest read on where I think calibration will land this cycle, and why." Then share the specific evidence for why you believe the next level has or has not been demonstrated.
 2. **Give the engineer's case a hearing.** "Walk me through how you see it." Listen — not to be persuaded against evidence, but to understand whether there is evidence you have missed.
@@ -147,7 +147,7 @@ Escalate to HR when:
 - You have a conflict of interest in the situation (a relationship, a personal history, or a financial stake)
 - The outcome of the conversation may involve a role change, demotion, or separation
 
-HR escalation is not a failure — it is the right level of support for decisions with significant consequence. The mistake is escalating too late, after the situation has become a crisis, rather than involving HR early as a thought partner.
+HR escalation is not a failure; it is the right level of support for decisions with significant consequence. The mistake is escalating too late — after the situation has become a crisis — instead of involving HR early as a thought partner.
 
 ---
 
