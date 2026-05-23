@@ -2,11 +2,11 @@
 
 ## Leadership Context
 
-An engineering leader's ability to communicate upward is a direct multiplier on the team's impact. If the CTO, CEO, or board cannot quickly understand what engineering has delivered, what it needs, and what risks it is managing, they will make resourcing and priority decisions with incomplete information — and engineering will consistently lose those decisions to functions that communicate better. This playbook covers the written artifacts that engineering leaders produce for executive and board audiences: the formats, the principles, and the failure modes to avoid. Getting these right is not about polish; it is about building the executive trust that translates into headcount, runway, and the ability to make consequential technical bets.
+An engineering leader's ability to communicate upward acts as a direct multiplier on the team's impact. If the CTO, CEO, or board cannot quickly understand what engineering has delivered, what it needs, and what risks it manages, they will make resourcing and priority decisions with incomplete information; engineering will consistently lose those decisions to functions communicating better. This playbook covers the written artifacts engineering leaders produce for executive and board audiences: the formats, the principles, and the failure modes to avoid. Getting these right does no polish work; it builds the executive trust translating into headcount, runway, and the ability to make consequential technical bets.
 
 ## Background and Motivation
 
-These templates were developed from repeated upward communication at ActBlue Technical Services (2022–2025): presenting roadmaps and program status to the VP of Engineering and Head of Product, presenting the PCI deprecation business case to Legal, Finance, and Product leadership, and making headcount and investment requests through multiple planning cycles. The formats here are the ones that produced alignment — not approximations of what good communication looks like in theory.
+These templates draw on repeated upward communication at ActBlue Technical Services (2022–2025): presenting roadmaps and program status to the VP of Engineering and Head of Product, presenting the PCI deprecation business case to Legal, Finance, and Product leadership, and making headcount and investment requests through multiple planning cycles. The formats here produced alignment in practice; theoretical approximations of good communication do not appear.
 
 ## When to Use This
 
@@ -23,7 +23,7 @@ Before any template: the principles that make executive communication work.
 
 ### Lead With the Ask
 
-Executive audiences read under time pressure. The most important sentence in any executive communication is the first one. If you bury the ask in the third paragraph after two paragraphs of context, the ask will be missed.
+Executive audiences read under time pressure. The load-bearing sentence in any executive communication is the first one. Burying the ask in the third paragraph after two paragraphs of context means the ask will be missed.
 
 **Wrong:**
 > "In Q3, the payments team made significant progress on the checkout reliability initiative. We resolved 14 of 18 known issues in the payment retry logic and improved error detection by adding distributed tracing to the payments service. As a result of this work, and in light of the upcoming Q4 holiday traffic projections, we believe we need to add two engineers to the payments team."
@@ -35,16 +35,16 @@ The context is still there. The ask is not buried.
 
 ### Quantify Impact
 
-Every claim in an executive communication should be quantifiable or should say explicitly why it cannot be quantified. Executives who read "significant improvement" or "faster response times" without numbers cannot make resource decisions based on those statements.
+Every claim in an executive communication should be quantifiable or should say explicitly why it cannot be quantified. Executives reading "significant improvement" or "faster response times" without numbers cannot make resource decisions on those statements.
 
 **Wrong:** "We significantly reduced checkout errors this quarter."
 **Right:** "Checkout error rate dropped from 2.3% to 0.8% this quarter, which is estimated to recover approximately $180K in lost revenue per quarter at current conversion rates."
 
-If you do not know the business impact, say so and give the engineering metric: "We reduced checkout error rate from 2.3% to 0.8%. We have not yet quantified the revenue impact."
+If the business impact remains unknown, say so and give the engineering metric: "We reduced checkout error rate from 2.3% to 0.8%. We have not yet quantified the revenue impact."
 
 ### Distinguish Diagnosis From Recommendation
 
-Executive audiences need to know the difference between "here is what is happening" and "here is what we recommend doing about it." When these are conflated, executives cannot tell whether they are being asked to approve something, informed of something, or asked to make a judgment call.
+Executive audiences need to know the difference between "here is what is happening" and "here is what we recommend doing about it." When these get conflated, executives cannot tell whether they face an approval request, an FYI, or a judgment call.
 
 Format:
 1. What is happening (diagnosis)
@@ -54,7 +54,7 @@ Format:
 
 ### Manage Risk Explicitly
 
-Engineering leaders who only surface risks after they have materialized lose executive trust quickly. Executive communication should include an honest risk register — not to create alarm, but to demonstrate that leadership is thinking ahead and managing proactively.
+Engineering leaders surfacing risks only after they have materialized lose executive trust quickly. Executive communication should include an honest risk register; the purpose runs to demonstrating leadership is thinking ahead and managing proactively, never to alarm.
 
 Risk language that signals credibility: "We believe X is unlikely but are monitoring Y as an early indicator. If Y triggers, we will do Z."
 
@@ -70,7 +70,7 @@ Risk language that signals loss of control: "We are working through some challen
 
 ### Section 1: Health Metrics (One Page)
 
-A dashboard view of the 4–6 metrics that best represent engineering health. Each metric should include: current value, prior quarter value, trend direction, and a one-sentence interpretation.
+A dashboard view of the 4–6 metrics representing engineering health. Each metric should include: current value, prior quarter value, trend direction, and a one-sentence interpretation.
 
 **Template:**
 
@@ -90,7 +90,7 @@ A dashboard view of the 4–6 metrics that best represent engineering health. Ea
 
 ### Section 2: Delivery Recap (One Page)
 
-What engineering committed to in Q3 and what was delivered. This section requires honesty. Executives who receive only good news from engineering will stop trusting the signal.
+What engineering committed to in Q3 and what shipped. This section requires honesty. Executives receiving only good news from engineering will stop trusting the signal.
 
 **Format:**
 
@@ -125,7 +125,7 @@ What engineering committed to in Q3 and what was delivered. This section require
 
 ### Section 4: Team Updates (Half Page)
 
-Headcount, hiring, and organizational changes. Written for a finance and operations audience, not an engineering audience.
+Headcount, hiring, and organizational changes. Written for a finance and operations audience; an engineering audience reads this differently.
 
 **Format:**
 - Headcount: [current] engineers vs. [plan]. [Delta and explanation if material].
@@ -137,7 +137,7 @@ Headcount, hiring, and organizational changes. Written for a finance and operati
 
 ### Section 5: Asks (One Page)
 
-What engineering needs from the executive team to deliver on Q4 commitments. This is the most important section. Be specific.
+What engineering needs from the executive team to deliver on Q4 commitments. The load-bearing section in the QBR. Be specific.
 
 **Format for each ask:**
 - **Ask:** [What you need]
@@ -159,7 +159,7 @@ What engineering needs from the executive team to deliver on Q4 commitments. Thi
 **Length:** 1 page (in the board deck), or a 5-minute verbal presentation with a leave-behind
 **Cadence:** Quarterly or as part of a board-level product and technology update
 
-Board members are not engineering practitioners. They are looking for signal on three questions: Is the technology a risk or an asset? Is the team capable of delivering on the company's growth plan? Are there material issues engineering leadership is aware of and managing?
+Board members do not work as engineering practitioners. They want signal on three questions: Does the technology read as a risk or an asset? Can the team deliver on the company's growth plan? Do material issues exist that engineering leadership knows about and manages?
 
 **One-page format:**
 
@@ -204,7 +204,7 @@ Example: "No asks this quarter."
 
 **Audience:** CEO, CPO, VP of Customer Success (and whoever else is tracking the incident)
 **Timing:** Within 2 hours of incident resolution; before any external communication
-**Length:** 5 sentences. That is the format, not a suggestion.
+**Length:** 5 sentences. The format prescribes this; suggestion mode does not apply.
 
 ```
 INCIDENT EXECUTIVE SUMMARY
@@ -237,10 +237,10 @@ before production deployment; this will be in place by November 26."
 ```
 
 **What not to include in the executive summary:**
-- Stack traces, error codes, or technical diagnostics — these belong in the incident postmortem
-- Attribution or blame — this creates legal risk and is inappropriate before a full postmortem
-- Speculation about causes that have not been confirmed
-- Assurances that this will "never happen again" — these are not credible and undermine trust
+- Stack traces, error codes, or technical diagnostics; these belong in the incident postmortem
+- Attribution or blame; this creates legal risk and reads as inappropriate before a full postmortem
+- Speculation about causes still unconfirmed
+- Assurances that this will "never happen again"; these read uncredible and undermine trust
 
 ---
 
@@ -295,7 +295,7 @@ NEXT UPDATE
 **When:** When requesting a new headcount approval outside of the annual plan
 **Length:** 1 page
 
-The headcount request memo has to answer the question the approver is actually asking: "Why now, why this role, and what happens if I say no?" If it does not answer all three, it will not get approved.
+The headcount request memo has to answer the question the approver asks in their head: "Why now, why this role, and what happens if I say no?" Failing to answer all three means the request will not get approved.
 
 ```
 HEADCOUNT REQUEST
@@ -346,33 +346,33 @@ additional fraud losses in Q1 while we wait."
 
 ### Too Much Technical Detail
 
-Executives reading about a database migration do not need to know which ORM was used or the specifics of the migration tooling. Every sentence of technical detail that does not connect to a business outcome dilutes the communication and signals that the author does not understand their audience.
+Executives reading about a database migration do not need to know which ORM the team used or the specifics of the migration tooling. Every sentence of technical detail failing to connect to a business outcome dilutes the communication and signals the author misreads their audience.
 
-Test: read the document and ask, for every sentence, "does this help the executive make a decision?" If the answer is no, cut it.
+Test: read the document and ask, for every sentence, "does this help the executive make a decision?" If the answer reads no, cut it.
 
 ### Passive Voice on Risks
 
-"There were some delays due to vendor dependencies" is passive voice on a risk. It obscures who is responsible, what the impact is, and what is being done. Executives reading passive voice on risks conclude, correctly, that the engineering leader is not fully in control of the situation.
+"There were some delays due to vendor dependencies" reads as passive voice on a risk. It obscures who holds responsibility, what the impact runs, and what someone is doing. Executives reading passive voice on risks conclude, correctly, that the engineering leader has lost full control of the situation.
 
-Write risks in active voice with an owner and a timeline: "The vendor delayed the API documentation by two weeks. We escalated to their VP of Engineering on October 15; we now have access and are back on schedule."
+Write risks in active voice with an owner and a timeline: "The vendor delayed the API documentation by two weeks. We escalated to their VP of Engineering on October 15; we now have access and run back on schedule."
 
 ### Missing the "So What"
 
-The most common failure in engineering-to-executive communication is stating facts without connecting them to consequences. Engineering leaders who write "we completed the infrastructure upgrade" and stop there have communicated half the message. The complete message includes what changed for the business as a result.
+The recurring failure in engineering-to-executive communication: stating facts without connecting them to consequences. Engineering leaders writing "we completed the infrastructure upgrade" and stopping there have communicated half the message. The complete message includes what changed for the business as a result.
 
-Every delivery statement should have a "which means..." or "as a result..." attached to it. If you cannot complete that sentence, you do not yet understand the business impact of the work — and that is a separate problem worth solving.
+Every delivery statement should carry a "which means..." or "as a result..." attached to it. If you cannot complete that sentence, you do not yet understand the business impact of the work; that signals a separate problem worth solving.
 
 ### Underselling Risk to Protect the Team
 
-Engineering leaders who downplay risk to executives to protect the team from scrutiny are doing the opposite of protecting the team. Executives who learn about a significant risk in a customer meeting or from a board member — rather than from the engineering leader — will conclude that engineering leadership is either unaware of the risk or hiding it. Both conclusions are damaging and hard to recover from.
+Engineering leaders downplaying risk to executives to protect the team from scrutiny do the opposite of protecting the team. Executives learning about a significant risk in a customer meeting or from a board member (instead of from the engineering leader) will conclude that engineering leadership is either unaware of the risk or hiding it. Both conclusions damage trust and prove hard to recover from.
 
-Surface risks early, frame them constructively, and bring a mitigation plan. That is what builds trust.
+Surface risks early, frame them constructively, and bring a mitigation plan. That builds trust.
 
 ### Updating After the Decision Is Made
 
-Executives cannot act on information they receive after the window to act has closed. A headcount request that arrives two weeks before the hiring freeze goes up is too late. An incident summary that lands 12 hours after the incident is resolved is too late for the CEO to have context for the customer conversation they already had.
+Executives cannot act on information they receive after the window to act has closed. A headcount request arriving two weeks before the hiring freeze goes up arrives too late. An incident summary landing 12 hours after the incident resolves arrives too late for the CEO to carry context into the customer conversation they already had.
 
-The timing of upward communication matters as much as the content. When in doubt, communicate earlier and with less polish than later and perfectly formatted.
+The timing of upward communication matters as much as the content. When in doubt, communicate earlier and with less polish over later and perfectly formatted.
 
 ## Further Reading
 
