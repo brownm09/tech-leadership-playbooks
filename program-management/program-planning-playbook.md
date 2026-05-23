@@ -2,7 +2,7 @@
 
 ## Leadership Context
 
-Multi-team technical programs are where engineering leadership makes or breaks delivery credibility with the business. When a program slips, the root cause is almost never a technical problem — it is a planning problem: scope that was never agreed to, dependencies that were invisible until they were blocking, and milestone dates that were set to satisfy a deadline rather than reflect actual sequencing. This playbook documents how to scope, launch, and run a program in a way that gives executives accurate visibility and gives engineers clear ownership. The output is not a Gantt chart — it is a shared understanding of what "done" means and what it will take to get there.
+Multi-team technical programs are where engineering leadership makes or breaks delivery credibility with the business. When a program slips, the root cause is rarely technical; it is a planning problem: scope that was never agreed to, dependencies that were invisible until they were blocking, and milestone dates that were set to satisfy a deadline without reflecting real sequencing. This playbook documents how to scope, launch, and run a program in a way that gives executives accurate visibility and gives engineers clear ownership. The output is not a Gantt chart — it is a shared understanding of what "done" means and what it will take to get there.
 
 ## Background and Motivation
 
@@ -114,7 +114,7 @@ A milestone is a defined, verifiable state — not "in progress" or "mostly done
 The kickoff is not a presentation. It is the single meeting where alignment becomes real or does not happen at all. Three things must be true when the kickoff ends:
 
 1. **Every team knows what they own.** If someone can leave the kickoff unsure of what they are responsible for, the kickoff failed.
-2. **Every team knows the first dependency they have on another team.** Not all dependencies — just the first one. This surfaces blocking relationships early enough to resolve them.
+2. **Every team knows the first dependency they have on another team.** Not all dependencies — the first one. This surfaces blocking relationships early enough to resolve them.
 3. **Everyone has seen and can challenge the success criteria.** If success criteria are defined by leadership and shown to the room for the first time in the kickoff, the room will nod and then go build something different. The kickoff is where criteria get challenged and confirmed.
 
 ### Pre-Read (Required)
@@ -132,11 +132,11 @@ Send at least 48 hours before. Must include: program brief (all sections), miles
 
 ### Anti-Patterns
 
-**The kickoff that is really a status update.** If the teams have been working for weeks before the kickoff, you are not doing a kickoff — you are doing a retroactive alignment meeting. Kickoff happens before execution begins.
+**The kickoff that is really a status update.** If the teams have been working for weeks before the kickoff, you are running a retroactive alignment meeting under the kickoff label. Kickoff happens before execution begins.
 
 **Presenting a plan to the room instead of building one.** Handing teams a completed Gantt chart and asking for questions signals that the planning is done and they are here to receive it. Alignment built this way does not last past the first dependency conflict.
 
-**Skipping the dependency walkthrough.** Teams consistently underestimate how coupled their work is until they are forced to name their dependencies out loud. The dependency walkthrough is the most valuable 20 minutes in the kickoff.
+**Skipping the dependency walkthrough.** Teams consistently underestimate how coupled their work is until they are forced to name their dependencies out loud. The dependency walkthrough is the highest-leverage 20 minutes in the kickoff.
 
 **The 3-hour kickoff.** Attention collapses after 90 minutes. If there is more content than fits in 90 minutes, cut the content — not the time limit.
 
@@ -258,7 +258,7 @@ Categories:
 
 **Meeting:**
 - 30 min: Review and cluster submitted items. Identify themes.
-- 30 min: Discuss the top 3–5 themes in depth. Name the root cause, not just the symptom.
+- 30 min: Discuss the top 3–5 themes in depth. Name the root cause, not the symptom.
 - 20 min: Produce 3–5 concrete changes to make to the next program. Each change has an owner.
 - 10 min: Executive sponsor join. Share top 3 themes and changes. Get feedback.
 
@@ -270,7 +270,7 @@ Categories:
 
 **Scope creep without scope decisions.** New work enters the program because no one said no. The fix is a documented scope boundary in the brief, and a process for approving scope changes. Any scope addition must name what it displaces (another deliverable, a date, or team capacity). Scope additions that displace nothing are not real additions — they are magical thinking.
 
-**Phantom dependencies.** Dependencies that are listed but not actively managed. The dependency matrix says Team A needs output from Team B by March 15, but no one has spoken to Team B about it since the kickoff. Phantom dependencies surface at the worst moment: when Team A goes to use the output and it does not exist. Fix: weekly dependency review with explicit confirmation from the producing team.
+**Phantom dependencies.** Dependencies that are listed but not actively managed. The dependency matrix says Team A needs output from Team B by March 15, but no one has spoken to Team B about it since the kickoff. Phantom dependencies surface late — when Team A goes to use the output and it does not exist. Fix: weekly dependency review with explicit confirmation from the producing team.
 
 **The coordinator tax.** When the TPM becomes the information bottleneck — all updates flow through them, all decisions wait for them, all coordination is synchronous with them in the loop. The right model is a program infrastructure that enables asynchronous coordination: a shared status document that teams update directly, a RAID log that any lead can update, and a sync format that surfaces only what requires the group's attention. A TPM who is needed for every communication is a single point of failure, not a coordination asset.
 
