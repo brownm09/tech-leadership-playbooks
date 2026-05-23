@@ -1,10 +1,10 @@
 # PRD Lifecycle Management
 
-> **Leadership context:** The PRD is the most abused document in product engineering. It gets frozen at kick-off, accumulates stale assumptions, and becomes something engineers route around rather than reference. The engineering leader's job is not to own the PRD — that's the PM's job — but to set the standard for how it evolves, enforce its use as a working document, and make sure the team is building against current understanding, not the snapshot from last quarter's planning session.
+> **Leadership context:** PRDs fail in predictable ways — frozen at kick-off, accumulating stale assumptions, treated as something to route around instead of consult. The PM owns the PRD; the engineering leader sets the standard for how the document evolves, enforces its use as a working artifact, and keeps the team building against current understanding instead of the snapshot from last quarter's planning session.
 
 ## Purpose
 
-This playbook defines how a PRD is structured, how it evolves over the life of a product, and what "done" means at each stage. It applies the continuous discovery model: the PRD tracks evolving product understanding rather than locking scope. One living PRD per product; version history is in git, not in a frozen "v1.3 Final (2)" document.
+This playbook defines how a PRD gets structured, how it evolves over the life of a product, and what "done" means at each stage. It applies the continuous discovery model: the PRD tracks evolving product understanding instead of locking scope. One living PRD per product. Git holds the version history; no "v1.3 Final (2)" document needed.
 
 > **Demonstration sandbox:** [lifting-logbook](https://github.com/brownm09/lifting-logbook)
 > is a personal-project monorepo, not a production system at scale. The artifacts linked
@@ -16,14 +16,14 @@ This playbook defines how a PRD is structured, how it evolves over the life of a
 
 ## The One Living PRD Principle
 
-The most common PRD failure mode is treating it as a contract. You write it during discovery, lock it at kick-off, and then run a separate change-control process for every deviation. This produces:
-- Engineers building against stale requirements because updating the PRD is bureaucratic
-- PMs maintaining two sources of truth (the PRD and the Jira description where the real decisions happen)
-- Post-mortems where "we built what the PRD said" is treated as an absolution
+The frequent PRD failure mode: treating the document as a contract. You write it during discovery, lock it at kick-off, and then run a separate change-control process for every deviation. The consequences:
+- Engineers build against stale requirements because PRD updates feel bureaucratic
+- PMs maintain two sources of truth (the PRD and the Jira description where the real decisions happen)
+- Post-mortems treat "we built what the PRD said" as an absolution
 
-The one living PRD model inverts this. The document always reflects current intent. The history is in version control. The changelog (see below) is how you communicate what changed and why — not a separate document, a section of the same one.
+The one living PRD model inverts this. The document always reflects current intent. Version control holds the history. The changelog (see below) communicates what changed and why — a section of the same document, not a separate one.
 
-**The test:** Any engineer joining the team mid-project should be able to read the PRD and get accurate context about what is being built, why, and for whom. If that isn't true, the document has drifted.
+**The test:** Any engineer joining the team mid-project should be able to read the PRD and get accurate context about what the team is building, why, and for whom. If the document fails this test, it has drifted.
 
 ---
 
@@ -33,9 +33,9 @@ Every PRD has five required sections. Sections 1–3 are set during discovery an
 
 ### Section 1 — Problem Statement
 
-One paragraph. What is the user unable to do, or doing poorly, because this product does not exist? Written as a job-to-be-done: *"When [situation], users want to [goal], but [obstacle] prevents them. The cost of this is [outcome]."*
+One paragraph. What can the user not do, or do only poorly, because this product does not exist? Written as a job-to-be-done: *"When [situation], users want to [goal], but [obstacle] prevents them. The cost of this is [outcome]."*
 
-Avoid solution language in this section. "Users need a dashboard" is not a problem statement.
+Avoid solution language in this section. "Users need a dashboard" describes a feature; a problem statement names what the user cannot do today.
 
 ### Section 2 — User Job and Outcome Table
 
@@ -43,19 +43,19 @@ Avoid solution language in this section. "Users need a dashboard" is not a probl
 |-----------|----------------|-------------------|-------------------|
 | (e.g.) Product manager | Monitor experiment results across multiple flag variants without switching tools | One view, no manual aggregation, results available within 24h of flag creation | Exporting from LaunchDarkly, joining in a spreadsheet |
 
-Fill one row per distinct user type with a meaningfully different job. Two or three rows is normal. More than four typically indicates unclear product scope, not genuine user diversity.
+Fill one row per distinct user type with a meaningfully different job. Two or three rows is normal. More than four typically signals unclear product scope; genuine user diversity rarely needs more than three.
 
 ### Section 3 — Personas
 
-Two or three personas, maximum. Each persona is a named, specific person — not a demographic. Use Cooper's persona format: a name, a role, one sentence on what they're trying to accomplish in their work, and one sentence on where this product fits in their day.
+Two or three personas, maximum. Each persona names a specific person; a demographic label fails the format. Use Cooper's persona format: a name, a role, one sentence on what they aim to accomplish in their work, and one sentence on where this product fits in their day.
 
-Personas are not market segments. A persona is "Maria, a senior PM who runs 8–10 concurrent experiments and needs to brief the CPO weekly on business impact." Not "data-driven PMs at mid-market SaaS companies."
+Personas describe individuals; "data-driven PMs at mid-market SaaS companies" names a market segment, which the persona format deliberately rejects. A persona reads: "Maria, a senior PM who runs 8–10 concurrent experiments and needs to brief the CPO weekly on business impact."
 
 ### Section 4 — Hypothesis and Bets
 
 The specific bets this product makes. Written as falsifiable hypotheses: *"We believe [action] will produce [outcome] for [persona]. We will know this worked when [metric] moves by [amount] within [timeframe]."*
 
-This section is updated when bets change. If a bet is invalidated by discovery or user research, it is not deleted — it is struck through with a one-line explanation and a changelog entry (see Section 5).
+Update this section when bets change. When discovery or user research invalidates a bet, strike it through with a one-line explanation and a changelog entry (see Section 5); do not delete it.
 
 ### Section 5 — Changelog
 
@@ -105,63 +105,63 @@ Not all changes to the PRD are equal. Use two tiers to reduce change-control fri
 
 ## Lifecycle Stages
 
-The PRD exists across four stages. What's expected in each:
+A PRD passes through four stages. What each stage expects:
 
 ### Discovery
 
-The PRD is a working hypothesis. Sections 1–3 are drafts. Section 4 has at least one hypothesis. Section 5 is empty.
+In Discovery the PRD functions as a working hypothesis. Sections 1–3 are drafts. Section 4 carries at least one hypothesis. Section 5 stays empty.
 
 **Gate to Alignment:** Problem statement is crisp, job-outcome table has ≥1 validated row, at least one persona has been confirmed with a real user, and the PM can articulate the primary bet in one sentence.
 
 ### Alignment
 
-The PRD is being reviewed and socialized. Engineering is scoping, design is exploring. The document is updated frequently as assumptions surface.
+Review and socialization happen here. Engineering scopes; design explores. The document gets updated frequently as assumptions surface.
 
 **Gate to Delivery:** PM and EM have signed off on Section 4. Engineering has estimated. Dependencies are identified. No open "TBD" in Sections 1–3.
 
 ### Delivery
 
-The PRD is a reference document. Minor updates are expected as implementation surfaces edge cases. Major changes require Tier 2 process.
+The PRD serves as a reference document. Minor updates surface as implementation hits edge cases. Major changes go through Tier 2 process.
 
-**In-flight discipline:** If an engineer can't reconcile a decision with the PRD, that's a signal the PRD is wrong — update it, don't paper over it in the code.
+**In-flight discipline:** When an engineer cannot reconcile a decision with the PRD, the PRD has the wrong content — update it; do not paper over it in the code.
 
-**Gate to Shipped:** Feature is in production, instrumentation is live, the team can observe the success metrics in Section 4.
+**Gate to Shipped:** Feature ships to production, instrumentation runs live, and the team can observe the success metrics in Section 4.
 
 ### Shipped
 
-The PRD is archived (read-only). The outcomes are documented in a brief post-ship retrospective appended to the changelog: what the metrics showed, whether the bets were validated, and what was learned.
+In Shipped, the document is archived read-only. A brief post-ship retrospective appended to the changelog documents the outcomes: what the metrics showed, whether discovery validated the bets, and what the team learned.
 
 ---
 
 ## Ownership and Collaboration
 
-**PM owns the PRD.** The PM is the author, the final decision-maker on content, and the person responsible for keeping it current.
+**PM owns the PRD.** The PM authors it, decides content, and keeps it current.
 
-**EM is the accountability partner.** The EM's job is to flag when the document has drifted from reality, push back on hypotheses that aren't falsifiable, and ensure engineers can reference the PRD to resolve implementation ambiguity.
+**EM partners on accountability.** The EM flags drift from reality, pushes back on hypotheses lacking falsifiability, and ensures engineers can reference the PRD to resolve implementation ambiguity.
 
-**Engineers read and flag.** Any engineer who can't reconcile a decision with the PRD should flag it to the PM within one working day — not route around it.
+**Engineers read and flag.** Any engineer who cannot reconcile a decision with the PRD should flag it to the PM within one working day; routing around it makes the drift worse.
 
-**Design owns the persona depth.** Design research should feed Sections 2 and 3. If personas are being written without user contact, that's a process gap to fix, not a PRD problem.
+**Design owns the persona depth.** Design research feeds Sections 2 and 3. Personas written without user contact signal a process gap to fix — the PRD itself is not the problem.
 
 ---
 
 ## Common Failure Modes
 
-**The frozen PRD.** The document is correct at kick-off and stale six weeks later. Engineers stop consulting it. Fix: make PRD review a standing agenda item in the weekly team sync — five minutes to ask "is this still accurate?"
+**The frozen PRD.** The document captures intent at kick-off and drifts within six weeks. Engineers stop consulting it. Fix: make PRD review a standing agenda item in the weekly team sync — five minutes to ask "does this still hold?"
 
-**The PRD-as-contract.** The PM treats deviation from the PRD as a process violation. Engineers treat "it's in the PRD" as a reason not to raise concerns. Fix: Tier 2 process should take hours, not days. The cost of a slow change process is undocumented drift.
+**The PRD-as-contract.** The PM treats deviation from the PRD as a process violation. Engineers treat "it's in the PRD" as grounds for skipping concerns. Fix: Tier 2 process should take hours, not days. A slow change process costs undocumented drift.
 
-**The solution PRD.** The document describes what will be built, not why. Section 1 says "Build a real-time dashboard" instead of describing the user's problem. Fix: ban solution language from Sections 1–3. If the problem statement could have been written after the solution was decided, it was.
+**The solution PRD.** The document describes what will be built and skips why. Section 1 says "Build a real-time dashboard" in place of describing the user's problem. Fix: ban solution language from Sections 1–3. A problem statement that could have been written after the solution was decided was.
 
-**The thousand-page PRD.** The document grows to cover every edge case and specification, duplicating what should live in design files and tickets. Fix: the PRD answers why and for whom. It does not answer how. Technical specs, API contracts, and edge case handling live in linked documents.
+**The thousand-page PRD.** The document grows to cover every edge case and specification, duplicating content belonging in design files and tickets. Fix: the PRD answers why and for whom; it does not answer how. Technical specs, API contracts, and edge-case handling belong in linked documents.
 
-**The invisible changelog.** Changes happen but aren't logged. Two months in, no one remembers why the scope changed. Fix: make the changelog append-only and treat entries the same way you treat commit messages — they're permanent, they explain reasoning, and they're written for someone who wasn't in the room.
+**The invisible changelog.** Changes happen but go unlogged. Two months in, no one remembers why the scope changed. Fix: make the changelog append-only and treat entries the same way you treat commit messages — permanent, reasoning-led, written for someone who wasn't in the room.
 
 ---
 
 ## Background and Motivation
 
-This lifecycle model was developed from the feature lifecycle and roadmapping process revision at Community Tech Alliance (2025–2026). I designed and drove the process changes; the team adopted them. The revision shifted emphasis from scope-locked product specifications to outcome-oriented living documents — a change that reduced planning debt and improved IC alignment with the problems the engineering org was actually trying to solve.
+I developed this lifecycle model during the feature lifecycle and roadmapping process revision at Community Tech Alliance (2025–2026). I designed and drove the process changes; the team adopted them. The revision shifted emphasis from scope-locked product specifications to outcome-oriented living documents — a change reducing planning debt and improving IC alignment with the problems the engineering org needed to solve.
 
 ---
 
@@ -188,13 +188,13 @@ The artifacts below illustrate the lifecycle stages described in this playbook a
 
 ### What this sandbox does *not* demonstrate
 
-- **Personas and the job-outcome table** are minimally represented — the project has one user (the author), so Section 2 and Section 3 of the playbook collapse. The lifecycle structure transfers; the user-research discipline that animates Sections 1–3 in a real product context does not.
-- **Tier 1 / Tier 2 update process** does not appear, because the same person is PM and EM. The state-machine and changelog discipline transfers; the alignment process does not.
+- **Personas and the job-outcome table** are minimally represented — the project has one user (the author), so Section 2 and Section 3 of the playbook collapse. The lifecycle structure transfers; the user-research discipline animating Sections 1–3 in a real product context does not transfer here.
+- **Tier 1 / Tier 2 update process** does not appear, because the same person is PM and EM. The state-machine and changelog discipline transfers; the alignment process does not transfer.
 
 ---
 
 ## References
 
-- [Clayton Christensen, Taddy Hall, Karen Dillon, and David Duncan — "Know Your Customers' 'Jobs to Be Done'" (*Harvard Business Review*, September 2016)](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done) — The canonical HBR treatment of the Jobs to Be Done framework. Establishes that customers hire products to accomplish specific outcomes, not to consume features. The job-outcome table format in §2 (job + "success looks like") is a direct application.
-- [Alan Cooper — *The Inmates Are Running the Asylum* (Sams, 1998)](https://www.amazon.com/Inmates-Are-Running-Asylum-Products/dp/0672326140) — Origin of Goal-Directed Design and user personas as a product design tool. The guidance to keep personas to two or three reflects Cooper's observation that more personas typically indicate unclear product scope rather than genuine user diversity.
-- [Marty Cagan — *Inspired: How to Create Tech Products Customers Love*, 2nd ed. (Wiley, 2018)](https://www.svpg.com/books/inspired-how-to-create-tech-products-customers-love-2nd-edition/) — Establishes continuous discovery and outcome-oriented product thinking. The "one living PRD" design and the rejection of per-version document freezes aligns with Cagan's product-team model, where the document tracks evolving product understanding rather than locking scope.
+- [Clayton Christensen, Taddy Hall, Karen Dillon, and David Duncan — "Know Your Customers' 'Jobs to Be Done'" (*Harvard Business Review*, September 2016)](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done) — The canonical HBR treatment of the Jobs to Be Done framework. Establishes that customers hire products to accomplish specific outcomes; the feature inventory is incidental. The job-outcome table format in §2 (job + "success looks like") is a direct application.
+- [Alan Cooper — *The Inmates Are Running the Asylum* (Sams, 1998)](https://www.amazon.com/Inmates-Are-Running-Asylum-Products/dp/0672326140) — Origin of Goal-Directed Design and user personas as a product design tool. The guidance to keep personas to two or three reflects Cooper's observation: more personas typically signal unclear product scope; genuine user diversity rarely requires more than three.
+- [Marty Cagan — *Inspired: How to Create Tech Products Customers Love*, 2nd ed. (Wiley, 2018)](https://www.svpg.com/books/inspired-how-to-create-tech-products-customers-love-2nd-edition/) — Establishes continuous discovery and outcome-oriented product thinking. The "one living PRD" design and the rejection of per-version document freezes aligns with Cagan's product-team model, where the document tracks evolving product understanding instead of locking scope.
