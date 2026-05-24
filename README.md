@@ -169,4 +169,4 @@ How technical decisions get proposed, reviewed, and recorded at the team or org 
 
 ## Context
 
-These frameworks were developed and applied across high-volume, regulated platforms including a payments processor handling 1M+ transactions/day under PCI-DSS. They span the full scope of engineering leadership: from org design and technical strategy at the director level, to operating cadence and executive communication at the chief-of-staff level, to cross-team program delivery at the TPM level. They are written to be adapted, not followed verbatim. The right answer for your system depends on your scale, team structure, and constraints.
+These frameworks were developed and applied across regulated, production payment platforms under PCI-DSS. They span the full scope of engineering leadership: from org design and technical strategy at the director level, to operating cadence and executive communication at the chief-of-staff level, to cross-team program delivery at the TPM level. They are written to be adapted, not followed verbatim. The right answer for your system depends on your scale, team structure, and constraints.

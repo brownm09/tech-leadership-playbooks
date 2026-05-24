@@ -2,9 +2,9 @@
 
 ## Leadership Context
 
-The build-vs-buy decision is one of the highest-leverage calls an engineering leader makes — not because individual decisions are irreversible, but because the pattern of these decisions over time determines what the engineering organization becomes. An org that builds everything accumulates custom systems that require specialized knowledge and ongoing maintenance, pulling capacity away from differentiated work. An org that buys everything accumulates vendor dependencies that constrain architecture, create data portability risk, and erode the engineering team's ability to solve novel problems.
+Build-vs-buy decisions compound across years. Individual decisions are reversible; the pattern over time determines what the engineering organization becomes. An org that builds everything accumulates custom systems requiring specialized knowledge and ongoing maintenance, pulling capacity away from differentiated work. An org that buys everything accumulates vendor dependencies that constrain architecture, create data portability risk, and erode the engineering team's ability to solve novel problems.
 
-The failure mode is not choosing wrong. The failure mode is choosing without a framework — following instinct, optimizing for the wrong dimension (usually initial cost), or letting the decision get made by whoever is most vocal in the architecture meeting. This playbook provides a structured, repeatable approach to build-vs-buy decisions that produces a documented rationale, surfaces the trade-offs explicitly, and creates an audit trail for post-decision review.
+The failure mode is rarely choosing wrong; it is choosing without a framework — following instinct, optimizing for the wrong dimension (usually initial cost), or letting the decision get made by whoever drives the conversation in the architecture meeting. This playbook provides a structured, repeatable approach to build-vs-buy decisions that produces a documented rationale, surfaces the trade-offs explicitly, and creates an audit trail for post-decision review.
 
 ## Background and Motivation
 
@@ -142,7 +142,7 @@ For buy and partner options: what is the risk profile of the vendor relationship
 | 2 | High lock-in; vendor-proprietary data formats or APIs; migration would be a major project |
 | 1 | Severe lock-in; vendor is a single point of failure; migration would threaten business continuity; vendor financial stability is uncertain |
 
-**For build option:** Score this dimension based on the risk of depending on a key internal contributor — if one engineer owns the system, the lock-in risk is actually high. Score 5 if the system is well-documented, tested, and operationally understood by multiple engineers.
+**For build option:** Score this dimension based on the risk of depending on a key internal contributor — if one engineer owns the system, the lock-in risk is high. Score 5 if the system is well-documented, tested, and operationally understood by multiple engineers.
 
 For a worked example of an alternatives-considered analysis structured around exactly these dimensions — vendor lock-in tolerance, traffic-shape fit, and 5-year TCO — see the observability-stack ADR in the demonstration sandbox.[^bvb-sandbox-1]
 
@@ -219,7 +219,7 @@ Engineering teams consistently underestimate the cost of integrating a buy optio
 
 **Optimizing for Demo Quality**
 
-Vendors are expert at making their products look good in a 45-minute demo. Decisions made on demo quality are decisions made on the vendor's best-case scenario. The demo shows features; it does not show operational reality, scaling behavior, or the support queue backlog.
+Vendors are expert at making their products look good in a 45-minute demo. Decisions made on demo quality rest on the scenario the vendor controls. The demo shows features; it does not show operational reality, scaling behavior, or the support queue backlog.
 
 *Counter:* Run a proof-of-concept against your actual data and actual integration requirements before any buy decision over $50K/year. Require a reference call with an org at similar scale.
 
@@ -286,7 +286,7 @@ Weights applied: [list weights used]
 
 **Chosen option:** [Build / Buy / Partner]
 **Rationale:** [3–5 sentences. Name the deciding dimensions. Acknowledge the trade-offs.
-Do not just restate the scores — explain why those scores led to this decision given the
+Do not restate the scores — explain why those scores led to this decision given the
 org's current situation.]
 
 **Assumptions that must hold for this decision to remain correct:**
@@ -306,7 +306,7 @@ org's current situation.]
 
 ## Post-Decision Review Checklist
 
-At 12 months after the decision, review the decision log against what actually happened. This is not a blame exercise — it is a calibration exercise that improves future decisions.
+At 12 months after the decision, review the decision log against what happened. The exercise is for calibration, not blame; it improves future decisions.
 
 - [ ] TCO: How do actual costs compare to the 5-year projection at month 12 (annualized)?
 - [ ] Integration complexity: Did the integration take as long and cost as much as projected?

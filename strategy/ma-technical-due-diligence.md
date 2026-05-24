@@ -2,9 +2,9 @@
 
 ## Leadership Context
 
-Technical due diligence is the moment when an engineering leader's judgment most directly affects a business transaction. The quality of the technical assessment shapes acquisition price negotiation, integration budget, and — most consequentially — the timeline at which the combined engineering org will be able to move as a single unit after close. A diligence process that misses a $2M infrastructure migration, a GPL licensing exposure, or a five-person key-person risk does not fail in diligence — it fails 18 months post-close, when the cost is paid under integration pressure, at premium.
+Technical due diligence is among the moments when an engineering leader's judgment directly shapes a business transaction. The quality of the technical assessment shapes acquisition price negotiation, integration budget, and — decisively — the timeline at which the combined engineering org will be able to move as a single unit after close. A diligence process that misses a $2M infrastructure migration, a GPL licensing exposure, or a five-person key-person risk does not fail in diligence; it fails 18 months post-close, when the cost is paid under integration pressure, at premium.
 
-The business outcome: thorough technical diligence reduces integration risk, produces defensible inputs to purchase price adjustments, and gives the post-close engineering leadership team a credible integration plan on day one rather than day 60.
+The business outcome: thorough technical diligence reduces integration risk, produces defensible inputs to purchase price adjustments, and gives the post-close engineering leadership team a credible integration plan on day one instead of day 60.
 
 ## Background and Motivation
 
@@ -14,7 +14,7 @@ This framework was synthesized from multi-year platform and compliance work in r
 
 The diligence emphasis changes based on acquisition type. Use this framework to select and weight domains, not to run every domain at full depth for every acquisition.
 
-**Acqui-hire.** The primary asset is the team — engineering talent, culture, and working relationships. Architecture and technical debt assessments matter less. Key-person risk, team cohesion, and culture compatibility matter most. Prioritize: Team & Culture, Integration Complexity (people integration), Security Posture (because you are absorbing an endpoint fleet).
+**Acqui-hire.** The primary asset is the team — engineering talent, culture, and working relationships. Architecture and technical debt assessments matter less. Key-person risk, team cohesion, and culture compatibility carry the weight. Prioritize: Team & Culture, Integration Complexity (people integration), Security Posture (because you are absorbing an endpoint fleet).
 
 **Product acquisition.** You are buying a working product and its user base. Architecture scalability, operational maturity, and technical debt matter significantly because you will own the ongoing cost of running and evolving the product. Prioritize: Architecture & Scalability, Technical Debt & Quality, Operational Maturity, Data Practices.
 
@@ -130,7 +130,7 @@ The diligence emphasis changes based on acquisition type. Use this framework to 
 - Retention agreements (if any) proposed by the target or expected by the target team
 - Offer letters and equity schedules for key engineers (to understand post-close vesting cliffs and retention risk)
 
-**Questions to ask (in team interviews, not just leadership):**
+**Questions to ask (in team interviews — not in leadership interviews alone):**
 - What are you most proud of that you've built here?
 - What would make you stay through and after the acquisition? What would make you leave?
 - How does the leadership team make technical decisions? Give me a recent example.
@@ -243,7 +243,7 @@ The diligence emphasis changes based on acquisition type. Use this framework to 
 
 ### Domain 8: Integration Complexity
 
-**What you are evaluating:** What it will actually cost — in time and engineering resources — to integrate this system into the acquiring company's product, infrastructure, and team.
+**What you are evaluating:** What it will cost — in time and engineering resources — to integrate this system into the acquiring company's product, infrastructure, and team.
 
 **Artifacts to request:**
 - API documentation (public-facing and internal)
@@ -258,7 +258,7 @@ The diligence emphasis changes based on acquisition type. Use this framework to 
 - What data does your system depend on that comes from outside your system?
 
 **Red flags:**
-- Identity is baked into the application rather than abstracted; SSO integration requires a significant rearchitecture
+- Identity is baked into the application instead of abstracted; SSO integration requires a significant rearchitecture
 - The system produces data in proprietary formats with no documented schema or export capability
 - Heavy dependency on a third-party vendor that the acquiring company does not use and cannot easily replace
 - Core logic is embedded in a framework or platform that is incompatible with the acquiring org's standards (e.g., .NET when the acquiring org is all Go/Kubernetes)
@@ -321,13 +321,13 @@ Two weeks is a compressed but workable timeline for technical diligence on a 20�
 - Data or Analytics lead (1 hour): data practices, data quality, compliance posture
 
 **Interview ground rules:**
-- Interview engineers without their leadership present for at least one session. Engineers are more candid about technical debt, leadership quality, and team morale when not monitored.
+- Interview engineers without their leadership present for at least one session. Engineers speak openly about technical debt, leadership quality, and team morale when not monitored.
 - Avoid leading questions ("Do you have any technical debt?"). Ask open-ended questions that require narrative answers ("What would you do first if you had 90 days with no product pressure?").
 - Take notes on what is not said as much as what is: evasion, redirection, and vague answers about architecture or security are signals.
 
 **Day 5–7: Code review and architecture walkthrough**
 - Conduct a focused code review on 2–3 areas: core business logic, authentication/authorization, and a recent feature that the team is proud of
-- Walk through the architecture diagram with the team's lead engineer; ask them to explain design decisions, not just describe components
+- Walk through the architecture diagram with the team's lead engineer; ask them to explain design decisions instead of describing components
 - Review CI/CD pipeline: inspect test suite structure, coverage metrics, build history
 
 **Day 8–10: Artifact analysis and scoring**
@@ -355,7 +355,7 @@ Two weeks is a compressed but workable timeline for technical diligence on a 20�
 Five things every executive needs to see:
 
 1. **Overall technical health score** — weighted score, rating, and a one-sentence characterization
-2. **Top 3 risks** — the findings that most affect price, integration cost, or execution risk post-close
+2. **Top 3 risks** — the findings driving price, integration cost, or execution risk post-close
 3. **Team assessment** — will the team stay? Who are the key people, and what is the retention risk?
 4. **Integration cost estimate** — time and FTE cost to integrate the target's systems into the acquiring company's product and infrastructure
 5. **Recommendation** — proceed, proceed with conditions (price adjustment, escrow, required remediation pre-close), or pass
@@ -398,7 +398,7 @@ Every engineering org has people without whom the system becomes significantly h
 
 GPL and AGPL licenses can create copyleft obligations that are not immediately visible. A SaaS product that incorporates AGPL-licensed code (common in data tools and ML libraries) may have an obligation to release its source code under AGPL if any user can access the software over a network — even without distribution. This is often discovered post-close when legal reviews the dependency inventory for the first time.
 
-**How to surface them:** Request a full dependency inventory with license data. Many build systems can generate this. Review any AGPL or GPL v3 dependencies that are used in the product layer (not just development tooling). Engage IP counsel for any findings in this area — the engineering team may not understand the license implications.
+**How to surface them:** Request a full dependency inventory with license data. Many build systems can generate this. Review any AGPL or GPL v3 dependencies used in the product layer (not solely development tooling). Engage IP counsel for any findings in this area — the engineering team may not understand the license implications.
 
 ---
 
@@ -441,7 +441,7 @@ The risk register should be reviewed at 30, 60, and 90 days post-close in integr
 
 ## Common Failure Modes
 
-**Architecture-only diligence.** The most common failure is a technical diligence that spends 80% of its time on system architecture and 20% on everything else. Architecture is important, but it is also the easiest domain to assess and the easiest for a prepared target company to present well. Key-person risk, licensing obligations, and operational maturity are harder to assess and harder to fake.
+**Architecture-only diligence.** A common failure is a technical diligence that spends 80% of its time on system architecture and 20% on everything else. Architecture matters, but it is also the domain a prepared target company can present well in a short window. Key-person risk, licensing obligations, and operational maturity are harder to assess and harder to fake.
 
 **Trusting the data room over interviews.** Artifacts are curated. The data room contains what the target company chose to show you. Interviews — especially with engineers without leadership present — surface what the data room does not.
 
