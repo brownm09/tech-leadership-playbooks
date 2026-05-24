@@ -4,7 +4,7 @@
 
 A technical strategy document is the primary artifact through which an engineering leader translates business objectives into engineering investment. Without it, headcount decisions are negotiated on intuition, architectural investments compete with feature work on a quarter-by-quarter basis, and the engineering organization operates reactively. With it, there is a shared frame for what the engineering organization is trying to become and what it will and will not invest in to get there.
 
-The audience for a technical strategy is not primarily engineers — it is the executive team, the board, and the finance function that controls the budget. It must be legible to a CFO who wants to know why replatforming requires 6 headcount for 18 months, and to a CEO who wants to know how the technical investment connects to market position. Engineers read it too, and it must be credible to them — but optimizing the document for engineers at the expense of executive legibility is the most common failure mode.
+The primary audience for a technical strategy is the executive team, the board, and the finance function that controls the budget. It must be legible to a CFO who wants to know why replatforming requires 6 headcount for 18 months, and to a CEO who wants to know how the technical investment connects to market position. Engineers read it too, and it must be credible to them; optimizing the document for engineers at the expense of executive legibility is a frequent failure mode.
 
 ## Background and Motivation
 
@@ -42,7 +42,7 @@ A technical strategy document that is missing any of these five sections is inco
 | Investment Roadmap | What do we need to do, in what order, and at what cost? |
 | Success Metrics | How will we know if the strategy is working? |
 
-The sections are sequential. A strategy that jumps to Investment Roadmap without a rigorous Current State Assessment is not a strategy — it is a wishlist. The diagnosis validates the prescription.
+The sections are sequential. A strategy that jumps to Investment Roadmap without a rigorous Current State Assessment is a wishlist. The diagnosis validates the prescription.
 
 ---
 
@@ -54,7 +54,7 @@ The current state assessment is a structured diagnosis of the engineering organi
 
 **Technical debt inventory**
 
-A technical debt inventory is not a list of "things engineers wish they could refactor." It is a classification of debt by its impact on delivery, reliability, and the team's ability to change the system.
+A technical debt inventory classifies debt by its impact on delivery, reliability, and the team's ability to change the system; it is not a list of "things engineers wish they could refactor."
 
 Classify debt into three categories:
 
@@ -346,14 +346,14 @@ The strategy document is the source of record. It is not what you present to eve
 - Explicit trade-offs and sequencing rationale
 
 **For executive team (5-slide summary):**
-1. Current state: 3 bullets — biggest technical constraints on the business
+1. Current state: 3 bullets — the technical constraints binding the business today
 2. Target state: 3 bullets — what the engineering org will be capable of in 18–36 months
 3. Investment roadmap: one-page table by horizon — investment, headcount, outcome
 4. Success metrics: primary metrics with targets by horizon
 5. Risks: 2–3 execution risks and mitigation approaches
 
 **For board (verbal narrative, 5 minutes):**
-Focus on three things: (1) where the engineering org is relative to the scale demands of the business, (2) the one or two largest technical risks to business continuity, (3) the headline investment and expected return. Do not show the roadmap table; describe the direction. Have the detailed document ready for follow-up questions.
+Focus on three things: (1) where the engineering org is relative to the scale demands of the business, (2) the one or two material risks to business continuity, (3) the headline investment and expected return. Do not show the roadmap table; describe the direction. Have the detailed document ready for follow-up questions.
 
 **For finance / budget review:**
 Lead with the resource summary table. Connect each investment to a business outcome: "the platform investment reduces new feature time-to-production by 40%, which accelerates revenue growth by [N] months." If you cannot articulate the ROI of an engineering investment in business terms, you will not win the budget conversation.
@@ -364,7 +364,7 @@ Lead with the resource summary table. Connect each investment to a business outc
 
 **Too much aspiration, too little diagnosis**
 
-A strategy that describes a beautiful target state without a credible current state assessment is not a strategy — it is a vision statement. Executives who have seen vision statements before (which is all of them) will not fund it. The diagnosis is what makes the investment case credible.
+A strategy that describes a beautiful target state without a credible current state assessment is a vision statement. Executives who have seen vision statements before (which is all of them) will not fund it. The diagnosis is what makes the investment case credible.
 
 *Fix:* Write the current state section first. If you cannot fill it in specifically, you do not know the current state well enough to write a strategy yet.
 
