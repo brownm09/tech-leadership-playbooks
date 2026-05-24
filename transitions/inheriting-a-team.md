@@ -48,7 +48,7 @@ Signs you are in this scenario:
 - The team seems relieved instead of uncertain; warmth here signals warning, not green light
 - A specific grievance surfaces the team wants addressed immediately
 
-What to do: Listen fully to the named complaints. Acknowledge what you hear. Do not validate complaints about the prior leader directly; instead, say you want to understand the team's experience and what would help going forward. Act on what can be acted on. Distinguish systemic problems (deserving structural response) from interpersonal grievances (deserving empathy).
+What to do: Listen fully to the named complaints. Acknowledge what you hear. Do not validate complaints about the prior leader directly; instead, say you want to understand the team's experience and what would help going forward. Act on what can be acted on. Distinguish systemic problems (deserving structural response) from interpersonal grievances (deserving empathy). Empathy is not confirmation.
 
 ### The Absent Predecessor
 
@@ -77,7 +77,7 @@ How to handle it: Have a direct conversation early. Acknowledge the situation pl
 
 Every established team has one: the person who has been there longer than anyone, who everyone goes to when they need to know how things work, who carries institutional memory not written down anywhere. The veteran functions as both an asset and a potential source of friction, depending on whether they feel the new leader respects what they know.
 
-How to handle it: Go to them early and explicitly. Ask them to help you understand the team's history. Listen more than you talk. Validate hearing what they share, and signal whether it influenced your thinking. Do not make changes affecting their domain without checking in first.
+How to handle it: Go to them early and explicitly. Ask them to help you understand the team's history. Listen more than you talk. Validate hearing what they share. Hearing and agreement remain separate moves. Do not make changes affecting their domain without checking in first.
 
 ### The One Who Asks "What Are You Going to Change?"
 
@@ -105,7 +105,7 @@ In weeks one through four, the team calibrates you on signals having nothing to 
 
 ### Signals you cannot control:
 
-**Whether the team liked your predecessor more.** Outside your work and your behavior to change. It matters only if you let it shape how you lead.
+**Whether the team liked your predecessor more.** Neither your work nor your behavior can shift this. It matters only if you let it shape how you lead.
 
 **Whether the org's decision to restructure or hire externally was the right call.** If the team believes the restructuring putting you in this role was a mistake, they may extend the skepticism to you. You cannot argue them out of this. You can demonstrate over time the transition cost was warranted.
 
@@ -199,7 +199,7 @@ Positioning yourself by contrasting with the prior leader's failures. Even when 
 Deciding because the team seems welcoming, you can move faster than the 30-60-90 framework suggests. Warmth in week one signals hospitality. The full listening tour remains warranted.
 
 **The Undifferentiated 1:1 Schedule.**
-Running the same listening tour with everyone in the same order, without adapting to the specific dynamics of inherited teams. The passed-over team member, the informal authority figure, and the disengaged team member each need 1:1s shaped by their specific dynamic. Generic templates miss the contour.
+Running the same listening tour with everyone in the same order, without adapting to the specific dynamics of inherited teams. The passed-over team member, the informal authority figure, and the disengaged team member each need 1:1s shaped by their specific dynamic.
 
 **The Ownership Assumption.**
 Treating the team's prior commitments as yours without reviewing them. Projects, promises, and roadmap items the prior leader made may or may not align with the right direction for the team under your leadership. Before inheriting someone else's commitments publicly, understand them privately.

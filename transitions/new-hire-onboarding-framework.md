@@ -92,7 +92,7 @@ The manager and engineer conduct a structured retrospective (see template below)
 
 ## Ramp Metrics
 
-The manager tracks these; do not share with the engineer as a performance rubric. The underlying milestones match the engineer-facing checklist; the warning signals and framing here calibrate to manager monitoring.
+The manager tracks these; do not share with the engineer as a performance rubric. The underlying milestones match the engineer-facing checklist; the warning signals and framing here calibrate to manager monitoring. Engineer self-assessment runs on different signals.
 
 | Metric | Target | Warning Signal |
 |---|---|---|

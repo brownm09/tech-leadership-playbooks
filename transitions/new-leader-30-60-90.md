@@ -2,7 +2,7 @@
 
 ## Leadership Context
 
-A costly mistake a new engineering leader makes: acting before listening. The org will read every early decision as a signal about who you are, what you value, what you will protect, and who carries safety. Those signals, once sent, become difficult to walk back. The 30-60-90 framework operates as a forcing function against moving too fast. It structures the early months as distinct phases: a listening tour, an early diagnosis, and a committed direction by day 90. Each phase has deliverables, and the deliverables exist to prevent the phase from becoming indefinite.
+A costly mistake a new engineering leader makes: acting before listening. The org will read every early decision as a signal about who you are, what you value, what you will protect, and who is trustworthy. Those signals, once sent, become difficult to walk back. The 30-60-90 framework operates as a forcing function against moving too fast. It structures the early months as distinct phases: a listening tour, an early diagnosis, and a committed direction by day 90. Each phase has deliverables, and the deliverables exist to prevent the phase from becoming indefinite.
 
 The framework applies whether you are joining as an external hire or stepping into a director-level role from within. The timelines shift (internal transitions can compress phase 1 because relationship context already exists), but the phases do not collapse.
 
@@ -48,7 +48,7 @@ Produce a written relationship map by the end of week two. Not for distribution;
 
 - **Key influencers** — the people whose opinions move others, regardless of title. Often a Staff Engineer or a senior IC who has been around long enough to remember everything.
 - **Coalition builders** — the people who know how to get things done informally. They often have titles underrepresenting their organizational reach.
-- **Skeptics** — the people waiting to see whether you have earned trust. Reasonable people carrying evidence change does not always go well; skeptics differ from enemies.
+- **Skeptics** — the people waiting to see whether you have earned trust. Reasonable people who have seen change go badly before; skeptics differ from enemies.
 - **At-risk relationships** — people who were passed over for the role you now hold, or who had a difficult relationship with your predecessor.
 
 ### What Not to Do in Month One
@@ -108,7 +108,7 @@ The north star does not need final form. A clear direction with acknowledged unc
 
 ### The Shift from Diagnosis to Action
 
-By day 60 you should have enough orientation to start acting. Not on everything; on the things where waiting longer carries its own cost. The discipline in month three: distinguishing between:
+By day 60 you should have enough orientation to start acting. Not on everything; on the things where waiting longer carries its own cost. In month three, distinguish between:
 
 - **Decisions you can now make.** You have the information you need; delay causes harm.
 - **Decisions needing more time.** You have a hypothesis but not enough signal.
@@ -131,9 +131,9 @@ At the end of the 90-day period, write a brief retrospective for yourself. Cover
 - What your initial landscape document got right and what it missed
 - The decisions you made and how they are landing
 - What you would do differently if starting over
-- The 90-180 plan: the next three months now with your bearings
+- The 90-180 plan: the next three months, with your bearings in place
 
-The retrospective belongs to you; the manager does not see it. The value comes from forcing a confrontation with how your initial read diverged from reality.
+The retrospective belongs to you; the manager is not the audience. The value comes from forcing a confrontation with how your initial read diverged from reality.
 
 ---
 
@@ -159,7 +159,7 @@ The extension does not mean acting more slowly on urgent problems. It means dist
 
 **The Transparency Overcorrection.** Sharing every half-formed thought in the spirit of openness. Uncertainty stays fine; broadcasting uncertainty without framing creates anxiety. Be honest about what you do not know, but anchor it to your planned next step.
 
-**The Prior Leader Shadow.** Every conversation beginning with implicit comparison to the person before you. Whether your predecessor earned love or contempt, the job remains your own and stops short of correcting for them.
+**The Prior Leader Shadow.** Every conversation beginning with implicit comparison to the person before you. Whether your predecessor earned love or contempt, the job remains being you; do not become a corrective for them.
 
 **The Premature All-Hands.** Scheduling a team all-hands before you have had 1:1s with everyone whose work you will mention. You will say something wrong about someone's work or role you would have known to avoid if you had met with them first.
 
