@@ -2,13 +2,13 @@
 
 ## Leadership Context
 
-Technical debt is not a moral failure — it is the accumulated cost of every speed trade-off ever made, including the ones that were correct at the time. The problem is not that it exists; it is that most engineering organizations have no systematic way to reason about which debt matters, in what order to address it, and how to argue for the time to do so in a roadmap context dominated by feature delivery.
+Technical debt accumulates from every speed trade-off, including the ones that were correct at the time. The problem is structural: engineering organizations rarely have a systematic way to reason about which debt matters, in what order to address it, and how to argue for the time to do so in a roadmap context dominated by feature delivery.
 
-Leaders who treat debt as a single category make two predictable errors: they either argue for a dedicated cleanup quarter that never arrives, or they absorb it silently until it becomes a reliability crisis. Neither outcome is acceptable. This framework covers classification, visibility, and sequencing — the three things you need to talk about technical debt in a way that actually changes what gets prioritized.
+Leaders who treat debt as a single category make two predictable errors: they either argue for a dedicated cleanup quarter that never arrives, or they absorb it silently until it becomes a reliability crisis. Neither outcome is acceptable. This framework covers classification, visibility, and sequencing — the three things you need to talk about technical debt in a way that changes what gets prioritized.
 
 ## Background and Motivation
 
-This framework was developed from two specific programs at ActBlue Technical Services (2022–2025). The first was a multi-year PCI environment deprecation initiative that reduced the PCI-scoped service codebase by approximately 30% — 7,000+ lines of code eliminated and 2,600+ accounts migrated — while maintaining payment continuity on a system handling 1M+ transactions per day. The second was an infrastructure migration from Heroku to Kubernetes that reduced infrastructure costs by approximately $64,000 per year. Both programs required arguing for and winning dedicated engineering time against competing feature roadmap priorities, and both required translating technical risk into the language that finance, product, and legal leadership could evaluate.
+This framework was developed from programs at ActBlue Technical Services (2022–2025). A multi-year PCI environment deprecation initiative eliminated approximately 30% of the PCI-scoped service codebase and migrated 2,600+ accounts to Stripe; the parallel payment-processor migration to Stripe shrunk the payments codebase by 7,000+ lines while maintaining production payment continuity. A separate infrastructure migration from Heroku to Kubernetes reduced infrastructure costs by approximately $64,000 per year. All three efforts required arguing for and winning dedicated engineering time against competing feature roadmap priorities, and required translating technical risk into the language that finance, product, and legal leadership could evaluate.
 
 The core insight from both: debt that cannot be described in business terms will not be prioritized in business planning. The classification framework exists to make that translation possible.
 
@@ -16,7 +16,7 @@ The core insight from both: debt that cannot be described in business terms will
 
 ## Part 1: Debt Classification
 
-Not all debt is equal. Treating it as a single category is the reason debt backlogs become infinite lists that nobody acts on. The four-class model forces a distinction between debt that will kill you, debt that is slowing you down, and debt that just makes engineers unhappy when they look at it.
+Not all debt is equal. Treating it as a single category is the reason debt backlogs become infinite lists nobody acts on. The four-class model forces a distinction between debt that will kill you, debt slowing you down, and debt that frustrates engineers when they look at it.
 
 ### Class 1: Load-Bearing Debt
 
@@ -26,13 +26,13 @@ Debt that, if not addressed, will cause a system failure. The "if not addressed"
 - A library with a security vulnerability where no upstream fix exists and the current version is approaching end-of-support
 - A monolith service boundary that cannot accommodate the load forecasted for the next 18 months without a structural change
 
-**How to identify it:** Load-bearing debt typically lives in the minds of your most senior engineers, in your incident post-mortems (as "contributing factors"), and in architecture diagrams that people annotate with "we don't talk about this." Surfacing it requires asking directly: "What are you most worried about in this system that you have never been given time to fix?"
+**How to identify it:** Load-bearing debt typically lives in the minds of senior engineers, in your incident post-mortems (as "contributing factors"), and in architecture diagrams that people annotate with "we don't talk about this." Surfacing it requires asking directly: "What are you most worried about in this system that you have never been given time to fix?"
 
-**How to argue for it:** Frame it as risk management. "If we do not address X by [timeline], we will lose the ability to [migrate / scale / patch] without a high-risk manual intervention. The cost of that intervention is [estimate]. The cost of addressing it now is [smaller estimate]." This is insurance language, not engineering language — and that is intentional.
+**How to argue for it:** Frame it as risk management. "If we do not address X by [timeline], we will lose the ability to [migrate / scale / patch] without a high-risk manual intervention. The cost of that intervention is [estimate]. The cost of addressing it now is [smaller estimate]." This is insurance language; the framing is deliberate.
 
 ### Class 2: Risk Debt
 
-Debt that does not immediately threaten system stability but creates compliance, security, or operational exposure. The timeline pressure is external — a compliance audit, a regulatory deadline, a contractual SLA — rather than intrinsic to the system.
+Debt that does not immediately threaten system stability but creates compliance, security, or operational exposure. The timeline pressure is external — a compliance audit, a regulatory deadline, a contractual SLA — instead of intrinsic to the system.
 
 Examples:
 - Dependencies not in scope of the current compliance boundary that extend the audit surface area
@@ -52,7 +52,7 @@ Examples:
 - A deploy pipeline that requires manual steps, adding 20 minutes to every release
 - An internal API that is undocumented and whose behavior is discovered through trial and error, adding 2–3 days to onboarding for every engineer who touches it
 
-**How to identify it:** Ask your engineers how long common tasks actually take vs. how long they should take. The gap is velocity debt. Cycle time metrics and deployment frequency (from DORA) make this visible at the system level; sprint retrospectives surface it at the team level.
+**How to identify it:** Ask your engineers how long common tasks take versus how long they should take. The gap is velocity debt. Cycle time metrics and deployment frequency (from DORA) make this visible at the system level; sprint retrospectives surface it at the team level.
 
 **How to argue for it:** Quantify the tax. "The current test suite takes 45 minutes. Engineers run it [N] times per week across [M] engineers. At [loaded engineer cost], that is [dollar amount] per year in waiting time — and that does not include the cost of bugs that pass because people skip the suite locally." Product managers who think debt remediation is abstract often respond immediately to this kind of arithmetic.
 
@@ -70,12 +70,12 @@ The cost of misclassifying cosmetic debt as velocity or risk debt is significant
 
 ### The Debt Inventory
 
-Start with a debt audit — a structured exercise where the team produces a list of debt items, classified using the framework above. The audit is not a planning exercise; it is a diagnosis exercise. The goal is to know what exists, not to commit to fixing it.
+Start with a debt audit — a structured exercise where the team produces a list of debt items, classified using the framework above. The audit aims at diagnosis; planning comes later. The goal is to know what exists, not to commit to fixing it.
 
 Audit mechanics:
-- Run as a team workshop, not an async survey. Async produces a list; a workshop produces a shared understanding of which items are most consequential.
+- Run as a team workshop, not an async survey. Async produces a list; a workshop produces a shared understanding of which items the team rates as critical.
 - Give each item a class (1–4) and an estimated remediation cost (rough order of magnitude, not a sprint commitment).
-- Flag any items where there is disagreement about the class. Those disagreements are the most important conversations in the audit.
+- Flag any items where there is disagreement about the class. Those disagreements are the conversations the audit exists for.
 
 Output: a debt register — a living document (not a ticket queue) that captures class, estimated cost, and the rationale for the classification. Review it quarterly. Items that are not in Class 1 or 2 do not get a place in roadmap conversations; they get addressed opportunistically.
 
@@ -108,15 +108,15 @@ A roadmap entry for debt work should include:
 
 ### Against Delivery Commitments
 
-The most common failure mode in debt remediation is treating it as a separate work stream from feature delivery. In practice, the teams doing the debt work are the same teams doing the feature work, and the sequencing has to account for both.
+A common failure mode in debt remediation is treating it as a separate work stream from feature delivery. In practice, the teams doing the debt work are the same teams doing the feature work, and the sequencing has to account for both.
 
-A sustainable model: reserve 15–20% of sprint capacity for Class 1 and Class 2 debt work, every sprint. (This range is calibrated to mid-size product engineering teams; tune it against your team's actual risk register and delivery pressures — smaller teams often need proportionally more headroom, larger orgs with dedicated platform capacity may carry less.) This is not a separate track — it is a capacity reservation. The specific items change quarter to quarter based on the debt register; the capacity reservation is constant. This approach produces steady debt reduction without requiring dedicated cleanup sprints, which are difficult to get and difficult to sustain.
+A sustainable model: reserve 15–20% of sprint capacity for Class 1 and Class 2 debt work, every sprint. (This range is calibrated to mid-size product engineering teams; tune it against your team's actual risk register and delivery pressures — smaller teams often need proportionally more headroom, larger orgs with dedicated platform capacity may carry less.) The reservation is a capacity allocation, not a separate track. The specific items change quarter to quarter based on the debt register; the capacity reservation is constant. This approach produces steady debt reduction without requiring dedicated cleanup sprints, which are difficult to get and difficult to sustain.
 
 The capacity reservation has to be explicit and defended. "We have 20% reserved for debt" needs to be in the team's working agreements, communicated to product, and visible in sprint planning. If it is implicit, it will be the first thing compressed when delivery pressure increases.
 
 ### The "Refactor Alongside Feature" Pattern
 
-When a feature touches a system that contains Class 3 (velocity) debt, include the remediation in the feature scope rather than treating it as separate work. "We will build the notification service, and in the same sprint we will migrate the adjacent logging code to the current standard." This is the opportunistic cleanup model applied at feature-planning time, not retrospectively.
+When a feature touches a system containing Class 3 (velocity) debt, include the remediation in the feature scope instead of treating it as separate work. "We will build the notification service, and in the same sprint we will migrate the adjacent logging code to the current standard." This applies the opportunistic cleanup model at feature-planning time, not retrospectively.
 
 The discipline: scope the refactor before the sprint starts, not during it. Mid-sprint scope additions almost always compress the refactor when time gets tight.
 
@@ -136,7 +136,7 @@ Mechanics for running a dedicated sprint:
 
 ### The Infinite Debt Backlog
 
-A debt backlog with 200 items is not a debt register — it is a guilt list. No one will work through 200 items; the list will be used as evidence that debt is unmanageable and therefore not worth trying to manage. Cut ruthlessly. If an item is not Class 1 or Class 2 and has been on the list for more than six months without a plan to address it, either schedule it or delete it.
+A debt backlog with 200 items functions as a guilt list, not a register. No one will work through 200 items; the list will be used as evidence that debt is unmanageable and therefore not worth trying to manage. Cut ruthlessly. If an item is not Class 1 or Class 2 and has been on the list for more than six months without a plan to address it, either schedule it or delete it.
 
 ### "We'll Clean It Up Later"
 
@@ -144,7 +144,7 @@ The phrase "we'll clean this up after the launch" is almost never true. Post-lau
 
 ### The Big Bang Rewrite
 
-The proposal to rewrite a system from scratch rather than incrementally improving it. This is almost always the wrong answer. Big bang rewrites:
+The proposal to rewrite a system from scratch instead of incrementally improving it. This is almost always the wrong answer. Big bang rewrites:
 - Take longer than estimated, because the original system's behavior is never fully understood until the rewrite reveals it
 - Risk migrating bugs from the old system to the new one (and introducing new ones)
 - Require maintaining two systems simultaneously during the transition period, doubling operational burden
