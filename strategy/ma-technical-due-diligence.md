@@ -2,7 +2,7 @@
 
 ## Leadership Context
 
-Technical due diligence is among the moments when an engineering leader's judgment directly shapes a business transaction. The quality of the technical assessment shapes acquisition price negotiation, integration budget, and — decisively — the timeline at which the combined engineering org will be able to move as a single unit after close. A diligence process that misses a $2M infrastructure migration, a GPL licensing exposure, or a five-person key-person risk does not fail in diligence; it fails 18 months post-close, when the cost is paid under integration pressure, at premium.
+Technical due diligence is among the moments when an engineering leader's judgment directly shapes a business transaction. The quality of the technical assessment shapes acquisition price negotiation, integration budget, and — decisively — the timeline at which the combined engineering org will be able to move as a single unit after close. A diligence process that misses a $2M infrastructure migration, a GPL licensing exposure, or a key-person risk concentrated in a small acquired team does not fail in diligence; it fails 18 months post-close, when the cost is paid under integration pressure, at premium.
 
 The business outcome: thorough technical diligence reduces integration risk, produces defensible inputs to purchase price adjustments, and gives the post-close engineering leadership team a credible integration plan on day one instead of day 60.
 
