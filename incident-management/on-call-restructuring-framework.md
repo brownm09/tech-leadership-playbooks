@@ -6,13 +6,13 @@ On-call structure carries talent and delivery risk, beyond the ops concern. Unsu
 
 ## Background and Motivation
 
-This framework grew out of the on-call restructuring at ActBlue Technical Services (2022–2024). I redesigned the cross-team incident handover process and redefined responder roles across a 5-person SRE team absorbing every incident in the organization. The structural changes — separating coordination from resolution, introducing per-team rotations, and centralizing alert instrumentation — reduced friction and improved stakeholder resolution clarity.
+This framework grew out of the on-call restructuring at ActBlue Technical Services (2022–2024). I redesigned the cross-team incident handover process and redefined responder roles across an SRE team absorbing every incident in the organization. The structural changes — separating coordination from resolution, introducing per-team rotations, and centralizing alert instrumentation — reduced friction and improved stakeholder resolution clarity.
 
 ## Problem Statement
 
-A common failure mode in on-call programs: a small team gets paged for everything, regardless of who owns the problem or can fix it. Alerts lack standardization, so some issues surface only when an engineer notices something has gone wrong, never when a monitor fires. No mechanism records incident start and end times, so the org has no data on frequency, duration, or trend.
+A common failure mode in on-call programs: a single team gets paged for everything, regardless of who owns the problem or can fix it. Alerts lack standardization, so some issues surface only when an engineer notices something has gone wrong, never when a monitor fires. No mechanism records incident start and end times, so the org has no data on frequency, duration, or trend.
 
-ActBlue's on-call program sat in this state before restructuring. The 5-person SRE team, plus a handful of staff-level volunteers, was absorbing every incident across the organization. Responders were expected to both coordinate the incident and resolve it — a split focus degrading response quality under pressure. Alerts existed across systems but lacked centralization or standardization, so detection lag varied by incident type and by who happened to be paying attention.
+ActBlue's on-call program sat in this state before restructuring. The SRE team, plus a handful of staff-level volunteers, was absorbing every incident across the organization. Responders were expected to both coordinate the incident and resolve it — a split focus degrading response quality under pressure. Alerts existed across systems but lacked centralization or standardization, so detection lag varied by incident type and by who happened to be paying attention.
 
 ## Structural Changes
 
@@ -29,7 +29,7 @@ This separation reduces cognitive load on responders and improves incident coher
 ### Rotation Structure
 
 **Before:**
-- 5-person SRE team plus ad hoc staff+ volunteers
+- Small SRE team plus ad hoc staff+ volunteers
 - Called for all incidents regardless of team ownership
 - No formal tiering
 
