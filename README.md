@@ -17,7 +17,7 @@ Phased framework for an engineering leader joining a new org. Covers the listeni
 Companion to the 30-60-90 for the specific dynamics of stepping into an existing team you did not hire. Covers the three predecessor archetypes (beloved, embattled, absent), loyalty traps (passed-over team members, informal authority figures), the trust signals the team is watching for in weeks 1–4, and early personnel decisions. Includes modified listening tour questions and a personnel decision decision tree.
 
 **[transitions/new-hire-onboarding-framework.md](transitions/new-hire-onboarding-framework.md)**
-The 30-day plan handed to an incoming engineer — the complement to the new-leader 30-60-90. Covers the three-phase ramp (orientation, first contribution, independent delivery), the three roles (manager, buddy, new hire), ramp metrics, and the most common onboarding failure modes. Includes a 30-day checklist, manager kick-off agenda, buddy guide, and 30-day retrospective format. Grounded in onboarding across six platform teams at ActBlue and the CTA engineering team.
+The 30-day plan handed to an incoming engineer — the complement to the new-leader 30-60-90. Covers the three-phase ramp (orientation, first contribution, independent delivery), the three roles (manager, buddy, new hire), ramp metrics, and common onboarding failure modes. Includes a 30-day checklist, manager kick-off agenda, buddy guide, and 30-day retrospective format. Grounded in onboarding across six platform teams at ActBlue and the CTA engineering team.
 
 ---
 
