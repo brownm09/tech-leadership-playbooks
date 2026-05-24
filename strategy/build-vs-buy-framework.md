@@ -219,7 +219,7 @@ Engineering teams consistently underestimate the cost of integrating a buy optio
 
 **Optimizing for Demo Quality**
 
-Vendors are expert at making their products look good in a 45-minute demo. Decisions made on demo quality are decisions made on the scenario the vendor controls. The demo shows features; it does not show operational reality, scaling behavior, or the support queue backlog.
+Vendors are expert at making their products look good in a 45-minute demo. Decisions made on demo quality rest on the scenario the vendor controls. The demo shows features; it does not show operational reality, scaling behavior, or the support queue backlog.
 
 *Counter:* Run a proof-of-concept against your actual data and actual integration requirements before any buy decision over $50K/year. Require a reference call with an org at similar scale.
 

@@ -8,9 +8,9 @@ Leaders who treat debt as a single category make two predictable errors: they ei
 
 ## Background and Motivation
 
-This framework was developed from programs at ActBlue Technical Services (2022–2025). A multi-year PCI environment deprecation initiative eliminated approximately 30% of the PCI-scoped service codebase and migrated 2,600+ accounts to Stripe; the parallel payment-processor migration to Stripe shrunk the payments codebase by 7,000+ lines while maintaining production payment continuity. A separate infrastructure migration from Heroku to Kubernetes reduced infrastructure costs by approximately $64,000 per year. All three efforts required arguing for and winning dedicated engineering time against competing feature roadmap priorities, and required translating technical risk into the language that finance, product, and legal leadership could evaluate.
+This framework was developed from programs at ActBlue Technical Services (2022–2025). A multi-year PCI environment deprecation initiative eliminated approximately 30% of the PCI-scoped service codebase and migrated 2,600+ accounts to Stripe; the parallel payment-processor migration to Stripe shrunk the payments codebase by 7,000+ lines while maintaining production payment continuity. A separate infrastructure migration from Heroku to Kubernetes reduced infrastructure costs by approximately $64,000 per year. All of these efforts required arguing for and winning dedicated engineering time against competing feature roadmap priorities, and required translating technical risk into the language that finance, product, and legal leadership could evaluate.
 
-The core insight from both: debt that cannot be described in business terms will not be prioritized in business planning. The classification framework exists to make that translation possible.
+The core insight from these programs: debt that cannot be described in business terms will not be prioritized in business planning. The classification framework exists to make that translation possible.
 
 ---
 
